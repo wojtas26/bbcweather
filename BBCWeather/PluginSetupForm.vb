@@ -18,13 +18,16 @@ Public Class PluginSetupForm
     Private _areaName As String = String.Empty
 
     Private Sub PluginSetupForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
         AppDomain.CurrentDomain.AppendPrivatePath(String.Format("{0}\Plugins\Windows\BBCWeather", AppDomain.CurrentDomain.BaseDirectory))
+
         Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
             _areaCode = xmlReader.GetValue("BBCWeather", "areaCode")
             _areaName = xmlReader.GetValue("BBCWeather", "areaName")
         End Using
-        AreaLookup(_areaName)
-        
+
+        If _areaName.Length > 0 Then AreaLookup(_areaName)
+
     End Sub
 
     Private Sub btnLookup_Click(sender As System.Object, e As System.EventArgs) Handles btnLookup.Click
