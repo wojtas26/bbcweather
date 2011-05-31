@@ -233,6 +233,8 @@
     <Content Include="Images\templates\mask.png" />
     <Content Include="skin\Black Glass HD\BBCweather.xml" />
     <Content Include="skin\Black Glass HD\Media\hover_BBCWeather.png" />
+    <Content Include="skin\Blue3Wide\BBCWeather.xml" />
+    <Content Include="skin\Blue3\BBCWeather.xml" />
     <Content Include="skin\DefaultWide\BBCWeather.xml" />
     <Content Include="skin\Default\BBCWeather.xml" />
   </ItemGroup>

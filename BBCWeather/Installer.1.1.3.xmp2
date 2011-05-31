@@ -34,14 +34,14 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>skin\Default\BBCWeather.xml</LocalFileName>
+              <LocalFileName>skin\Blue3\BBCWeather.xml</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{9eb2a30b-8e5f-4d33-9c19-2f07b7d487a6}-BBCWeather.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\BBCWeather.xml</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>skin\DefaultWide\BBCWeather.xml</LocalFileName>
+              <LocalFileName>skin\Blue3Wide\BBCWeather.xml</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{38b99f2f-9c4c-4700-b70b-18fd1d473511}-BBCWeather.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3Wide\BBCWeather.xml</DestinationFilename>
             </FileItem>
@@ -1178,41 +1178,6 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <PanelName>Welcome Screen</PanelName>
         <WizardButtonsEnum>NextCancel</WizardButtonsEnum>
       </SectionItem>
-      <SectionItem Guid="ec5feb4e-6157-4126-89b7-13bbffb19bc2" Name="Tree View Selector" ConditionGroup="">
-        <Params>
-          <Items>
-            <SectionParam Name="Header Title">
-              <Value />
-              <ValueType>String</ValueType>
-              <Description>Header title</Description>
-            </SectionParam>
-            <SectionParam Name="Header description">
-              <Value />
-              <ValueType>String</ValueType>
-              <Description>Description of section, shown in under section title</Description>
-            </SectionParam>
-            <SectionParam Name="Header image">
-              <Value />
-              <ValueType>File</ValueType>
-              <Description>Image in upper right part</Description>
-            </SectionParam>
-            <SectionParam Name="Description ">
-              <Value />
-              <ValueType>String</ValueType>
-              <Description>Description of this operation</Description>
-            </SectionParam>
-          </Items>
-        </Params>
-        <Actions>
-          <Items />
-        </Actions>
-        <IncludedGroups>
-          <string>Default</string>
-          <string>BlackGlass</string>
-        </IncludedGroups>
-        <PanelName>Tree View Selector</PanelName>
-        <WizardButtonsEnum>BackNextCancel</WizardButtonsEnum>
-      </SectionItem>
       <SectionItem Guid="59891981-e860-4951-9c07-fb60843c73f9" Name="Install Section" ConditionGroup="">
         <Params>
           <Items>
@@ -1389,14 +1354,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>skin\Default\BBCWeather.xml</LocalFileName>
+        <LocalFileName>skin\Blue3\BBCWeather.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{9eb2a30b-8e5f-4d33-9c19-2f07b7d487a6}-BBCWeather.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\BBCWeather.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>skin\DefaultWide\BBCWeather.xml</LocalFileName>
+        <LocalFileName>skin\Blue3Wide\BBCWeather.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{38b99f2f-9c4c-4700-b70b-18fd1d473511}-BBCWeather.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3Wide\BBCWeather.xml</DestinationFilename>
       </FileItem>
