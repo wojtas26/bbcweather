@@ -97,4 +97,8 @@ Public Class PluginSetupForm
     End Sub
 
 
+    Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
+        System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WDNKXZFMKR4MY")
+    End Sub
+
 End Class

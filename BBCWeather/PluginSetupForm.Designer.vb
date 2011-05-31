@@ -28,6 +28,8 @@ Partial Class PluginSetupForm
         Me.tbxInput = New System.Windows.Forms.TextBox()
         Me.clbResults = New System.Windows.Forms.CheckedListBox()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLookup
@@ -76,11 +78,21 @@ Partial Class PluginSetupForm
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.BBCWeather.My.Resources.Resources.btn_donate_SM
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 201)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 23)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
         'PluginSetupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(255, 236)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLookup)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.clbResults)
@@ -89,6 +101,7 @@ Partial Class PluginSetupForm
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "PluginSetupForm"
         Me.Text = "BBC Weather config"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -98,4 +111,5 @@ Partial Class PluginSetupForm
     Friend WithEvents tbxInput As System.Windows.Forms.TextBox
     Friend WithEvents clbResults As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

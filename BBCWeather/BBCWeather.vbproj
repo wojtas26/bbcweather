@@ -231,6 +231,7 @@
     <Content Include="Images\Media\hover_BBCWeather.png" />
     <Content Include="Images\templates\hover_my weather.png" />
     <Content Include="Images\templates\mask.png" />
+    <None Include="Resources\btn_donate_SM.gif" />
     <Content Include="skin\Black Glass HD\BBCweather.xml" />
     <Content Include="skin\Black Glass HD\Media\hover_BBCWeather.png" />
     <Content Include="skin\Blue3Wide\BBCWeather.xml" />
