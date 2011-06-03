@@ -45,6 +45,12 @@
         <id>4</id>
         <label> Monthly Outlook</label>
       </control>
+      <control>
+        <description>Maps button</description>
+        <type>button</type>
+        <id>5</id>
+        <label> Forecast Maps</label>
+      </control>
     </control>
 
     <!-- Header controls     -->
