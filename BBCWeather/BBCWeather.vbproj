@@ -151,6 +151,7 @@
     <EmbeddedResource Include="bbc_off.png" />
     <EmbeddedResource Include="bbc_on.png" />
     <Content Include="Images\BBCWeather.ico" />
+    <Content Include="Images\Media\BBCWeather\map_background.png" />
     <Content Include="skin\Black Glass HD\Media\BBCWeather\bg_frame.png" />
     <Content Include="Images\Media\BBCWeather\five_day_group.png" />
     <Content Include="Images\Media\BBCWeather\header_BBCWeather.png" />
