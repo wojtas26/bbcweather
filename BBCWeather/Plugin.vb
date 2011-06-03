@@ -1194,13 +1194,13 @@ Public Class BBCWeatherPlugin
             Dim i As Integer = 0
             For Each childnode As HtmlAgilityPack.HtmlNode In node.ChildNodes
                 If childnode.Name.ToLower = "tr" Then
-                    If childnode.ChildNodes(1).ChildNodes.Count > 1 Then
-                        _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim() + vbCrLf
-                        _24HourForecast(i).DayName += childnode.ChildNodes(1).ChildNodes(2).InnerText.Trim()
-                        _24HourForecast(i).DayName = _24HourForecast(i).DayName.Trim()
-                    Else
-                        _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim()
-                    End If
+                    'If childnode.ChildNodes(1).ChildNodes.Count > 1 Then
+                    '    _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim() + vbCrLf
+                    '    _24HourForecast(i).DayName += childnode.ChildNodes(1).ChildNodes(2).InnerText.Trim()
+                    '    _24HourForecast(i).DayName = _24HourForecast(i).DayName.Trim()
+                    'Else
+                    _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim()
+                    'End If
                     _24HourForecast(i).Summary = childnode.ChildNodes(3).InnerText.Trim()
                     _24HourForecast(i).MaxTemp = Replace(childnode.ChildNodes(5).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "") '5-1-3 degF
                     _24HourForecast(i).WindDirection = childnode.ChildNodes(7).ChildNodes(1).ChildNodes(1).InnerText.Trim()
