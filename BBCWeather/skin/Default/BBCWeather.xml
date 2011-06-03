@@ -45,6 +45,12 @@
         <id>4</id>
         <label> Monthly Outlook</label>
       </control>
+      <control>
+        <description>Maps button</description>
+        <type>button</type>
+        <id>5</id>
+        <label> Forecast Maps</label>
+      </control>
     </control>
 
     <!-- Header controls     -->
@@ -1784,5 +1790,53 @@
       </control>
     </control>
     <!-- Monthly forecast end -->
+
+    <!-- Maps start -->
+    <!-- Control ids 600 - 699 -->
+    <control>
+      <type>group</type>
+      <dimColor>FFFFFFFF</dimColor>
+      <animation effect="fade" time="100">VisibleChange</animation>
+      <animation effect="fade" time="100">VisibleChange</animation>
+        <control>
+          <description>Maps background image</description>
+          <type>image</type>
+          <keepaspectratio>no</keepaspectratio>
+          <id>600</id>
+          <posX>290</posX>
+          <posY>100</posY>
+          <width>410</width>
+          <height>446</height>
+          <texture>BBCWeather\map_background.png</texture>
+        </control>
+        <control>
+          <description>Maps multi image</description>
+          <type>multiimage</type>
+          <keepaspectratio>yes</keepaspectratio>
+          <id>601</id>
+          <posX>310</posX>
+          <posY>120</posY>
+          <width>370</width>
+          <height>500</height>
+          <imagepath>BBCWeather</imagepath>
+          <timeperimage>1000</timeperimage>
+          <fadetime>100</fadetime>
+          <randomize>no</randomize>
+          <loop>no</loop>
+        </control>
+        <control>
+          <description>Maps overlay image (placenames)</description>
+          <type>image</type>
+          <keepaspectratio>yes</keepaspectratio>
+          <id>602</id>
+          <posX>310</posX>
+          <posY>120</posY>
+          <width>370</width>
+          <height>500</height>
+          <texture>BBCWeather\overlay.png</texture>
+        </control>
+      </control>
+    <!-- Maps end -->
+
   </controls>
 </window>
