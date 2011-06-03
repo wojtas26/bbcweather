@@ -2018,21 +2018,21 @@
             <type>image</type>
             <keepaspectratio>no</keepaspectratio>
             <id>600</id>
-            <posX>560</posX>
-            <posY>110</posY>
-            <width>533</width>
-            <height>580</height>
+            <posX>900</posX>
+            <posY>160</posY>
+            <width>800</width>
+            <height>870</height>
             <texture>BBCWeather\bg_map_background.png</texture>
           </control>
           <control>
             <description>Maps multi image</description>
             <type>multiimage</type>
-            <keepaspectratio>yes</keepaspectratio>
+            <keepaspectratio>no</keepaspectratio>
             <id>601</id>
-            <posX>600</posX>
-            <posY>150</posY>
-            <width>453</width>
-            <height>500</height>
+            <posX>960</posX>
+            <posY>220</posY>
+            <width>680</width>
+            <height>750</height>
             <imagepath>BBCWeather</imagepath>
             <timeperimage>1000</timeperimage>
             <fadetime>100</fadetime>
@@ -2042,12 +2042,12 @@
           <control>
             <description>Maps overlay image (placenames)</description>
             <type>image</type>
-            <keepaspectratio>yes</keepaspectratio>
+            <keepaspectratio>no</keepaspectratio>
             <id>602</id>
-            <posX>600</posX>
-            <posY>150</posY>
-            <width>453</width>
-            <height>500</height>
+            <posX>960</posX>
+            <posY>220</posY>
+            <width>680</width>
+            <height>750</height>
             <texture>BBCWeather\overlay.png</texture>
           </control>
         </control>
