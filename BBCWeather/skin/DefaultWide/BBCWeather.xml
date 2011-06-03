@@ -40,10 +40,16 @@
         <label> Next 24 Hours</label>
       </control>
       <control>
-        <description> Monthly button</description>
+        <description>Monthly button</description>
         <type>button</type>
         <id>4</id>
         <label> Monthly Outlook</label>
+      </control>
+      <control>
+        <description>Maps button</description>
+        <type>button</type>
+        <id>5</id>
+        <label> Forecast Maps</label>
       </control>
     </control>
 
