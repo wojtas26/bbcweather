@@ -313,7 +313,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 0 max label</description>
         <type>label</type>
         <id>210</id>
@@ -336,7 +336,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 0 min label</description>
         <type>label</type>
         <id>212</id>
@@ -359,7 +359,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 0 wind label</description>
         <type>label</type>
         <id>214</id>
@@ -458,7 +458,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 1 max label</description>
         <type>label</type>
         <id>230</id>
@@ -481,7 +481,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 1 min label</description>
         <type>label</type>
         <id>232</id>
@@ -504,7 +504,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 1 wind label</description>
         <type>label</type>
         <id>234</id>
@@ -603,7 +603,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 2 max label</description>
         <type>label</type>
         <id>250</id>
@@ -626,7 +626,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 2 min label</description>
         <type>label</type>
         <id>252</id>
@@ -649,7 +649,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 2 wind label</description>
         <type>label</type>
         <id>254</id>
@@ -748,7 +748,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 3 max label</description>
         <type>label</type>
         <id>270</id>
@@ -771,7 +771,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 3 min label</description>
         <type>label</type>
         <id>272</id>
@@ -794,7 +794,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 3 wind label</description>
         <type>label</type>
         <id>274</id>
@@ -893,7 +893,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 4 max label</description>
         <type>label</type>
         <id>290</id>
@@ -916,7 +916,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 4 min label</description>
         <type>label</type>
         <id>292</id>
@@ -939,7 +939,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Day 4 wind label</description>
         <type>label</type>
         <id>294</id>
@@ -1047,7 +1047,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 0 max label</description>
         <type>label</type>
         <id>305</id>
@@ -1070,7 +1070,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 0 wind label</description>
         <type>label</type>
         <id>307</id>
@@ -1169,7 +1169,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 1 max label</description>
         <type>label</type>
         <id>325</id>
@@ -1192,7 +1192,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 1 wind label</description>
         <type>label</type>
         <id>327</id>
@@ -1291,7 +1291,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 2 max label</description>
         <type>label</type>
         <id>345</id>
@@ -1314,7 +1314,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 2 wind label</description>
         <type>label</type>
         <id>347</id>
@@ -1413,7 +1413,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 3 max label</description>
         <type>label</type>
         <id>365</id>
@@ -1436,7 +1436,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 3 wind label</description>
         <type>label</type>
         <id>367</id>
@@ -1535,7 +1535,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 4 max label</description>
         <type>label</type>
         <id>385</id>
@@ -1558,7 +1558,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 4 wind label</description>
         <type>label</type>
         <id>387</id>
@@ -1657,7 +1657,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 5 max label</description>
         <type>label</type>
         <id>405</id>
@@ -1680,7 +1680,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 5 wind label</description>
         <type>label</type>
         <id>407</id>
@@ -1779,7 +1779,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 6 max label</description>
         <type>label</type>
         <id>425</id>
@@ -1802,7 +1802,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 6 wind label</description>
         <type>label</type>
         <id>427</id>
@@ -1902,7 +1902,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 7 max label</description>
         <type>label</type>
         <id>445</id>
@@ -1925,7 +1925,7 @@
         <width>40</width>
         <texture>-</texture>
       </control>
-      <control Style="NoShadow">
+      <control>
         <description>Hour 7 wind label</description>
         <type>label</type>
         <id>447</id>

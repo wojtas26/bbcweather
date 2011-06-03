@@ -1,10 +1,16 @@
 ﻿Imports System
 Imports System.IO
 Imports System.Net
+Imports System.Xml
 Imports System.Text
+Imports System.Drawing
+Imports System.Drawing.Drawing2D
+
 Imports System.Threading
 Imports System.Windows.Forms
 Imports System.Runtime.CompilerServices
+
+Imports Jayrock.Json
 
 Imports MediaPortal.GUI.Library
 Imports MediaPortal.Dialogs
@@ -59,6 +65,7 @@ Public Class BBCWeatherPlugin
         FiveDay
         TwentyFourHours
         Monthly
+        Maps
     End Enum
 
     Private Enum Controls
@@ -271,6 +278,10 @@ Public Class BBCWeatherPlugin
         TBX_MONTHLY_DETAIL_TEXTBOX = 504
         IMG_MONTHLY_HORIZ_RULE = 505
 
+        IMG_MAPS_ANIMATIONS_BACKGROUND = 600
+        IMG_MAPS_ANIMATIONS = 601
+        IMG_MAPS_ANIMATIONS_OVERLAY = 602
+
     End Enum
 
 #End Region
@@ -280,6 +291,7 @@ Public Class BBCWeatherPlugin
     <SkinControlAttribute(2)> Protected _button5days As GUIButtonControl = Nothing
     <SkinControlAttribute(3)> Protected _button24Hours As GUIButtonControl = Nothing
     <SkinControlAttribute(4)> Protected _buttonMonthly As GUIButtonControl = Nothing
+    <SkinControlAttribute(5)> Protected _buttonMaps As GUIButtonControl = Nothing
 
     Private Const NUM_DAYS As Integer = 5
 
@@ -288,6 +300,7 @@ Public Class BBCWeatherPlugin
     Private _monthly As MonthForeCast = New MonthForeCast
     Private _locationCode As String = String.Empty
     Private _locationName As String = String.Empty
+    Private _regionName As String = String.Empty
     Private _workerActive As Boolean = False
     Private _downloadLock As Object = Nothing
     Private _currentMode As String = Mode.FiveDay           'Start with the 5 day forecast
@@ -419,10 +432,8 @@ Public Class BBCWeatherPlugin
             _currentMode = Mode.TwentyFourHours
         ElseIf control Is _buttonMonthly Then
             _currentMode = Mode.Monthly
-        ElseIf (control.GetID = 504) And actionType = MediaPortal.GUI.Library.Action.ActionType.ACTION_MOVE_UP Then
-            control.NavigateUp = 1
-        ElseIf (control.GetID = 504) And actionType = MediaPortal.GUI.Library.Action.ActionType.ACTION_MOVE_DOWN Then
-            control.NavigateDown = 1
+        ElseIf control Is _buttonMaps Then
+            _currentMode = Mode.Maps
         End If
 
         RefreshNewMode()
@@ -446,15 +457,16 @@ Public Class BBCWeatherPlugin
             Case Mode.Monthly
                 SetMonthlyModeControls()
                 GUIControl.FocusControl(GetID, 4)
+            Case Mode.Maps
+                SetMapsModeControls()
+                GUIControl.FocusControl(GetID, 5)
         End Select
     End Sub
 
     Private Sub HideAllControls()
-
-        For Each i As Integer In [Enum].GetValues(GetType(Controls))
+        For i As Integer = 100 To 999
             GUIControl.HideControl(GetID, i)
         Next
-
     End Sub
 
     Private Sub SetHeaderControls()
@@ -466,8 +478,7 @@ Public Class BBCWeatherPlugin
 
     Private Sub SetCurrentWeatherControls()
 
-        'Current weather controls
-        For i As Integer = 100 To 116
+        For i As Integer = 100 To 199
             GUIControl.ShowControl(GetID, i)
         Next
 
@@ -488,13 +499,12 @@ Public Class BBCWeatherPlugin
         SetHeaderControls()
         SetCurrentWeatherControls()
 
+        For i As Integer = 200 To 299
+            GUIControl.ShowControl(GetID, i)
+        Next
+
         Dim image As GUIImage = Nothing
-
         For dayNum As Integer = 0 To 4
-
-            For i As Integer = 200 To 299
-                GUIControl.ShowControl(GetID, i)
-            Next
 
             GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_DAYNAME + (dayNum * 20), Left(DateTime.Now.AddDays(dayNum).ToString("dddd"), 3))
             image = DirectCast(GetControl(Controls.IMG_DAY0_SUMMARY_IMAGE + (dayNum * 20)), GUIImage)
@@ -549,15 +559,13 @@ Public Class BBCWeatherPlugin
 
     End Sub
 
-
-
     Private Sub SetMonthlyModeControls()
 
         HideAllControls()
         SetHeaderControls()
         SetCurrentWeatherControls()
 
-        For i As Integer = 500 To 505
+        For i As Integer = 500 To 599
             GUIControl.ShowControl(GetID, i)
         Next
 
@@ -568,8 +576,8 @@ Public Class BBCWeatherPlugin
         GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_AUTHOR_LABEL, _monthly.author)
         GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_HEADLINE_LABEL, _monthly.headline)
 
-        Dim break As String = String.Format("{0}{0}{1}{0}{0}", Environment.NewLine, Replicate("=", 30))
-        txt = _monthly.summary
+        Dim break As String = String.Format("{0}{1}{0}", Environment.NewLine, Replicate("=", 30))
+        txt = Environment.NewLine + _monthly.summary
         txt += break
         txt += _monthly.period1 + Environment.NewLine
         txt += _monthly.periodSummary1 + Environment.NewLine
@@ -581,9 +589,27 @@ Public Class BBCWeatherPlugin
         txt += break
         txt += _monthly.period3 + Environment.NewLine
         txt += _monthly.periodSummary3 + Environment.NewLine
-        txt += _monthly.periodDetail3
+        txt += _monthly.periodDetail3 + Environment.NewLine
 
         GUIControl.SetControlLabel(GetID, Controls.TBX_MONTHLY_DETAIL_TEXTBOX, txt)
+
+    End Sub
+
+    Private Sub SetMapsModeControls()
+
+        HideAllControls()
+        SetHeaderControls()
+        SetCurrentWeatherControls()
+
+        For i As Integer = 600 To 699
+            GUIControl.ShowControl(GetID, i)
+        Next
+
+        Dim image As GUIImage = DirectCast(GetControl(Controls.IMG_MAPS_ANIMATIONS_OVERLAY), GUIImage)
+        image.SetFileName(String.Format("{0}\Media\BBCWeather\overlay.png", GUIGraphicsContext.Skin))
+
+        Dim mImage As GUIMultiImage = DirectCast(GetControl(Controls.IMG_MAPS_ANIMATIONS), GUIMultiImage)
+        mImage.AllocResources()
 
     End Sub
 
@@ -699,12 +725,7 @@ Public Class BBCWeatherPlugin
 
         Dim img As Integer = 0
         Dim day As Integer = 0
-        'If hour = -1 Then
-        '    If Now.Hour < 16 Then day = 1
-        'Else
         If hour >= 6 And hour <= 20 Then day = 1
-        'End If
-
 
         If InStr(weather, "with") > 0 Then
             weather = Left(weather, InStr(weather, "with") - 2)
@@ -824,12 +845,16 @@ Public Class BBCWeatherPlugin
 
                 If downloadSuccess Then
                     If Not ParseLocationName() AndAlso Not autoUpdate Then DisplayErrorDialog("location name")
+                    If Not ParseRegionName() AndAlso Not autoUpdate Then DisplayErrorDialog("region name")
                     If Not ParseCurrentObservation() AndAlso Not autoUpdate Then DisplayErrorDialog("current observation")
                     If Not Parse5DayWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("5 day forecast")
                     If Not Parse24HourWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("24 hour forecast")
                     If Not ParseMonthlyWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
                 End If
 
+                downloadSuccess = DownloadMaps()
+                downloadSuccess = DownloadMapOverlay()
+                If downloadSuccess Then ParseMapOverlay()
                 RefreshNewMode()
 
                 _lastRefreshTime = DateTime.Now
@@ -877,9 +902,205 @@ Public Class BBCWeatherPlugin
 
     End Function
 
+    Private Function DownloadMaps() As Boolean
+
+        If Not Win32API.IsConnectedToInternet() Then
+            Log.Error("plugin: BBCWeather - error downloading weather maps, no internet connection")
+            Return False
+        End If
+
+        ClearAnimationFiles()
+        
+        Dim URL As String = String.Empty
+        Dim fileName As String = String.Empty
+        Dim wClient As New WebClient
+
+        Dim hour As Integer = Now.Hour
+        Dim day As Integer = Now.Day
+        Dim daysInMonth As Integer = Date.DaysInMonth(Now.Year, Now.Month)
+        Dim dayCount As Integer = 0
+        Dim sDay As String = String.Empty
+
+        Dim sHour As String = GetHour(hour)
+        If CInt(sHour) = hour Then hour = GetHour(hour - 1)
+
+        hour = CInt(sHour)
+
+        '3 hourly images for the first 2 days
+        Dim numImages As Integer = 14
+        If hour = 6 Or hour = 12 Or hour = 18 Or hour = 0 Then numImages += 1
+
+        For i As Integer = 1 To numImages
+            sHour = GetHour(hour)
+            sDay = GetDay(day)
+            URL = String.Format("http://newsimg.bbc.co.uk/weather/map_presenter/{0}/{1}/forecast/{2}.jpg", sDay, sHour, _regionName)
+            fileName = String.Format("{0}\Media\animations\BBCWeather\{1}_{2}_{3}.jpg", GUIGraphicsContext.Skin, IIf(i < 10, "0" + i.ToString, i.ToString), sDay, sHour)
+            Try
+                wClient.DownloadFile(URL, fileName)
+                AddTimeInfo(fileName, sHour, Now.AddDays(dayCount).ToString("dddd").ToUpper)
+            Catch ex As Exception
+                Log.Error("plugin: BBCWeather - error downloading weather from {0}", URL)
+                Return False
+            End Try
+
+            hour += +3
+            If hour > 23 Then
+                day += 1
+                dayCount += 1
+                hour -= 24
+            End If
+            If day > daysInMonth Then day = day - daysInMonth
+        Next
+
+        '12 hourly images for the next 3 days
+        If hour < 12 Then
+            hour = 12
+        Else
+            day += 1
+            dayCount += 1
+            hour = 0
+        End If
+
+        For i As Integer = numImages + 1 To numImages + 6
+            sHour = GetHour(hour)
+            sDay = GetDay(day)
+            URL = String.Format("http://newsimg.bbc.co.uk/weather/map_presenter/{0}/{1}/forecast/{2}.jpg", sDay, sHour, _regionName)
+            fileName = String.Format("{0}\Media\animations\BBCWeather\{1}_{2}_{3}.jpg", GUIGraphicsContext.Skin, IIf(i < 10, "0" + i.ToString, i.ToString), sDay, sHour)
+            Try
+                wClient.DownloadFile(URL, fileName)
+                AddTimeInfo(fileName, "", String.Format("{0}{1}", IIf(sHour = "00", Now.AddDays(dayCount - 1).ToString("dddd").ToUpper, Now.AddDays(dayCount).ToString("dddd").ToUpper), IIf(sHour = "00", " NIGHT", "")))
+            Catch ex As Exception
+                Log.Error("plugin: BBCWeather - error downloading weather from {0}", URL)
+                Return False
+            End Try
+
+            hour += 12
+            If hour > 23 Then
+                day += 1
+                dayCount += 1
+                hour -= 24
+            End If
+
+            If day > daysInMonth Then day = day - daysInMonth
+        Next
+
+        Return True
+
+    End Function
+
+    Private Function DownloadMapOverlay() As Boolean
+
+        If Not Win32API.IsConnectedToInternet() Then
+            Log.Error("plugin: BBCWeather - error downloading weather, no internet connection")
+            Return False
+        End If
+
+        Dim URL As String = String.Format("http://news.bbc.co.uk/weather/map_presenter/{0}/MapAreaNode.xml", _regionName)
+
+        Try
+            Dim sourceString As String = New WebClient().DownloadString(URL)
+            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _locationCode), False)
+            writer.WriteLine(sourceString)
+            writer.Close()
+        Catch ex As Exception
+            Log.Error("plugin: BBCWeather - error downloading weather from {0}", URL)
+            Return False
+        End Try
+
+        Log.Info("plugin: BBCWeather - successfully downloaded {0}", URL)
+
+        Return True
+
+    End Function
+
+    Private Function GetHour(ByVal hh As Integer) As String
+
+        Do Until hh < 24
+            If hh >= 24 Then hh = hh - 24
+        Loop
+
+        Select Case hh
+            Case 0, 1, 2
+                Return "00"
+            Case 3, 4, 5
+                Return "03"
+            Case 6, 7, 8
+                Return "06"
+            Case 9, 10, 11
+                Return "09"
+            Case 12, 13, 14
+                Return "12"
+            Case 15, 16, 17
+                Return "15"
+            Case 18, 19, 20
+                Return "18"
+            Case 21, 22, 23
+                Return "21"
+            Case Else
+                Return "00"
+        End Select
+
+    End Function
+
+    Private Function GetDay(ByVal dd As Integer) As String
+
+        If dd < 10 Then Return String.Format("0{0}", dd.ToString)
+        Return dd.ToString
+
+    End Function
+
+    Private Shared Sub ClearAnimationFiles()
+
+        Dim path As String = String.Format("{0}\\Media\\animations\\BBCWeather\\", GUIGraphicsContext.Skin)
+
+        If Not Directory.Exists(path) Then Directory.CreateDirectory(path)
+
+        Dim dir As DirectoryInfo = New DirectoryInfo(path)
+        For Each f As FileInfo In dir.GetFiles
+            Try
+                f.Delete()
+            Catch ex As Exception
+                Log.Error("plugin: BBCWeather - error deleting weather image, {0}", ex.Message)
+            End Try
+        Next
+
+    End Sub
+
+    Private Sub AddTimeInfo(ByVal fileName As String, ByVal hour As String, ByVal day As String)
+
+        Dim oldImage As Image = Image.FromFile(fileName)
+        Dim imageSize As New Size(oldImage.Width, oldImage.Height)
+        Dim newBitmap As New Bitmap(oldImage, imageSize)
+        oldImage.Dispose()
+
+        Dim graphic As Graphics = Graphics.FromImage(newBitmap)
+        Dim hourText As String = String.Format("{0}:00", hour)
+        Dim font As New Font("Verdana", 8, FontStyle.Bold)
+
+        Dim extGraphic As ExtendedGraphics = New ExtendedGraphics(graphic)
+        Dim pen As Pen = New Pen(Brushes.White, 2.5F)
+
+        If hour <> "" Then
+            extGraphic.FillRoundRectangle(Brushes.Black, 390, 430, 50, 18, 5)
+            extGraphic.DrawRoundRectangle(pen, 390, 430, 50, 18, 5)
+            graphic.DrawString(hourText, font, Brushes.White, 394, 432)
+        End If
+
+        graphic.PageUnit = GraphicsUnit.Pixel
+        Dim stringSize As SizeF = graphic.MeasureString(day, font)
+        extGraphic.FillRoundRectangle(Brushes.DarkRed, 430 - stringSize.Width, 455, stringSize.Width + 10, 18, 5)
+        extGraphic.DrawRoundRectangle(pen, 430 - stringSize.Width, 455, stringSize.Width + 10, 18, 5)
+        graphic.DrawString(day, font, Brushes.White, 434 - stringSize.Width, 457)
+
+        File.Delete(fileName)
+        newBitmap.Save(fileName, Imaging.ImageFormat.Jpeg)
+        newBitmap.Dispose()
+
+    End Sub
+    
 #End Region
 
-#Region "Parse HTML files"
+#Region "Parse files"
 
     Private Function ParseLocationName() As Boolean
 
@@ -895,6 +1116,18 @@ Public Class BBCWeatherPlugin
             Log.Error("plugin: BBCWeather - error with 24 hour parse : {0}", ex.Message)
             Return False
         End Try
+
+        Return True
+
+    End Function
+
+    Private Function ParseRegionName() As Boolean
+
+        Dim URL As String = String.Format("http://news.bbc.co.uk/weather/forecast/{0}/MapPresenterInner.json", _locationCode)
+        Dim response As String = New WebClient().DownloadString(URL)
+        Dim jo1 As JsonObject = CType(Conversion.JsonConvert.Import(response), JsonObject)
+        Dim jo2 As JsonObject = jo1.Item("MapPresenter")
+        _regionName = jo2.Item("showLocation")
 
         Return True
 
@@ -961,13 +1194,13 @@ Public Class BBCWeatherPlugin
             Dim i As Integer = 0
             For Each childnode As HtmlAgilityPack.HtmlNode In node.ChildNodes
                 If childnode.Name.ToLower = "tr" Then
-                    If childnode.ChildNodes(1).ChildNodes.Count > 1 Then
-                        _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim() + vbCrLf
-                        _24HourForecast(i).DayName += childnode.ChildNodes(1).ChildNodes(2).InnerText.Trim()
-                        _24HourForecast(i).DayName = _24HourForecast(i).DayName.Trim()
-                    Else
-                        _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim()
-                    End If
+                    'If childnode.ChildNodes(1).ChildNodes.Count > 1 Then
+                    '    _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim() + vbCrLf
+                    '    _24HourForecast(i).DayName += childnode.ChildNodes(1).ChildNodes(2).InnerText.Trim()
+                    '    _24HourForecast(i).DayName = _24HourForecast(i).DayName.Trim()
+                    'Else
+                    _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim()
+                    'End If
                     _24HourForecast(i).Summary = childnode.ChildNodes(3).InnerText.Trim()
                     _24HourForecast(i).MaxTemp = Replace(childnode.ChildNodes(5).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "") '5-1-3 degF
                     _24HourForecast(i).WindDirection = childnode.ChildNodes(7).ChildNodes(1).ChildNodes(1).InnerText.Trim()
@@ -1108,6 +1341,55 @@ Public Class BBCWeatherPlugin
 
     End Function
 
+    Private Function ParseMapOverlay() As Boolean
+
+        Dim doc As New XmlDocument
+        doc.Load(String.Format("{0}\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _locationCode))
+
+        Dim nodes As XmlNodeList = doc.SelectNodes("//placename")
+
+        Dim name As String = String.Empty
+        Dim x As Integer = 0
+        Dim y As Integer = 0
+        Dim align As String = String.Empty
+
+        Dim bitmap As New Bitmap(453, 500)
+        Dim graphic As Graphics = Graphics.FromImage(bitmap)
+        Dim font As New Font("Verdana", 10, FontStyle.Bold)
+
+        For Each node As XmlNode In nodes
+            name = node.Attributes("name").Value
+            x = node.Attributes("x").Value
+            y = node.Attributes("y").Value
+            align = node.Attributes("align").Value
+            Dim rect As Rectangle = New Rectangle(x - 2, y - 2, 5, 5)
+            graphic.DrawRectangle(Pens.White, rect)
+            graphic.FillRectangle(Brushes.White, rect)
+
+            If align.ToLower = "left" Then
+                Dim offset As SizeF = graphic.MeasureString(name, font)
+                x = x - offset.Width + 2
+            Else
+                x += 7
+            End If
+
+            Dim point1 As New Point(x - 3, y - 7)
+            graphic.DrawString(name, font, Brushes.Black, point1)
+            Dim point2 As New Point(x - 2, y - 8)
+            graphic.DrawString(name, font, Brushes.White, point2)
+            graphic.Save()
+
+        Next
+
+        bitmap.Save(String.Format("{0}\Media\BBCWeather\overlay.png", GUIGraphicsContext.Skin), Imaging.ImageFormat.Png)
+        graphic.Dispose()
+        bitmap.Dispose()
+
+
+        Return True
+
+    End Function
+
 #End Region
 
 #Region "Plugin ISetupForm members"
@@ -1166,3 +1448,148 @@ Public Class BBCWeatherPlugin
 
 End Class
 
+Public Class ExtendedGraphics
+
+    Private mGraphics As Graphics
+    Public Property Graphics() As Graphics
+        Get
+            Return Me.mGraphics
+        End Get
+        Set(value As Graphics)
+            Me.mGraphics = value
+        End Set
+    End Property
+
+    Public Sub New(graphics As Graphics)
+        Me.Graphics = graphics
+    End Sub
+
+
+#Region "Fills a Rounded Rectangle with integers."
+    Public Sub FillRoundRectangle(brush As Global.System.Drawing.Brush, x As Integer, y As Integer, width As Integer, height As Integer, radius As Integer)
+
+        Dim fx As Single = Convert.ToSingle(x)
+        Dim fy As Single = Convert.ToSingle(y)
+        Dim fwidth As Single = Convert.ToSingle(width)
+        Dim fheight As Single = Convert.ToSingle(height)
+        Dim fradius As Single = Convert.ToSingle(radius)
+        Me.FillRoundRectangle(brush, fx, fy, fwidth, fheight, fradius)
+
+    End Sub
+#End Region
+
+
+#Region "Fills a Rounded Rectangle with continuous numbers."
+    Public Sub FillRoundRectangle(brush As Global.System.Drawing.Brush, x As Single, y As Single, width As Single, height As Single, radius As Single)
+        Dim rectangle As New RectangleF(x, y, width, height)
+        Dim path As GraphicsPath = Me.GetRoundedRect(rectangle, radius)
+        Me.Graphics.FillPath(brush, path)
+    End Sub
+#End Region
+
+
+#Region "Draws a Rounded Rectangle border with integers."
+    Public Sub DrawRoundRectangle(pen As Global.System.Drawing.Pen, x As Integer, y As Integer, width As Integer, height As Integer, radius As Integer)
+        Dim fx As Single = Convert.ToSingle(x)
+        Dim fy As Single = Convert.ToSingle(y)
+        Dim fwidth As Single = Convert.ToSingle(width)
+        Dim fheight As Single = Convert.ToSingle(height)
+        Dim fradius As Single = Convert.ToSingle(radius)
+        Me.DrawRoundRectangle(pen, fx, fy, fwidth, fheight, fradius)
+    End Sub
+#End Region
+
+
+#Region "Draws a Rounded Rectangle border with continuous numbers."
+    Public Sub DrawRoundRectangle(pen As Global.System.Drawing.Pen, x As Single, y As Single, width As Single, height As Single, radius As Single)
+        Dim rectangle As New RectangleF(x, y, width, height)
+        Dim path As GraphicsPath = Me.GetRoundedRect(rectangle, radius)
+        Me.Graphics.DrawPath(pen, path)
+    End Sub
+#End Region
+
+
+#Region "Get the desired Rounded Rectangle path."
+    Private Function GetRoundedRect(baseRect As RectangleF, radius As Single) As GraphicsPath
+
+        ' if corner radius is less than or equal to zero, 
+        ' return the original rectangle 
+        If radius <= 0.0F Then
+            Dim mPath As New GraphicsPath()
+            mPath.AddRectangle(baseRect)
+            mPath.CloseFigure()
+            Return mPath
+        End If
+
+        ' if the corner radius is greater than or equal to 
+        ' half the width, or height (whichever is shorter) 
+        ' then return a capsule instead of a lozenge 
+        If radius >= (Math.Min(baseRect.Width, baseRect.Height)) / 2.0 Then
+            Return GetCapsule(baseRect)
+        End If
+
+        ' create the arc for the rectangle sides and declare 
+        ' a graphics path object for the drawing 
+        Dim diameter As Single = radius * 2.0F
+        Dim sizeF As New SizeF(diameter, diameter)
+        Dim arc As New RectangleF(baseRect.Location, sizeF)
+        Dim path As GraphicsPath = New Global.System.Drawing.Drawing2D.GraphicsPath()
+
+        ' top left arc 
+        path.AddArc(arc, 180, 90)
+
+        ' top right arc 
+        arc.X = baseRect.Right - diameter
+        path.AddArc(arc, 270, 90)
+
+        ' bottom right arc 
+        arc.Y = baseRect.Bottom - diameter
+        path.AddArc(arc, 0, 90)
+
+        ' bottom left arc
+        arc.X = baseRect.Left
+        path.AddArc(arc, 90, 90)
+
+        path.CloseFigure()
+        Return path
+    End Function
+#End Region
+
+#Region "Gets the desired Capsular path."
+    Private Function GetCapsule(baseRect As RectangleF) As GraphicsPath
+        Dim diameter As Single
+        Dim arc As RectangleF
+        Dim path As GraphicsPath = New Global.System.Drawing.Drawing2D.GraphicsPath()
+        Try
+            If baseRect.Width > baseRect.Height Then
+                ' return horizontal capsule 
+
+                diameter = baseRect.Height
+                Dim sizeF As New SizeF(diameter, diameter)
+                arc = New RectangleF(baseRect.Location, sizeF)
+                path.AddArc(arc, 90, 180)
+                arc.X = baseRect.Right - diameter
+                path.AddArc(arc, 270, 180)
+            ElseIf baseRect.Width < baseRect.Height Then
+                ' return vertical capsule 
+
+                diameter = baseRect.Width
+                Dim sizeF As New SizeF(diameter, diameter)
+                arc = New RectangleF(baseRect.Location, sizeF)
+                path.AddArc(arc, 180, 180)
+                arc.Y = baseRect.Bottom - diameter
+                path.AddArc(arc, 0, 180)
+            Else
+                ' return circle 
+
+                path.AddEllipse(baseRect)
+            End If
+        Catch ex As Exception
+            path.AddEllipse(baseRect)
+        Finally
+            path.CloseFigure()
+        End Try
+        Return path
+    End Function
+#End Region
+End Class
