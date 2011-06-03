@@ -1142,7 +1142,7 @@
       </GroupItem>
       <GroupItem Name="BlackGlass">
         <ParentGroup>Default</ParentGroup>
-        <DisplayName>Black Glass HD</DisplayName>
+        <DisplayName>Black Glass HD skin files</DisplayName>
         <DefaulChecked>false</DefaulChecked>
         <Description>Only select if you use the Black Glass HD skin with MP 1.2.0 Beta</Description>
         <Files>
@@ -1153,13 +1153,6 @@
               <LocalFileName>skin\Black Glass HD\BBCweather.xml</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{324b3e0a-b235-4fa9-b512-d4e54f15217c}-BBCweather.xml</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\BBCweather.xml</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>Images\Media\hover_BBCWeather.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{659352c5-13e0-4610-8c1a-49fde7d8bab8}-hover_BBCWeather.png</ZipFileName>
-              <DestinationFilename>%Skin%\Black Glass HD\Media\hover_BBCWeather.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
@@ -1700,9 +1693,9 @@
               <ZipFileName>Installer{CopyFile}\{8f765d00-7099-4b37-8275-d8529b46424b}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\na.png</DestinationFilename>
             </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>skin\Black Glass HD\Media\hover_BBCWeather.png</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{0f0a9061-83d0-4554-b7cf-38b88b99b258}-hover_BBCWeather.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\hover_BBCWeather.png</DestinationFilename>
@@ -2537,9 +2530,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <ZipFileName>Installer{CopyFile}\{324b3e0a-b235-4fa9-b512-d4e54f15217c}-BBCweather.xml</ZipFileName>
         <DestinationFilename>%Skin%\Black Glass HD\BBCweather.xml</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>skin\Black Glass HD\Media\hover_BBCWeather.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{0f0a9061-83d0-4554-b7cf-38b88b99b258}-hover_BBCWeather.png</ZipFileName>
         <DestinationFilename>%Skin%\Black Glass HD\Media\hover_BBCWeather.png</DestinationFilename>
@@ -2570,26 +2563,6 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <DestinationFilename>%Skin%\DefaultWide\Media\</DestinationFilename>
         <Folder>Images\Media</Folder>
         <Group>Default</Group>
-        <Recursive>true</Recursive>
-      </FolderGroup>
-      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName />
-        <ZipFileName>Installer{CopyFile}\{89d559f8-a6c7-49f3-a3db-e092e97d401d}-</ZipFileName>
-        <DestinationFilename>%Skin%\Black Glass HD\Media\</DestinationFilename>
-        <Folder>Images\Media</Folder>
-        <Group>BlackGlass</Group>
-        <Recursive>true</Recursive>
-      </FolderGroup>
-      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName />
-        <ZipFileName>Installer{CopyFile}\{ac19b955-0be8-4696-8942-cc278c03bd1c}-</ZipFileName>
-        <DestinationFilename>%Skin%\Black Glass HD\Media\</DestinationFilename>
-        <Folder>skin\Black Glass HD\Media</Folder>
-        <Group>BlackGlass</Group>
         <Recursive>true</Recursive>
       </FolderGroup>
     </FolderGroups>
