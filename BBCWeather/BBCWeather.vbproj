@@ -92,7 +92,6 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BBCWeather.vb" />
     <Compile Include="PluginSetupForm.Designer.vb">
       <DependentUpon>PluginSetupForm.vb</DependentUpon>
     </Compile>
