@@ -1932,14 +1932,6 @@
       </control>
       <!-- 24 hour day forecast end -->
 
-
-
-
-
-
-
-
-
       <!-- Monthly forecast start -->
       <!-- Control ids 500 - 599 -->
       <control>
@@ -2014,9 +2006,52 @@
       </control>
       <!-- Monthly forecast end -->
 
-
-
-
+      <!-- Maps start -->
+      <!-- Control ids 600 - 699 -->
+      <control>
+        <type>group</type>
+        <dimColor>FFFFFFFF</dimColor>
+        <animation effect="fade" time="100">VisibleChange</animation>
+        <animation effect="fade" time="100">VisibleChange</animation>
+          <control>
+            <description>Maps background image</description>
+            <type>image</type>
+            <keepaspectratio>no</keepaspectratio>
+            <id>600</id>
+            <posX>560</posX>
+            <posY>110</posY>
+            <width>533</width>
+            <height>580</height>
+            <texture>BBCWeather\bg_map_background.png</texture>
+          </control>
+          <control>
+            <description>Maps multi image</description>
+            <type>multiimage</type>
+            <keepaspectratio>yes</keepaspectratio>
+            <id>601</id>
+            <posX>600</posX>
+            <posY>150</posY>
+            <width>453</width>
+            <height>500</height>
+            <imagepath>BBCWeather</imagepath>
+            <timeperimage>1000</timeperimage>
+            <fadetime>100</fadetime>
+            <randomize>no</randomize>
+            <loop>no</loop>
+          </control>
+          <control>
+            <description>Maps overlay image (placenames)</description>
+            <type>image</type>
+            <keepaspectratio>yes</keepaspectratio>
+            <id>602</id>
+            <posX>600</posX>
+            <posY>150</posY>
+            <width>453</width>
+            <height>500</height>
+            <texture>BBCWeather\overlay.png</texture>
+          </control>
+        </control>
+      <!-- Maps end -->
 
 
 
@@ -2148,8 +2183,17 @@
           <id>4</id>
           <label> Monthly outlook</label>
           <onright>50</onright>
-          <ondown>2</ondown>
+          <ondown>5</ondown>
           <onup>3</onup>
+        </control>
+        <control>
+          <description>Maps button</description>
+          <type>button</type>
+          <id>5</id>
+          <label> Forecast Maps</label>
+          <onright>50</onright>
+          <ondown>2</ondown>
+          <onup>4</onup>
         </control>
       </control>
 
