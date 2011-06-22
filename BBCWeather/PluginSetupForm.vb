@@ -110,6 +110,7 @@ Public Class PluginSetupForm
             _areaCode = _ja(3)(clbResults.Items.IndexOf(checkedItem))
             _areaName = _ja(1)(clbResults.Items.IndexOf(checkedItem))
         Next
+
         If _areaCode <> "" Then
             Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
                 xmlReader.SetValue("BBCWeather", "areaCode", _areaCode)
@@ -120,6 +121,9 @@ Public Class PluginSetupForm
                 Settings.SaveCache()
             End Using
         End If
+
+        If cbxInfoService.Checked Then MessageBox.Show("You should open InfoService config now and remove the tick from the 'Weather information enabled' checkbox on the Weather tab. Then click Save.", "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Me.Close()
     End Sub
 

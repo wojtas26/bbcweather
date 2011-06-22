@@ -387,29 +387,25 @@ Public Class BBCWeatherPlugin
 #Region "Overrides"
 
     Public Overloads Overrides Function Init() As Boolean
+        AppDomain.CurrentDomain.AppendPrivatePath(String.Format("{0}\Plugins\Windows\BBCWeather", AppDomain.CurrentDomain.BaseDirectory))
+        Try
+            LoadSettings()
+            DownloadAll()
+            ParseCurrentObservation()
+            Parse5DayWeatherInfo()
+            Parse24HourWeatherInfo()
+            SetInfoServiceProperties()
+        Catch ex As Exception
+            Log.Error("plugin: BBCWeather: error on plugin init.")
+        End Try
         Return Load(GUIGraphicsContext.Skin & "\BBCWeather.xml")
     End Function
 
     Protected Overrides Sub OnPageLoad()
 
-        AppDomain.CurrentDomain.AppendPrivatePath(String.Format("{0}\Plugins\Windows\BBCWeather", AppDomain.CurrentDomain.BaseDirectory))
-
         MyBase.OnPageLoad()
-
-        LoadSettings()
-
-        If _areaCode = "" Then
-            _areaCode = "8"
-            Log.Info("plugin: BBCWeather starting - areaCode is unknown, defaulting to {0}", _areaCode)
-        Else
-            Log.Info("plugin: BBCWeather starting - areaCode is set to {0}", _areaCode)
-        End If
-
-        HideAllControls()
         RefreshNewMode()
-
         _downloadLock = New Object
-
         If _lastRefreshTime < Now.AddMinutes(-_refreshIntervalMinutes) Then BackgroundUpdate(False)
 
     End Sub
@@ -429,10 +425,6 @@ Public Class BBCWeatherPlugin
 
     Protected Overrides Sub OnClicked(controlId As Integer, control As MediaPortal.GUI.Library.GUIControl, actionType As MediaPortal.GUI.Library.Action.ActionType)
 
-        HideAllControls()
-        SetHeaderControls()
-        SetCurrentWeatherControls()
-
         If control Is _button5days Then
             _currentMode = Mode.FiveDay
         ElseIf control Is _button24Hours Then
@@ -444,7 +436,6 @@ Public Class BBCWeatherPlugin
         End If
 
         RefreshNewMode()
-
         MyBase.OnClicked(controlId, control, actionType)
 
     End Sub
@@ -456,18 +447,19 @@ Public Class BBCWeatherPlugin
     Private Sub RefreshNewMode()
         Select Case _currentMode
             Case Mode.FiveDay
-                Set5DayModeControls()
                 GUIControl.FocusControl(GetID, 2)
+                Set5DayModeControls()
             Case Mode.TwentyFourHours
-                Set24HourModeControls()
                 GUIControl.FocusControl(GetID, 3)
+                Set24HourModeControls()
             Case Mode.Monthly
-                SetMonthlyModeControls()
                 GUIControl.FocusControl(GetID, 4)
+                SetMonthlyModeControls()
             Case Mode.Maps
-                SetMapsModeControls()
                 GUIControl.FocusControl(GetID, 5)
+                SetMapsModeControls()
         End Select
+        GUIControl.FocusControl(GetID, 9999)
     End Sub
 
     Private Sub HideAllControls()
@@ -1480,52 +1472,46 @@ Public Class BBCWeatherPlugin
     Private Function SetInfoServiceProperties() As Boolean
 
         Try
-            If Not _areaName Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.location", _areaName)
-            If Not _currentTemp Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.temp", _currentTemp)
-            GUIPropertyManager.SetProperty("#infoservice.weather.today.feelsliketemp", "N/A")
-            If Not _currentHumidity Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.humidity", _currentHumidity)
-            GUIPropertyManager.SetProperty("#infoservice.weather.today.sunrise", "N/A")
-            GUIPropertyManager.SetProperty("#infoservice.weather.today.sunset", "N/A")
-            GUIPropertyManager.SetProperty("#infoservice.weather.today.uvindex", "N/A")
-            If Not _currentWind Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.wind", _currentWind)
-            If Not _currentSummary Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.condition", _currentSummary)
-            If Not _currentSummary Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.img.small.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
-            If Not _currentSummary Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.img.small.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
-            If Not _currentSummary Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.img.small.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
-            If Not _currentSummary Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.img.big.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
-            If Not _currentSummary Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.img.big.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
-            If Not _currentSummary Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.today.img.big.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
-            GUIPropertyManager.SetProperty("#infoservice.weather.today.weekday", Now.ToString("dddd"))
-            If Not _currentObsStation Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.lastupdated.message", String.Format("Observation station is {0}.", _currentObsStation))
-            If Not _currentObsTime Is Nothing Then GUIPropertyManager.SetProperty("#infoservice.weather.lastupdated.datetime", _currentObsTime)
+            If Not _areaName Is Nothing Then SetInfoServiceProperty("#infoservice.weather.location", _areaName)
+            If Not _currentTemp Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.temp", _currentTemp)
+            SetInfoServiceProperty("#infoservice.weather.today.feelsliketemp", "N/A")
+            If Not _currentHumidity Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.humidity", _currentHumidity)
+            SetInfoServiceProperty("#infoservice.weather.today.sunrise", "N/A")
+            SetInfoServiceProperty("#infoservice.weather.today.sunset", "N/A")
+            SetInfoServiceProperty("#infoservice.weather.today.uvindex", "N/A")
+            If Not _currentWind Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.wind", _currentWind)
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.condition", _currentSummary)
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            SetInfoServiceProperty("#infoservice.weather.today.weekday", Now.ToString("dddd"))
+            If Not _currentObsStation Is Nothing Then SetInfoServiceProperty("#infoservice.weather.lastupdated.message", String.Format("Observation station is {0}.", _currentObsStation))
+            If Not _currentObsTime Is Nothing Then SetInfoServiceProperty("#infoservice.weather.lastupdated.datetime", _currentObsTime)
 
             Dim num As Integer = 1
             Dim forecast As ForeCast
             For Each forecast In _5DayForecast
 
-                If Not forecast.MinTemp Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.mintemp", num), String.Format("{0}°C", forecast.MinTemp))
-                If Not forecast.MaxTemp Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.maxtemp", num), String.Format("{0}°C", forecast.MaxTemp))
-                If Not forecast.SunRise Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.sunrise", num), Replace(forecast.SunRise, "sunrise", "").Trim)
-                If Not forecast.SunSet Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.sunset", num), Replace(forecast.SunSet, "sunset", "").Trim)
-                If Not forecast.Summary Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.condition", num), forecast.Summary)
-                GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.condition", num), "N/A")
-                If Not forecast.WindSpeed Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.wind", num), forecast.WindSpeed)
-                GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.wind", num), "N/A")
-                If Not forecast.Humidity Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.humidity", num), forecast.Humidity)
-                GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.humidity", num), "N/A")
-                If Not forecast.Summary Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
-                If Not forecast.Summary Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
-                If Not forecast.Summary Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
-                If Not forecast.Summary Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
-                If Not forecast.Summary Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
-                If Not forecast.Summary Is Nothing Then GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
-                'GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.img.small.fullpath", num), "N/A")
-                'GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.img.small.filenamewithext", num), "N/A")
-                'GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.img.small.filenamewithoutext", num), "N/A")
-                'GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.img.big.fullpath", num), "N/A")
-                'GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.img.big.filenamewithext", num), "N/A")
-                'GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.night.img.big.filenamewithoutext", num), "N/A")
-                GUIPropertyManager.SetProperty(String.Format("#infoservice.weather.forecast{0}.weekday", num), Now.AddDays(num - 1).ToString("dddd"))
+                If Not forecast.MinTemp Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.mintemp", num), String.Format("{0}°C", forecast.MinTemp))
+                If Not forecast.MaxTemp Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.maxtemp", num), String.Format("{0}°C", forecast.MaxTemp))
+                If Not forecast.SunRise Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.sunrise", num), Replace(forecast.SunRise, "sunrise", "").Trim)
+                If Not forecast.SunSet Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.sunset", num), Replace(forecast.SunSet, "sunset", "").Trim)
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.condition", num), forecast.Summary)
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.condition", num), "N/A")
+                If Not forecast.WindSpeed Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.wind", num), forecast.WindSpeed)
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.wind", num), "N/A")
+                If Not forecast.Humidity Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.humidity", num), forecast.Humidity)
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.humidity", num), "N/A")
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.weekday", num), Now.AddDays(num - 1).ToString("dddd"))
                 num += 1
             Next
             Log.Info("plugin: BBCWeather - completed setting Infoservice props.")
@@ -1534,9 +1520,16 @@ Public Class BBCWeatherPlugin
             Return False
         End Try
 
+        GUIPropertyManager.Changed = True
         Return True
 
     End Function
+
+    Private Sub SetInfoServiceProperty(ByVal tag As String, tagValue As String)
+        GUIPropertyManager.SetProperty(tag, tagValue)
+        Log.Debug("plugin: BBCWeather - set {0} to {1}", tag, tagValue)
+    End Sub
+
 
 #End Region
 
