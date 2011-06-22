@@ -914,6 +914,10 @@ Public Class BBCWeatherPlugin
 
     Private Function DownloadAll() As Boolean
 
+        If Not Directory.Exists(String.Format("{0}\BBCWeather\", Config.GetFolder(Config.Dir.Cache))) Then
+            Directory.CreateDirectory(String.Format("{0}\BBCWeather\", Config.GetFolder(Config.Dir.Cache)))
+        End If
+
         '==============================================================================================================
         ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:A = Next Five Days
         ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:B = Twenty Four Hours
@@ -950,7 +954,7 @@ Public Class BBCWeatherPlugin
 
         Try
             Dim sourceString As String = New WebClient().DownloadString(URL)
-            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather_{1}_{2}.html", Config.GetFolder(Config.Dir.Cache), _areaCode, forecastType), False)
+            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather\BBCWeather_{1}_{2}.html", Config.GetFolder(Config.Dir.Cache), _areaCode, forecastType), False)
             writer.WriteLine(sourceString)
             writer.Close()
         Catch ex As Exception
@@ -1061,7 +1065,7 @@ Public Class BBCWeatherPlugin
 
         Try
             Dim sourceString As String = New WebClient().DownloadString(URL)
-            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode), False)
+            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode), False)
             writer.WriteLine(sourceString)
             writer.Close()
         Catch ex As Exception
@@ -1169,7 +1173,7 @@ Public Class BBCWeatherPlugin
         Dim doc As New HtmlAgilityPack.HtmlDocument
 
         Try
-            doc.Load(String.Format("{0}\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//h1")
             _areaName = node.InnerText
             Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_D.html", _areaCode)
@@ -1201,7 +1205,7 @@ Public Class BBCWeatherPlugin
 
             For i As Integer = 0 To 4
 
-                doc.Load(String.Format("{0}\BBCWeather_{1}_A.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
+                doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_A.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
                 Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode(String.Format("//tr[@id = ""n5_Day{0}""]", Chr(65 + i)))
                 _5DayForecast(i).DayName = node.ChildNodes(1).ChildNodes(1).ChildNodes(1).Attributes("title").Value
                 _5DayForecast(i).Summary = node.ChildNodes(3).ChildNodes(1).ChildNodes(3).InnerText
@@ -1229,7 +1233,7 @@ Public Class BBCWeatherPlugin
 
                 'Get sunrise/sunset from the day specific page
                 For j As Integer = 0 To 4
-                    doc.Load(String.Format("{0}\BBCWeather_{1}_A_{2}.html", Config.GetFolder(Config.Dir.Cache), _areaCode, Chr(65 + j)))
+                    doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_A_{2}.html", Config.GetFolder(Config.Dir.Cache), _areaCode, Chr(65 + j)))
                     node = doc.DocumentNode.SelectSingleNode("//div[@id = ""summary-info""]")
                     If (DateTime.Now.Hour >= 16) AndAlso (j = 0) Then
                         'Sunrise is not given if after 4pm on the day
@@ -1261,7 +1265,7 @@ Public Class BBCWeatherPlugin
         Dim doc As New HtmlAgilityPack.HtmlDocument
 
         Try
-            doc.Load(String.Format("{0}\BBCWeather_{1}_B.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_B.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//tbody")
 
             Dim i As Integer = 0
@@ -1302,7 +1306,7 @@ Public Class BBCWeatherPlugin
         Dim doc As New HtmlAgilityPack.HtmlDocument
         Try
 
-            doc.Load(String.Format("{0}\BBCWeather_{1}_C.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_C.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//div[@class = ""updated""]")
             _monthly.publishedDate = node.ChildNodes(3).InnerText
             _monthly.nextUpdate = node.ChildNodes(5).InnerText
@@ -1374,7 +1378,7 @@ Public Class BBCWeatherPlugin
         Dim doc As New HtmlAgilityPack.HtmlDocument
 
         Try
-            doc.Load(String.Format("{0}\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//div[@id = ""ob_V_node""]")
             _currentObsTime = node.ChildNodes(1).InnerText.Trim()
             _currentObsTime = Right(_currentObsTime, Len(_currentObsTime) - InStr(_currentObsTime, "at ") - 2)
@@ -1427,7 +1431,7 @@ Public Class BBCWeatherPlugin
     Private Function ParseMapOverlay() As Boolean
 
         Dim doc As New XmlDocument
-        doc.Load(String.Format("{0}\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode))
+        doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode))
 
         Dim nodes As XmlNodeList = doc.SelectNodes("//placename")
 
