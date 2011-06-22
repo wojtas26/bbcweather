@@ -152,8 +152,92 @@
   <ItemGroup>
     <EmbeddedResource Include="bbc_off.png" />
     <EmbeddedResource Include="bbc_on.png" />
+    <Content Include="bin\BBCWeather\HtmlAgilityPack.dll" />
+    <Content Include="bin\BBCWeather\Jayrock.Json.dll" />
     <Content Include="Images\BBCWeather.ico" />
     <Content Include="Images\Media\BBCWeather\map_background.png" />
+    <Content Include="Images\templates\map_background.png" />
+    <Content Include="skin\Avalon\BBCWeather.xml" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-1-3.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-10-12.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-13-15.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-16-18.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-19-21.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-22-24.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-25-27.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-28-30.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-31-33.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-34-36.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-37-39.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-4-6.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-40.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\-7-9.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\0.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\1-3.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\10-12.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\13-15.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\16-18.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\19-21.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\22-24.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\25.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\4-6.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\7-9.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\temp\na.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\0.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\1.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\10.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\11.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\12.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\13.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\14.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\15.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\16.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\17.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\18.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\19.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\2.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\20.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\21.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\22.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\23.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\24.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\25.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\26.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\27.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\28.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\29.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\3.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\30.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\31.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\32.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\5.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\6.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\7.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\8.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\weather\9.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\e.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\ene.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\ese.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\n.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\na.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\ne.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\nne.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\nnw.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\nw.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\s.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\se.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\sse.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\ssw.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\sw.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\w.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\wnw.png" />
+    <Content Include="skin\Avalon\Media\BBCWeather\wind\wsw.png" />
+    <Content Include="skin\Avalon\Media\bbc_weather_5_bg.png" />
+    <Content Include="skin\Avalon\Media\bbc_weather_8_bg.png" />
+    <Content Include="skin\Avalon\Media\bbc_weather_map_bg.png" />
+    <Content Include="skin\Avalon\Media\bbc_weather_map_overlay_bg.png" />
+    <Content Include="skin\Avalon\Media\bbc_weather_month_bg.png" />
+    <Content Include="skin\Avalon\Media\hover_BBCWeather.png" />
     <Content Include="skin\Black Glass HD\Media\BBCWeather\bg_frame.png" />
     <Content Include="Images\Media\BBCWeather\five_day_group.png" />
     <Content Include="Images\Media\BBCWeather\header_BBCWeather.png" />
@@ -246,7 +330,13 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="skin\Avalon\Media\animations\BBCWeather\" />
+    <Folder Include="skin\Blue3Wide\animations\BBCWeather\" />
+    <Folder Include="skin\Blue3\animations\BBCWeather\" />
+    <Folder Include="skin\DefaultWide\animations\BBCWeather\" />
+    <Folder Include="skin\Default\animations\BBCWeather\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -16,17 +16,41 @@ Public Class PluginSetupForm
     Private _ja As JsonArray
     Private _areaCode As String = String.Empty
     Private _areaName As String = String.Empty
+    Private _tempUnit As String = String.Empty
+    Private _windUnit As String = String.Empty
+    Private _overRide As Boolean = False
 
     Private Sub PluginSetupForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
         AppDomain.CurrentDomain.AppendPrivatePath(String.Format("{0}\Plugins\Windows\BBCWeather", AppDomain.CurrentDomain.BaseDirectory))
 
         Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
-            _areaCode = xmlReader.GetValue("BBCWeather", "areaCode")
-            _areaName = xmlReader.GetValue("BBCWeather", "areaName")
+            _areaCode = xmlReader.GetValueAsString("BBCWeather", "areaCode", "8")
+            _areaName = xmlReader.GetValueAsString("BBCWeather", "areaName", "London")
+            _tempUnit = xmlReader.GetValueAsString("BBCWeather", "tempUnit", "degC")
+            _windUnit = xmlReader.GetValueAsString("BBCWeather", "windUnit", "mph")
+            _overRide = xmlReader.GetValueAsBool("BBCWeather", "overRide", False)
         End Using
 
         If _areaName.Length > 0 Then AreaLookup(_areaName)
+
+        If _tempUnit.ToLower = "degc" Then
+            rbnDegC.Checked = True
+            rbnDegF.Checked = False
+        Else
+            rbnDegC.Checked = False
+            rbnDegF.Checked = True
+        End If
+
+        If _windUnit.ToLower = "mph" Then
+            rbnMph.Checked = True
+            rbnKph.Checked = False
+        Else
+            rbnMph.Checked = False
+            rbnKph.Checked = True
+        End If
+
+        cbxInfoService.Checked = _overRide
 
     End Sub
 
@@ -90,6 +114,9 @@ Public Class PluginSetupForm
             Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
                 xmlReader.SetValue("BBCWeather", "areaCode", _areaCode)
                 xmlReader.SetValue("BBCWeather", "areaName", _areaName)
+                xmlReader.SetValue("BBCWeather", "tempUnit", IIf(rbnDegF.Checked, "degF", "degC"))
+                xmlReader.SetValue("BBCWeather", "windUnit", IIf(rbnKph.Checked, "kph", "mph"))
+                xmlReader.SetValueAsBool("BBCWeather", "overRide", cbxInfoService.Checked)
                 Settings.SaveCache()
             End Using
         End If
