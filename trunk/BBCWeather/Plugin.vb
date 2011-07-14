@@ -488,7 +488,7 @@ Public Class BBCWeatherPlugin
         GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_PRESSURE, _currentPressure)
         GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_VISIBILITY, _currentVisibility)
         GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_OBS_TIME, _currentObsTime)
-        GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_OBS_STATION, _currentObsTime)
+        GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_OBS_STATION, _currentObsStation)
 
     End Sub
 
