@@ -298,8 +298,11 @@ Public Class BBCWeatherPlugin
     Private _5DayForecast As ForeCast() = New ForeCast(NUM_DAYS) {}
     Private _24HourForecast As ForeCast() = New ForeCast(7) {}
     Private _monthly As MonthForeCast = New MonthForeCast
-    Private _locationCode As String = String.Empty
-    Private _locationName As String = String.Empty
+    Private _areaCode As String = String.Empty
+    Private _areaName As String = String.Empty
+    Private _tempUnit As String = String.Empty
+    Private _windUnit As String = String.Empty
+    Private _overRide As Boolean = False
     Private _regionName As String = String.Empty
     Private _workerActive As Boolean = False
     Private _downloadLock As Object = Nothing
@@ -347,7 +350,11 @@ Public Class BBCWeatherPlugin
     Private Sub LoadSettings()
 
         Using xmlReader As Settings = New MPSettings
-            _locationCode = xmlReader.GetValue("BBCWeather", "areaCode")
+            _areaCode = xmlReader.GetValueAsString("BBCWeather", "areaCode", "8")
+            _areaName = xmlReader.GetValueAsString("BBCWeather", "areaName", "London")
+            _tempUnit = xmlReader.GetValueAsString("BBCWeather", "tempUnit", "degC")
+            _windUnit = xmlReader.GetValueAsString("BBCWeather", "windUnit", "mph")
+            _overRide = xmlReader.GetValueAsBool("BBCWeather", "overRide", False)
         End Using
 
     End Sub
@@ -380,29 +387,25 @@ Public Class BBCWeatherPlugin
 #Region "Overrides"
 
     Public Overloads Overrides Function Init() As Boolean
+        AppDomain.CurrentDomain.AppendPrivatePath(String.Format("{0}\Plugins\Windows\BBCWeather", AppDomain.CurrentDomain.BaseDirectory))
+        Try
+            LoadSettings()
+            DownloadAll()
+            ParseCurrentObservation()
+            Parse5DayWeatherInfo()
+            Parse24HourWeatherInfo()
+            SetInfoServiceProperties()
+        Catch ex As Exception
+            Log.Error("plugin: BBCWeather: error on plugin init.")
+        End Try
         Return Load(GUIGraphicsContext.Skin & "\BBCWeather.xml")
     End Function
 
     Protected Overrides Sub OnPageLoad()
 
-        AppDomain.CurrentDomain.AppendPrivatePath(String.Format("{0}\Plugins\Windows\BBCWeather", AppDomain.CurrentDomain.BaseDirectory))
-
         MyBase.OnPageLoad()
-
-        LoadSettings()
-
-        If _locationCode = "" Then
-            _locationCode = "8"
-            Log.Info("plugin: BBCWeather starting - areaCode is unknown, defaulting to {0}", _locationCode)
-        Else
-            Log.Info("plugin: BBCWeather starting - areaCode is set to {0}", _locationCode)
-        End If
-
-        HideAllControls()
         RefreshNewMode()
-
         _downloadLock = New Object
-
         If _lastRefreshTime < Now.AddMinutes(-_refreshIntervalMinutes) Then BackgroundUpdate(False)
 
     End Sub
@@ -411,7 +414,7 @@ Public Class BBCWeatherPlugin
 
         Dim a As DateTime = DateTime.Now
 
-        If (DateTime.Now - _lastRefreshTime).Minutes >= _refreshIntervalMinutes AndAlso _locationCode <> String.Empty AndAlso Not Me.IsRefreshing Then
+        If (DateTime.Now - _lastRefreshTime).Minutes >= _refreshIntervalMinutes AndAlso _areaCode <> String.Empty AndAlso Not Me.IsRefreshing Then
             Log.Debug("plugin: BBCWeather: autoupdating data.")
             BackgroundUpdate(True)
         End If
@@ -421,10 +424,6 @@ Public Class BBCWeatherPlugin
     End Sub
 
     Protected Overrides Sub OnClicked(controlId As Integer, control As MediaPortal.GUI.Library.GUIControl, actionType As MediaPortal.GUI.Library.Action.ActionType)
-
-        HideAllControls()
-        SetHeaderControls()
-        SetCurrentWeatherControls()
 
         If control Is _button5days Then
             _currentMode = Mode.FiveDay
@@ -437,7 +436,6 @@ Public Class BBCWeatherPlugin
         End If
 
         RefreshNewMode()
-
         MyBase.OnClicked(controlId, control, actionType)
 
     End Sub
@@ -449,18 +447,19 @@ Public Class BBCWeatherPlugin
     Private Sub RefreshNewMode()
         Select Case _currentMode
             Case Mode.FiveDay
-                Set5DayModeControls()
                 GUIControl.FocusControl(GetID, 2)
+                Set5DayModeControls()
             Case Mode.TwentyFourHours
-                Set24HourModeControls()
                 GUIControl.FocusControl(GetID, 3)
+                Set24HourModeControls()
             Case Mode.Monthly
-                SetMonthlyModeControls()
                 GUIControl.FocusControl(GetID, 4)
+                SetMonthlyModeControls()
             Case Mode.Maps
-                SetMapsModeControls()
                 GUIControl.FocusControl(GetID, 5)
+                SetMapsModeControls()
         End Select
+        GUIControl.FocusControl(GetID, 9999)
     End Sub
 
     Private Sub HideAllControls()
@@ -472,7 +471,7 @@ Public Class BBCWeatherPlugin
     Private Sub SetHeaderControls()
 
         GUIControl.ShowControl(GetID, Controls.LBL_LOCATION)
-        GUIControl.SetControlLabel(GetID, Controls.LBL_LOCATION, _locationName)
+        GUIControl.SetControlLabel(GetID, Controls.LBL_LOCATION, _areaName)
 
     End Sub
 
@@ -618,7 +617,9 @@ Public Class BBCWeatherPlugin
         Dim img As String = "na"
 
         If temp <> "" Then
-            Select Case CInt(temp)
+            Dim iTemp As Integer = CInt(temp)
+            If _tempUnit.ToLower = "degf" Then iTemp = (iTemp - 32) / 1.8
+            Select Case iTemp
                 Case Is >= 25
                     img = "25"
                 Case 22, 23, 24
@@ -721,7 +722,7 @@ Public Class BBCWeatherPlugin
 
     End Function
 
-    Private Function GetWeatherImage(ByVal weather As String, Optional ByVal hour As Integer = 12) As String
+    Private Function GetWeatherImage(ByVal weather As String, Optional ByVal hour As Integer = 12, Optional ByVal fullPath As Boolean = True, Optional ByVal infoService As Boolean = False) As String
 
         Dim img As Integer = 0
         Dim day As Integer = 0
@@ -742,12 +743,14 @@ Public Class BBCWeatherPlugin
                 img = 6
             Case "white cloud"
                 img = 7
-            Case "black cloud"
+            Case "black cloud", "grey cloud"
                 img = 8
             Case "light rain shower"
                 img = 9 + day
+            Case "drizzle"
+                img = 11
             Case "light rain"
-                img = 11 + day
+                img = 12
             Case "heavy rain shower"
                 img = 13 + day
             Case "heavy rain"
@@ -776,7 +779,52 @@ Public Class BBCWeatherPlugin
                 img = 32
         End Select
 
-        Return (String.Format("{0}\Media\BBCWeather\weather\{1}.png", GUIGraphicsContext.Skin, img.ToString))
+        If infoService Then
+            Select Case img
+                Case 0
+                    img = 31
+                Case 1
+                    img = 32
+                Case 2
+                    img = 33
+                Case 3
+                    img = 34
+                Case 5, 6
+                    img = 20
+                Case 7
+                    img = 30
+                Case 8
+                    img = 28
+                Case 9
+                    img = 45
+                Case 10
+                    img = 39
+                Case 11
+                    img = 11
+                Case 12, 13, 14, 15
+                    img = 10
+                Case 16, 17, 18
+                    img = 5
+                Case 19, 20, 21
+                    img = 6
+                Case 22, 23, 24, 25, 26, 27
+                    img = 13
+                Case 28, 30
+                    img = 47
+                Case 29, 31
+                    img = 37
+                Case 32
+                    img = 99
+                Case Else
+                    img = 99
+            End Select
+        End If
+
+        If fullPath Then
+            Return (String.Format("{0}\Media\BBCWeather\weather\{1}.png", GUIGraphicsContext.Skin, img.ToString))
+        Else
+            Return img.ToString
+        End If
 
     End Function
 
@@ -825,37 +873,14 @@ Public Class BBCWeatherPlugin
         SyncLock _downloadLock
             Using cursor As New WaitCursor()
 
-                Dim downloadSuccess As Boolean = False
-                Dim parseDataSuccess As Integer = 0
-                '==============================================================================================================
-                ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:A = Next Five Days
-                ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:B = Twenty Four Hours
-                ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:C = Monthly Outlook
-                ' http://news.bbc.co.uk/weather/forecast/355/ObservationsEmbed.xhtml   = Latest Observations
-                ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?&showDay=A = Days detail
-                '==============================================================================================================
-
-                downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?state=fo:A", _locationCode), "A") '5 days
-                For i As Integer = 0 To 4
-                    downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?&showDay={1}", _locationCode, Chr(65 + i)), String.Format("A_{0}", Chr(65 + i))) '5 day - day 1
-                Next
-                downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?state=fo:B", _locationCode), "B") '24 hours
-                downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?state=fo:C", _locationCode), "C") 'Monthly
-                downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/ObservationsEmbed.xhtml", _locationCode), "D") 'Latest observations
-
-                If downloadSuccess Then
-                    If Not ParseLocationName() AndAlso Not autoUpdate Then DisplayErrorDialog("location name")
-                    If Not ParseRegionName() AndAlso Not autoUpdate Then DisplayErrorDialog("region name")
+                If DownloadAll() Then
                     If Not ParseCurrentObservation() AndAlso Not autoUpdate Then DisplayErrorDialog("current observation")
                     If Not Parse5DayWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("5 day forecast")
                     If Not Parse24HourWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("24 hour forecast")
                     If Not ParseMonthlyWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
+                    If Not ParseMapOverlay() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
+                    If Not SetInfoServiceProperties() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
                 End If
-
-                downloadSuccess = DownloadMaps()
-                downloadSuccess = DownloadMapOverlay()
-                If downloadSuccess Then ParseMapOverlay()
-                RefreshNewMode()
 
                 _lastRefreshTime = DateTime.Now
 
@@ -870,7 +895,7 @@ Public Class BBCWeatherPlugin
         Dim errorDialog As GUIDialogOK = DirectCast(GUIWindowManager.GetWindow(CInt(Window.WINDOW_DIALOG_OK)), GUIDialogOK)
         errorDialog.SetHeading("BBC Weather parsing error")
         errorDialog.SetLine(1, String.Format("Error parsing {0}.", forecastType))
-        errorDialog.SetLine(2, String.Format("Location is {0} ({1})", _locationName, _locationCode))
+        errorDialog.SetLine(2, String.Format("Location is {0} ({1})", _areaName, _areaCode))
         errorDialog.SetLine(3, String.Empty)
         errorDialog.DoModal(GetID)
     End Sub
@@ -878,6 +903,39 @@ Public Class BBCWeatherPlugin
 #End Region
 
 #Region "Downloads"
+
+    Private Function DownloadAll() As Boolean
+
+        If Not Directory.Exists(String.Format("{0}\BBCWeather\", Config.GetFolder(Config.Dir.Cache))) Then
+            Directory.CreateDirectory(String.Format("{0}\BBCWeather\", Config.GetFolder(Config.Dir.Cache)))
+        End If
+
+        '==============================================================================================================
+        ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:A = Next Five Days
+        ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:B = Twenty Four Hours
+        ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?state=fo:C = Monthly Outlook
+        ' http://news.bbc.co.uk/weather/forecast/355/ObservationsEmbed.xhtml   = Latest Observations
+        ' http://news.bbc.co.uk/weather/forecast/355/Forecast.xhtml?&showDay=A = Days detail
+        '==============================================================================================================
+
+        Dim downloadSuccess As Boolean = False
+        downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?state=fo:A", _areaCode), "A") '5 days
+        For i As Integer = 0 To 4
+            downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?&showDay={1}", _areaCode, Chr(65 + i)), String.Format("A_{0}", Chr(65 + i))) '5 day - day 1
+        Next
+        downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?state=fo:B", _areaCode), "B") '24 hours
+        downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/Forecast.xhtml?state=fo:C", _areaCode), "C") 'Monthly
+        downloadSuccess = DownloadForecast(String.Format("http://news.bbc.co.uk/weather/forecast/{0}/ObservationsEmbed.xhtml", _areaCode), "D") 'Latest observations
+
+        ParseLocationName()
+        ParseRegionName()
+
+        downloadSuccess = DownloadMaps()
+        downloadSuccess = DownloadMapOverlay()
+
+        Return downloadSuccess
+
+    End Function
 
     Private Function DownloadForecast(ByVal URL As String, ByVal forecastType As String) As Boolean
 
@@ -888,7 +946,7 @@ Public Class BBCWeatherPlugin
 
         Try
             Dim sourceString As String = New WebClient().DownloadString(URL)
-            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather_{1}_{2}.html", Config.GetFolder(Config.Dir.Cache), _locationCode, forecastType), False)
+            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather\BBCWeather_{1}_{2}.html", Config.GetFolder(Config.Dir.Cache), _areaCode, forecastType), False)
             writer.WriteLine(sourceString)
             writer.Close()
         Catch ex As Exception
@@ -910,7 +968,7 @@ Public Class BBCWeatherPlugin
         End If
 
         ClearAnimationFiles()
-        
+
         Dim URL As String = String.Empty
         Dim fileName As String = String.Empty
         Dim wClient As New WebClient
@@ -999,7 +1057,7 @@ Public Class BBCWeatherPlugin
 
         Try
             Dim sourceString As String = New WebClient().DownloadString(URL)
-            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _locationCode), False)
+            Dim writer As StreamWriter = New StreamWriter(String.Format("{0}\BBCWeather\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode), False)
             writer.WriteLine(sourceString)
             writer.Close()
         Catch ex As Exception
@@ -1097,7 +1155,7 @@ Public Class BBCWeatherPlugin
         newBitmap.Dispose()
 
     End Sub
-    
+
 #End Region
 
 #Region "Parse files"
@@ -1107,11 +1165,10 @@ Public Class BBCWeatherPlugin
         Dim doc As New HtmlAgilityPack.HtmlDocument
 
         Try
-            doc.Load(String.Format("{0}\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _locationCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//h1")
-            _locationName = node.InnerText
-
-            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_D.html", _locationCode)
+            _areaName = node.InnerText
+            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_D.html", _areaCode)
         Catch ex As Exception
             Log.Error("plugin: BBCWeather - error with 24 hour parse : {0}", ex.Message)
             Return False
@@ -1123,7 +1180,7 @@ Public Class BBCWeatherPlugin
 
     Private Function ParseRegionName() As Boolean
 
-        Dim URL As String = String.Format("http://news.bbc.co.uk/weather/forecast/{0}/MapPresenterInner.json", _locationCode)
+        Dim URL As String = String.Format("http://news.bbc.co.uk/weather/forecast/{0}/MapPresenterInner.json", _areaCode)
         Dim response As String = New WebClient().DownloadString(URL)
         Dim jo1 As JsonObject = CType(Conversion.JsonConvert.Import(response), JsonObject)
         Dim jo2 As JsonObject = jo1.Item("MapPresenter")
@@ -1140,22 +1197,35 @@ Public Class BBCWeatherPlugin
 
             For i As Integer = 0 To 4
 
-                doc.Load(String.Format("{0}\BBCWeather_{1}_A.html", Config.GetFolder(Config.Dir.Cache), _locationCode))
+                doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_A.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
                 Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode(String.Format("//tr[@id = ""n5_Day{0}""]", Chr(65 + i)))
                 _5DayForecast(i).DayName = node.ChildNodes(1).ChildNodes(1).ChildNodes(1).Attributes("title").Value
                 _5DayForecast(i).Summary = node.ChildNodes(3).ChildNodes(1).ChildNodes(3).InnerText
-                'Max temp is not given if after 4pm
-                If ((i = 0) And (DateTime.Now.Hour < 16)) Or (i > 0) Then _5DayForecast(i).MaxTemp = Replace(node.ChildNodes(5).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "") '5-2-1 for degF
-                _5DayForecast(i).MinTemp = Replace(node.ChildNodes(7).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "") '7-2-1 for degF
+                If ((i = 0) And (DateTime.Now.Hour < 16)) Or (i > 0) Then 'Max temp is not given if after 4pm
+                    If _tempUnit.ToLower = "degc" Then
+                        _5DayForecast(i).MaxTemp = Replace(node.ChildNodes(5).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "")
+                    Else
+                        _5DayForecast(i).MaxTemp = Replace(node.ChildNodes(5).ChildNodes(1).ChildNodes(3).InnerText, "&deg;F", "")
+                    End If
+                End If
+                If _tempUnit.ToLower = "degc" Then
+                    _5DayForecast(i).MinTemp = Replace(node.ChildNodes(7).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "")
+                Else
+                    _5DayForecast(i).MinTemp = Replace(node.ChildNodes(7).ChildNodes(1).ChildNodes(3).InnerText, "&deg;F", "")
+                End If
                 _5DayForecast(i).WindDirection = node.ChildNodes(9).ChildNodes(1).ChildNodes(1).InnerText.Trim()
-                _5DayForecast(i).WindSpeed = Replace(node.ChildNodes(9).ChildNodes(1).ChildNodes(2).InnerText, "mph", "") '9-1-3 for kph
+                If _windUnit.ToLower = "mph" Then
+                    _5DayForecast(i).WindSpeed = Replace(node.ChildNodes(9).ChildNodes(1).ChildNodes(2).InnerText, "mph", "")
+                Else
+                    _5DayForecast(i).WindSpeed = Replace(node.ChildNodes(9).ChildNodes(1).ChildNodes(4).InnerText, "km/h", "")
+                End If
                 _5DayForecast(i).Humidity = node.ChildNodes(11).ChildNodes(3).InnerText.Trim()
                 _5DayForecast(i).Pressure = node.ChildNodes(11).ChildNodes(7).InnerText.Trim()
                 _5DayForecast(i).Visibility = node.ChildNodes(11).ChildNodes(11).InnerText.Trim()
 
                 'Get sunrise/sunset from the day specific page
                 For j As Integer = 0 To 4
-                    doc.Load(String.Format("{0}\BBCWeather_{1}_A_{2}.html", Config.GetFolder(Config.Dir.Cache), _locationCode, Chr(65 + j)))
+                    doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_A_{2}.html", Config.GetFolder(Config.Dir.Cache), _areaCode, Chr(65 + j)))
                     node = doc.DocumentNode.SelectSingleNode("//div[@id = ""summary-info""]")
                     If (DateTime.Now.Hour >= 16) AndAlso (j = 0) Then
                         'Sunrise is not given if after 4pm on the day
@@ -1170,7 +1240,7 @@ Public Class BBCWeatherPlugin
                         _5DayForecast(i).SunSet = node.ChildNodes(1).ChildNodes(3).InnerText
                     End If
                 Next
-                Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_A.html", _locationCode)
+                Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_A.html", _areaCode)
             Next
 
         Catch ex As Exception
@@ -1184,27 +1254,28 @@ Public Class BBCWeatherPlugin
 
     Private Function Parse24HourWeatherInfo() As Boolean
 
-
         Dim doc As New HtmlAgilityPack.HtmlDocument
 
         Try
-            doc.Load(String.Format("{0}\BBCWeather_{1}_B.html", Config.GetFolder(Config.Dir.Cache), _locationCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_B.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//tbody")
 
             Dim i As Integer = 0
             For Each childnode As HtmlAgilityPack.HtmlNode In node.ChildNodes
                 If childnode.Name.ToLower = "tr" Then
-                    'If childnode.ChildNodes(1).ChildNodes.Count > 1 Then
-                    '    _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim() + vbCrLf
-                    '    _24HourForecast(i).DayName += childnode.ChildNodes(1).ChildNodes(2).InnerText.Trim()
-                    '    _24HourForecast(i).DayName = _24HourForecast(i).DayName.Trim()
-                    'Else
                     _24HourForecast(i).DayName = childnode.ChildNodes(1).ChildNodes(0).InnerText.Trim()
-                    'End If
                     _24HourForecast(i).Summary = childnode.ChildNodes(3).InnerText.Trim()
-                    _24HourForecast(i).MaxTemp = Replace(childnode.ChildNodes(5).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "") '5-1-3 degF
+                    If _tempUnit.ToLower = "degc" Then
+                        _24HourForecast(i).MaxTemp = Replace(childnode.ChildNodes(5).ChildNodes(1).ChildNodes(1).InnerText, "&deg;C", "")
+                    Else
+                        _24HourForecast(i).MaxTemp = Replace(childnode.ChildNodes(5).ChildNodes(1).ChildNodes(3).InnerText, "&deg;F", "")
+                    End If
                     _24HourForecast(i).WindDirection = childnode.ChildNodes(7).ChildNodes(1).ChildNodes(1).InnerText.Trim()
-                    _24HourForecast(i).WindSpeed = Replace(childnode.ChildNodes(7).ChildNodes(1).ChildNodes(2).InnerText, "mph", "")
+                    If _windUnit.ToLower = "mph" Then
+                        _24HourForecast(i).WindSpeed = Replace(childnode.ChildNodes(7).ChildNodes(1).ChildNodes(2).InnerText, "mph", "")
+                    Else
+                        _24HourForecast(i).WindSpeed = Replace(childnode.ChildNodes(7).ChildNodes(1).ChildNodes(4).InnerText, "km/h", "")
+                    End If
                     _24HourForecast(i).Humidity = childnode.ChildNodes(9).ChildNodes(3).InnerText.Trim()
                     _24HourForecast(i).Pressure = childnode.ChildNodes(9).ChildNodes(7).InnerText.Trim()
                     _24HourForecast(i).Visibility = childnode.ChildNodes(9).ChildNodes(11).InnerText.Trim()
@@ -1212,7 +1283,7 @@ Public Class BBCWeatherPlugin
                 End If
             Next
 
-            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_B.html", _locationCode)
+            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_B.html", _areaCode)
         Catch ex As Exception
             Log.Error("plugin: BBCWeather - error with 24 hour parse : {0}", ex.Message)
             Return False
@@ -1227,7 +1298,7 @@ Public Class BBCWeatherPlugin
         Dim doc As New HtmlAgilityPack.HtmlDocument
         Try
 
-            doc.Load(String.Format("{0}\BBCWeather_{1}_C.html", Config.GetFolder(Config.Dir.Cache), _locationCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_C.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//div[@class = ""updated""]")
             _monthly.publishedDate = node.ChildNodes(3).InnerText
             _monthly.nextUpdate = node.ChildNodes(5).InnerText
@@ -1283,7 +1354,7 @@ Public Class BBCWeatherPlugin
                 End If
             Next
 
-            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_C.html", _locationCode)
+            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_C.html", _areaCode)
 
         Catch ex As Exception
             Log.Error("plugin: BBCWeather - error with 24 hour parse : {0}", ex.Message)
@@ -1299,19 +1370,27 @@ Public Class BBCWeatherPlugin
         Dim doc As New HtmlAgilityPack.HtmlDocument
 
         Try
-            doc.Load(String.Format("{0}\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _locationCode))
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}_D.html", Config.GetFolder(Config.Dir.Cache), _areaCode))
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//div[@id = ""ob_V_node""]")
             _currentObsTime = node.ChildNodes(1).InnerText.Trim()
             _currentObsTime = Right(_currentObsTime, Len(_currentObsTime) - InStr(_currentObsTime, "at ") - 2)
             _currentObsStation = Replace(node.ChildNodes(3).InnerText, "Observation station:", "").Trim()
             _currentSummary = node.ChildNodes(11).ChildNodes(1).InnerText
-            _currentTemp = Replace(node.ChildNodes(11).ChildNodes(3).ChildNodes(1).InnerText, "&deg;", "°")
-            _currentWind = Replace(node.ChildNodes(11).ChildNodes(5).ChildNodes(0).InnerText, "Wind:", "").Trim()
-            _currentWind = String.Format("{0} ({1})", node.ChildNodes(11).ChildNodes(5).ChildNodes(1).InnerText, GetCompassPoint(_currentWind))
+            If _tempUnit.ToLower = "degc" Then
+                _currentTemp = Replace(node.ChildNodes(11).ChildNodes(3).ChildNodes(1).InnerText, "&deg;", "°")
+            Else
+                _currentTemp = Replace(node.ChildNodes(11).ChildNodes(3).ChildNodes(2).InnerText, "&deg;", "°")
+            End If
+            If _windUnit.ToLower = "mph" Then
+                _currentWind = node.ChildNodes(11).ChildNodes(5).ChildNodes(1).InnerText
+            Else
+                _currentWind = node.ChildNodes(11).ChildNodes(5).ChildNodes(3).InnerText
+            End If
+            _currentWind = String.Format("{0} ({1})", _currentWind, GetCompassPoint(Replace(node.ChildNodes(11).ChildNodes(5).ChildNodes(0).InnerText, "Wind:", "").Trim()))
             _currentHumidity = Replace(node.ChildNodes(11).ChildNodes(7).InnerText, "Hum:", "").Trim()
             _currentPressure = Replace(node.ChildNodes(13).ChildNodes(1).InnerText, "Press:", "").Trim()
             _currentVisibility = Replace(node.ChildNodes(13).ChildNodes(3).InnerText, "Vis:", "").Trim()
-            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_D.html", _locationCode)
+            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}_D.html", _areaCode)
         Catch ex As Exception
             Log.Error("plugin: BBCWeather - error with current observation parse : {0}", ex.Message)
             Return False
@@ -1344,7 +1423,7 @@ Public Class BBCWeatherPlugin
     Private Function ParseMapOverlay() As Boolean
 
         Dim doc As New XmlDocument
-        doc.Load(String.Format("{0}\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _locationCode))
+        doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode))
 
         Dim nodes As XmlNodeList = doc.SelectNodes("//placename")
 
@@ -1389,6 +1468,68 @@ Public Class BBCWeatherPlugin
         Return True
 
     End Function
+
+    Private Function SetInfoServiceProperties() As Boolean
+
+        Try
+            If Not _areaName Is Nothing Then SetInfoServiceProperty("#infoservice.weather.location", _areaName)
+            If Not _currentTemp Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.temp", _currentTemp)
+            SetInfoServiceProperty("#infoservice.weather.today.feelsliketemp", "N/A")
+            If Not _currentHumidity Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.humidity", _currentHumidity)
+            SetInfoServiceProperty("#infoservice.weather.today.sunrise", "N/A")
+            SetInfoServiceProperty("#infoservice.weather.today.sunset", "N/A")
+            SetInfoServiceProperty("#infoservice.weather.today.uvindex", "N/A")
+            If Not _currentWind Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.wind", _currentWind)
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.condition", _currentSummary)
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            SetInfoServiceProperty("#infoservice.weather.today.weekday", Now.ToString("dddd"))
+            If Not _currentObsStation Is Nothing Then SetInfoServiceProperty("#infoservice.weather.lastupdated.message", String.Format("Observation station is {0}.", _currentObsStation))
+            If Not _currentObsTime Is Nothing Then SetInfoServiceProperty("#infoservice.weather.lastupdated.datetime", _currentObsTime)
+
+            Dim num As Integer = 1
+            Dim forecast As ForeCast
+            For Each forecast In _5DayForecast
+
+                If Not forecast.MinTemp Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.mintemp", num), String.Format("{0}°C", forecast.MinTemp))
+                If Not forecast.MaxTemp Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.maxtemp", num), String.Format("{0}°C", forecast.MaxTemp))
+                If Not forecast.SunRise Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.sunrise", num), Replace(forecast.SunRise, "sunrise", "").Trim)
+                If Not forecast.SunSet Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.sunset", num), Replace(forecast.SunSet, "sunset", "").Trim)
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.condition", num), forecast.Summary)
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.condition", num), "N/A")
+                If Not forecast.WindSpeed Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.wind", num), forecast.WindSpeed)
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.wind", num), "N/A")
+                If Not forecast.Humidity Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.humidity", num), forecast.Humidity)
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.humidity", num), "N/A")
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.weekday", num), Now.AddDays(num - 1).ToString("dddd"))
+                num += 1
+            Next
+            Log.Info("plugin: BBCWeather - completed setting Infoservice props.")
+        Catch ex As Exception
+            Log.Error("plugin: BBCWeather - error with setting Infoservice props : {0}", ex.Message)
+            Return False
+        End Try
+
+        GUIPropertyManager.Changed = True
+        Return True
+
+    End Function
+
+    Private Sub SetInfoServiceProperty(ByVal tag As String, tagValue As String)
+        GUIPropertyManager.SetProperty(tag, tagValue)
+        Log.Debug("plugin: BBCWeather - set {0} to {1}", tag, tagValue)
+    End Sub
+
 
 #End Region
 

@@ -45,1096 +45,1096 @@
               <ZipFileName>Installer{CopyFile}\{38b99f2f-9c4c-4700-b70b-18fd1d473511}-BBCWeather.xml</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\BBCWeather.xml</DestinationFilename>
             </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>Images\Media\hover_BBCWeather.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{a45310f8-e45b-477c-8c77-33361af9b8d5}-hover_BBCWeather.png</ZipFileName>
-              <DestinationFilename>%Skin%\Default\Media\hover_BBCWeather.png</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>Images\Media\hover_BBCWeather.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{55f46724-f5fb-40e2-a2aa-32e08a963899}-hover_BBCWeather.png</ZipFileName>
-              <DestinationFilename>%Skin%\DefaultWide\Media\hover_BBCWeather.png</DestinationFilename>
-            </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>Images\Media\BBCWeather\bg_frame.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{efd593dd-7361-45ac-b2bd-d3f2fb8209c0}-bg_frame.png</ZipFileName>
-              <DestinationFilename>%Skin%\Default\Media\BBCWeather\bg_frame.png</DestinationFilename>
+              <LocalFileName>Images\Media\hover_BBCWeather.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{29482c33-d6bd-4635-9835-490fc11cca16}-hover_BBCWeather.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\hover_BBCWeather.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\five_day_group.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0c981599-2763-45ff-bdaf-5d1082e34826}-five_day_group.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2f601074-651f-4df6-aa48-2b489d48c8fc}-five_day_group.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\five_day_group.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\header_BBCWeather.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{6d20fc0e-e959-4cce-b0e1-d6a5ae010f4d}-header_BBCWeather.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9a395d78-adf1-4b14-87eb-a0140c6d8718}-header_BBCWeather.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\header_BBCWeather.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>Images\Media\BBCWeather\map_background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a8f1f2f5-65e8-4a48-8b0d-1d37a06b9eed}-map_background.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\BBCWeather\map_background.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\e.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{1355fd26-7f4a-4c2b-b296-035079705d9f}-e.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{fafaea03-c24f-40b2-bec0-321c9e14be83}-e.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\e.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ene.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{915d5967-5007-4674-85b2-ec1da5a42390}-ene.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{26df0810-62f0-4992-a1f0-24825640a133}-ene.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ene.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ese.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9e39ce2b-1e4e-4d50-b69a-fcf84204ecc2}-ese.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{049e22dd-4bef-4853-8939-8b1fe78ce114}-ese.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ese.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\n.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b5446551-2db3-4830-98b7-ec9978512e4f}-n.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0e4db89a-b7a3-4119-b45b-54f2c06b7fd0}-n.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\n.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\na.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{27423b08-73a1-4ec4-be6e-58e980db30ac}-na.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{52c84ec4-d02c-44e8-b5c7-a5a6b44d7682}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\na.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ne.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{7618e8ad-6af8-4aca-8070-e21b451ec658}-ne.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d832034a-ac14-4e5b-a50f-2e09b4813b00}-ne.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ne.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nne.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{871def62-e76f-41a1-9113-20d7984e3a3b}-nne.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{66fb9dc7-8db4-4a2e-97e5-a16557d7244e}-nne.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\nne.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nnw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{049c1db0-a40b-4f4e-8b2c-72c88f0d1c63}-nnw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{dd6164e9-96cc-4e89-83df-02c015f026bc}-nnw.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\nnw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3d585d75-da99-4744-bc63-a34e80fe7a13}-nw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6bc4c34e-c8a0-48db-bd86-498598589b8b}-nw.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\nw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\s.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{6d9b05d5-41ab-4e9c-9562-b1a8e4a65382}-s.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{376799dd-d7ca-45e3-95ad-d80d4b71a051}-s.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\s.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\se.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{1af7e792-153e-4fc3-9308-c6aaa4acfab4}-se.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{48e0a9cc-bb76-41cb-9fd9-568b1e14e719}-se.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\se.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\sse.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{32fab41f-c430-49e6-96c3-d8b9c89a3a39}-sse.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5f3fb45f-e9f0-4d79-976c-e430be57825e}-sse.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\sse.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ssw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9c81baa9-afdc-463d-9b4f-af977aaeeb28}-ssw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{965cebeb-7150-4abe-8390-ffdb769f2754}-ssw.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ssw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\sw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4e523345-25db-4b97-881d-8bffdd003571}-sw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{e2db18d3-7965-4421-9fae-291e59fa6ecf}-sw.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\sw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\w.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{a223136c-cd04-409e-ad7d-42922aac18a7}-w.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0748265e-cbe7-4ee5-8027-3a4c5cf13b95}-w.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\w.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\wnw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{97f5c225-071b-4c05-8be9-3526f5521069}-wnw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{dcc33990-d6a9-4ce0-b361-052f3ba220d1}-wnw.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\wnw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\wsw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4d3945da-2389-480c-92f0-e47852f9622e}-wsw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2569bc72-7cb4-49cf-b739-7f4ac2fd4b39}-wsw.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\wsw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\0.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{257c614d-2fa0-47cf-8b59-3bcc322f0185}-0.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{e644d6cf-c1d3-4b9b-a49f-5a6c76c4664e}-0.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\0.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\1.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{25362417-8419-42b3-a5f2-80d579ca6ac9}-1.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{a0c731e6-e233-479d-92dc-244807e4e790}-1.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\1.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\10.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b7588601-d6c2-47e8-a419-601c63fc1b37}-10.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{a750707c-14ef-4f54-b415-eb0849be0729}-10.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\10.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\11.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ee071b22-c5e3-408a-92ec-e9b3ce31a00f}-11.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9f3606aa-ea16-40ce-bf67-4f2e38435db1}-11.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\11.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{067159ea-1513-4712-8ef5-fd86e80b9ce9}-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{860ceb17-d722-4349-b84e-c780355b8880}-12.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\13.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c4bbdcf6-ac9b-42f8-a303-0308ba19addb}-13.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2819250e-6055-40e0-95c6-147ebe6d4703}-13.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\13.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\14.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5fa3f267-2aee-4e06-a1c5-219ef65cd719}-14.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{f0d2a318-341b-4567-b8e6-61fe727fdd39}-14.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\14.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{090c4e4b-92bb-4711-9ca4-1581418bf185}-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ca924a59-aa42-4fdf-b06f-ca99131ffd87}-15.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\16.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e6640cb5-1077-4883-ba02-2203f3bd2ddc}-16.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{de8f33bf-df9e-4832-a909-06487f72d70f}-16.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\16.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\17.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{aaf59e85-f334-4c8c-ba90-326c565130f1}-17.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{79cc3a0a-436f-4fde-a232-fd96131b2c71}-17.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\17.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{67ae4229-33eb-409e-97f9-4035e986ff56}-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{01cb7289-ad7f-4b97-ba04-826c412317ab}-18.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\19.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4ebfee7a-aad8-4ec5-9750-bdc29c1dca9c}-19.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7dbc8443-8747-4b74-aee4-9d9a213c81ef}-19.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\19.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\2.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c12be20d-6483-4f3a-ac76-be6fb91e6ca9}-2.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{e4a507bc-969b-40d3-bbc8-27b5e8b99a66}-2.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\2.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\20.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{117eade3-1c7a-4023-9fee-6abd4722727d}-20.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{03c1ce1b-8e7a-4ee1-a28c-9d2a8e1d5837}-20.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\20.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{47459d16-c50d-4cfe-bc34-a72ba457b879}-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9e3b9c5f-1ff4-4eda-be45-6e8d0f4d3075}-21.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\22.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c22b46b3-553b-4f60-9b36-1c6d1370c5b6}-22.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{28a102fe-7e7f-4139-a511-bc4b3db27668}-22.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\22.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\23.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f3a53afe-fb68-4df8-b9df-ada4654b8055}-23.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{04e8a5e0-2c4c-4ece-8469-d953f5beba8a}-23.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\23.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{7dc31b78-db77-4c37-a57c-a24d3bc3650f}-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{c0f59bb5-d8c0-46ff-8b5f-90eaba07ce39}-24.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\25.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{fe111847-457c-43af-a200-b11b7f3e77ef}-25.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{531b2d94-31bb-4058-9352-f6d93da3d12f}-25.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\25.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\26.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c67438ab-11df-4a30-bd69-e67eee6907d8}-26.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{76d4a133-cd47-4dd0-8059-01ae586c35cf}-26.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\26.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\27.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{2731b5c7-1ff8-4d80-8b06-fd251046ed01}-27.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5b4e573f-0177-4530-a447-bb08a1816e59}-27.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\27.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\28.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{89c9be22-c2be-4df7-88b0-af24440a4f9f}-28.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b4a41e2a-9c3d-4daf-91c0-26157bfbc75b}-28.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\28.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\29.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{8a705c55-9a51-4796-b4ea-05b5d63d9b0c}-29.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{41d5ac1a-a43c-490b-89f8-2eaf077d0620}-29.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\29.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{a8bbbb18-2518-42ab-8bcd-ae396ad240dc}-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{c74bcf31-0c40-4437-bdba-23751aa5c141}-3.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\30.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ac1c6ee4-8f58-46d3-affc-4b3236b7ae05}-30.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{611ea43e-e207-4a63-bdfc-82ecf4104bbd}-30.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\30.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\31.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0e41abcd-442b-4d27-a23d-67fcbd3049f3}-31.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{be23c99f-8098-4a84-9665-b24c3d617c48}-31.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\31.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\32.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e15d2f2d-7360-4797-b307-cba670476a0e}-32.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{8754374f-0958-4542-bd39-f2bef072b996}-32.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\32.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\5.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f91b929a-122f-4dcb-9b06-a05738e3526c}-5.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d44253f4-93c5-4294-be0a-1c8d03835bc2}-5.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\5.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{11059667-6038-4114-8803-ce615a453dcc}-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d09730c0-90ff-4009-b38d-aae53c772522}-6.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\7.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{6620cd11-6efc-4a23-ac7c-80b25bf23a5d}-7.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{1c0f4acd-9dc3-43e0-9dd4-a518e42d93cc}-7.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\7.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\8.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b2016992-c55e-412d-8448-b46cb86d96db}-8.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{16867267-92dc-4191-a1e0-47d25feadd44}-8.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\8.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c26384da-b795-4d79-9ef1-f88f92caf58f}-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0d196531-c4e9-4282-b46f-3c85322f021f}-9.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-1-3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{bf11990c-9ef8-4094-8cfa-bc31637a795c}--1-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{f5258a25-59c4-409f-9248-35d5bf7b777c}--1-3.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-1-3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-10-12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{54f93468-04be-47c3-a9fd-6ec452162446}--10-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{571c0746-9c32-4a42-9547-557baa45ebaf}--10-12.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-10-12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-13-15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b631c0b4-a375-4656-b463-f9984d1a8db5}--13-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{40e886cd-9a48-4c3a-a2cb-82e59702075f}--13-15.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-13-15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-16-18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0c557996-0f93-4461-a7f3-e87c38ce6049}--16-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{812e6582-8797-4963-9aa0-75039fa0fc3b}--16-18.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-16-18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-19-21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4065dc9b-64db-495b-816d-6c6ac750fe39}--19-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0ac65760-3aab-4ccb-a696-358de9c4c143}--19-21.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-19-21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-22-24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{52381715-c5c4-4847-914a-f79ee1122aa8}--22-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{cb5a484b-e516-4f62-a813-9bc52137a218}--22-24.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-22-24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-25-27.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c0b6a76f-9a5d-4d61-834c-450676332c79}--25-27.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d61a3c41-8124-4015-a5df-6f5b1036a515}--25-27.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-25-27.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-28-30.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{eae7a71c-beea-424d-97c2-592ebd8b72b1}--28-30.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{019aa65f-c328-43fd-9c91-058ca025205d}--28-30.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-28-30.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-31-33.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{45807134-3d34-419e-919d-e213a57de2cf}--31-33.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6e065e15-4582-4412-9248-f7d6c13f3677}--31-33.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-31-33.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-34-36.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{14ca356d-d1d0-4d76-8c8a-cf7370845ea5}--34-36.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{38b88374-b58d-4f49-8806-7cb96c21f8d5}--34-36.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-34-36.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-37-39.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{2e83c137-3e66-4582-ae25-516e91ba6a8f}--37-39.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2aa68d2f-92ab-49de-b8a4-8f1a4bea3e5e}--37-39.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-37-39.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-4-6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{cf7a415e-2c2f-4637-9979-5503f41e87e7}--4-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{e2ddfa0b-a2f5-495c-9a07-1770f1b67f08}--4-6.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-4-6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-40.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{65786280-689e-4503-b44b-c1e2e90ae06c}--40.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{4b34ff20-0232-4bce-b6ab-81fa054da132}--40.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-40.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-7-9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c2b8025f-af24-4484-8415-e20ed39a5321}--7-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{598f40f5-7cd3-4135-969e-6cb5081d87db}--7-9.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-7-9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\0.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{eeb686f4-f816-4a81-bfbc-a11bfd058f78}-0.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6be03f87-d83c-4c3a-8d05-988dd9f72af2}-0.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\0.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\1-3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{6214ac42-a707-4f83-9b7f-32cf0771698b}-1-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{a6c26b23-a61c-4117-990e-81abd1e9dceb}-1-3.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\1-3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\10-12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{8aa84358-635d-412e-a8b8-77595b7cbdd7}-10-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{1bbb9f3e-9752-4408-9d23-0fb3534fe718}-10-12.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\10-12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\13-15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e3d50ee4-3f90-4b7f-aee8-a1cd29c910c7}-13-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6c39aaf7-4214-4f4f-9714-2cf9b3911fdf}-13-15.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\13-15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\16-18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{99112288-dd95-4cec-9ed4-c4da4d05c7af}-16-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7d6f7dbe-2ce1-4a07-8086-97ebaaf85080}-16-18.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\16-18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\19-21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c0695bdd-c7d5-4913-9032-d7b0c8771fd2}-19-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{f06536cb-f3d2-4fa4-bbdf-9ab4c845e3e1}-19-21.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\19-21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\22-24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3c36d237-8236-41d7-94db-f48c1d12f713}-22-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6dae9399-48d1-4c3b-a4b4-f005922a791e}-22-24.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\22-24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\25.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{7b172a1c-7c67-4497-89a8-f6dde03fd961}-25.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2974a333-eec6-445f-8bf5-d43b296d2b75}-25.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\25.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\4-6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{190d51f2-04d1-4634-a4a0-50e469c766de}-4-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{1887aa2c-8fc2-44a0-9dbf-de3bc5a747fa}-4-6.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\4-6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\7-9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5e868dc3-5152-4325-9915-4f564e182ea1}-7-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{8ed565db-b946-42e3-88f9-08b266bf6a67}-7-9.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\7-9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\na.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5565bff7-853a-426e-9e88-508329d497c7}-na.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{173bd103-990d-4976-a79d-866697338850}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\na.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>Images\Media\BBCWeather\bg_frame.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{581bd123-58ee-4e70-be5c-4044f701db66}-bg_frame.png</ZipFileName>
-              <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\bg_frame.png</DestinationFilename>
+              <LocalFileName>Images\Media\hover_BBCWeather.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b6e64100-f4a6-421a-8122-701883cfe490}-hover_BBCWeather.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\hover_BBCWeather.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\five_day_group.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0055a20c-70cc-4fc4-84e5-1dbd9f7f52b6}-five_day_group.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{3f2b9cd5-8c2d-457e-b9a9-0ff84f0e8382}-five_day_group.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\five_day_group.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\header_BBCWeather.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{66255ea5-1925-4c48-b766-3f86b355c229}-header_BBCWeather.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0ad49ecf-4e6f-488c-9bf6-dea53b82c5d7}-header_BBCWeather.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\header_BBCWeather.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>Images\Media\BBCWeather\map_background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e371cb40-a11d-4a59-a481-7462200b92c8}-map_background.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\map_background.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\e.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0e57f9f5-20f8-42d1-a144-ba4927028522}-e.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d393b58a-2870-43d9-afed-53ea43027cd9}-e.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\e.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ene.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c3e49678-c6d2-4c74-8199-5e52226b9a86}-ene.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{53cd5386-ce49-4664-bcbe-a26c71b36101}-ene.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\ene.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ese.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f781c808-3bf6-40ef-8a36-0791345e25cc}-ese.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{875519c9-dccc-4996-a546-0b5e9b6414af}-ese.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\ese.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\n.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{d8d5f5e0-3843-4336-9a28-4d25b7dc1de8}-n.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d4fadbd3-61ac-45e3-bf91-59ce3a97dba1}-n.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\n.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\na.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c2e8d985-a9cf-4fd4-92f0-1a17fa4d88e3}-na.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{774637e5-a7b4-4a14-afde-07b9476b114a}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\na.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ne.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3a52add9-0383-4833-9336-607e3ce0af66}-ne.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ca9a283e-b19e-4924-afb7-049acd2dd821}-ne.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\ne.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nne.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{cb90c354-dced-4650-890b-cc1bbd2b74e8}-nne.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{792fbf48-e3d2-423c-b5f3-a785594fe251}-nne.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\nne.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nnw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e37979fe-f258-4956-a4c2-411ce450fded}-nnw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{635f1b91-380e-4090-9ee0-88b7e967c471}-nnw.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\nnw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{83981534-8de6-4312-9010-45c0addc3bf0}-nw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{4e8ee6fc-332b-4dab-ab73-9672f906cb18}-nw.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\nw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\s.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e5009c33-cbb4-4051-94df-9a81fa1aec28}-s.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{4c71c5cd-0d1a-4713-a358-85a065e58423}-s.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\s.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\se.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{2507b19c-ecbe-4dd1-aa5f-34bb7ed2720f}-se.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{bef88ce9-0673-4816-91ed-e79f24166e31}-se.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\se.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\sse.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9d8e59d3-d443-4c37-815b-cd7c0be6bcac}-sse.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{dd45de88-fff4-4f35-8fbe-c3ea70996eab}-sse.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\sse.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ssw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5121583b-53e9-4953-8755-f061b16c3dd3}-ssw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2556e5de-1ae1-4a77-911a-84a05aa96777}-ssw.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\ssw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\sw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{8cd60efa-2691-4f05-ae7d-989e4da3a5ca}-sw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9dfee5f6-4b6d-49f4-888b-c8fb12c783a8}-sw.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\sw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\w.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{7122c7ff-0b25-49bb-be73-1146f0591ccd}-w.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{82a6c436-0723-4b65-9419-8c3954a47bac}-w.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\w.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\wnw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b2c0f63a-f074-4b7b-82e0-4ebaf873ddfe}-wnw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9341e822-abd7-4dfc-b708-50228bb49e02}-wnw.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\wnw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\wsw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{fdd49a4f-ed26-468b-b82a-e7f9326cdc89}-wsw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{95845428-1d45-40c0-8065-8c735b2afba8}-wsw.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\wind\wsw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\0.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{44281d42-262f-4c23-a78c-2533c2ff42dd}-0.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7af2af1a-64ba-44fe-9b2a-426d3ec013ba}-0.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\0.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\1.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5d0b6b75-1010-42e8-b9d7-522b37f2627a}-1.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{56f296e3-9ccc-41ea-8093-012a1bd6326c}-1.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\1.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\10.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0ac9e919-171e-4a08-88ca-1457c136784a}-10.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{72dca53c-e3e5-4610-a631-191580b8e5af}-10.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\10.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\11.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3e0dc71d-c2a9-4311-baf3-8a7638953a2f}-11.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{cc8b9ed0-09d6-4240-ad32-76f1fbd42d33}-11.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\11.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5258aa4d-afc9-4462-8eb6-df39d8bc1fd0}-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{471a1efd-f0a8-4926-be9c-69c05837682d}-12.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\13.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{2629f801-11ab-4918-a853-d0e35eeee682}-13.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{24061d8b-7eef-45a2-8417-5adedd6b8ef0}-13.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\13.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\14.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5c3b1713-2c88-4141-8b89-3f0f3b9f2fc5}-14.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{642016a0-0354-4379-b249-d7e13d74950f}-14.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\14.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f812893c-d696-457b-a78f-4ccf337513b5}-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{78b43046-40fd-4463-ab69-1f3f54a64636}-15.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\16.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f60c3986-ee24-4536-92e8-21cff1599933}-16.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6e91ebbe-28aa-477f-803a-351d2d5d590f}-16.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\16.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\17.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{2dfdd110-a109-4a1f-9364-75e9febc7007}-17.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{69df95c0-283b-438b-aa41-b3ed73d4ece8}-17.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\17.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{969c5912-c8f7-4288-988a-f95aeec26ec2}-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9dc0c9b7-43b0-453e-8d9e-d116fa916fb3}-18.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\19.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{df1525b4-8578-4813-85cf-806a3a6162bf}-19.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d28e5025-fa1c-4a9f-b76c-f5ddbffdf34d}-19.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\19.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\2.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{874d8193-3ee9-41dd-b826-2f0f74fcd003}-2.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5213a597-10c2-4b84-bcbe-6ebe609e5f5e}-2.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\2.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\20.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{1280a4a2-2a85-48cf-a006-50cb7a0cc7a4}-20.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{3994efb8-5f48-4150-8bef-f6d5d98b0371}-20.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\20.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{17fa74e4-9caf-4fbb-b540-f6df3c6ed21e}-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{dffb5b08-04c1-4441-9271-9e10c792446b}-21.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\22.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0b9e27ea-6568-4a50-a798-2450259345f8}-22.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{a4076567-2ef9-4177-a008-862064ea055c}-22.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\22.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\23.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{04317b6f-4d85-47dd-9fe2-8b5a202a8ee1}-23.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{40badae1-1a6e-4ea8-aac6-00d80e12dd20}-23.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\23.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{d40ef4a5-e9ff-4739-8be8-45ce25938dbb}-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{3e9d8372-01c2-4fc5-acee-46d1ce1ea227}-24.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\25.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9d073aa5-9a9a-419e-91c1-fc9dbdc5dd66}-25.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6cd722ad-6340-44f8-9725-a784bd3d18aa}-25.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\25.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\26.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f0d18769-b2c3-4d81-a3f7-ffa19a97183f}-26.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d6a363a7-6ef3-4251-8183-520d264eaa5c}-26.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\26.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\27.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{29d3aba3-ca89-4031-b8aa-51521a5c2a36}-27.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2987fa24-332e-4060-9ecf-feecdb7bf2cd}-27.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\27.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\28.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{35800b12-6dd6-41ce-a605-d65001fe2dae}-28.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5c2d3b53-57f4-415d-85d3-cc4d0d407ac1}-28.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\28.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\29.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{d8bf0cbd-3d3e-490f-af8d-d686105f4748}-29.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{32ff6d20-3f5f-4512-9005-380d92b37ce4}-29.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\29.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b37a01f6-b431-4442-ad72-7cd00ee50eb8}-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{16b0f1da-f4ac-4ff5-bbf2-af4659bb3527}-3.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\30.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{741e83be-0353-4530-937b-874cb96799e8}-30.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7b9974c5-8d54-41cc-ae55-c9d1ad59009f}-30.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\30.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\31.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{82af5aa5-87d1-4127-880f-e00690a857e6}-31.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{c8ee4825-65bb-400e-b4ea-c48c25fccb3f}-31.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\31.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\32.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{47b5e3dd-b63f-44ad-a635-b0c1102b0a4e}-32.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{f01bd427-526b-4ed2-9e34-eb04288aa95d}-32.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\32.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\5.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{661b6dea-3049-4c4e-ad43-6a43fb089e18}-5.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{68165695-294d-4797-8613-191a606f7218}-5.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\5.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{aab8000f-8e31-406d-8684-b1869d760bd3}-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{99763c64-3aaa-463c-bb44-bce486823f43}-6.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\7.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ad492c5d-c1cb-4999-ba2a-20e0587ff2b4}-7.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ab4f1166-6329-4fb2-b54d-0624dfcba96f}-7.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\7.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\8.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{96d72162-1478-44a1-9440-478de7d2c2fe}-8.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5c45668a-afe5-4021-a171-7fdac0060da6}-8.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\8.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ff234793-e4b5-4b0b-90df-84b6b838a511}-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{14c0813a-3852-41ed-ac66-f446b4be10e8}-9.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\weather\9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-1-3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{35a1f802-32df-4c50-b092-0f069a5a7668}--1-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{284aaf65-8a29-4614-81e5-b6093da53ea3}--1-3.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-1-3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-10-12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ac858245-7b4a-4600-8691-d96fd92dd2d9}--10-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{c0f2b467-069e-45b9-af66-ae0766b61f67}--10-12.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-10-12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-13-15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c0451c1c-2cac-4580-b05b-c4534fc05706}--13-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{389bcc7d-b239-4436-b357-a83e15ff8f31}--13-15.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-13-15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-16-18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{600c6c1e-ba5f-4a35-9dd6-4c7cbf0a6d3d}--16-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2525e7be-9a87-48c9-8562-841ad4d221a9}--16-18.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-16-18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-19-21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e034a4e9-be9e-42ad-be00-10408782061d}--19-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b74a030d-a83c-4697-9588-0e26c71120f9}--19-21.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-19-21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-22-24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{d0112524-081a-43b3-9323-34d7abd20725}--22-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{1f05e60c-9d57-4200-97a3-261d200ed1aa}--22-24.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-22-24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-25-27.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{425904d4-5233-4d27-9cc9-684839619d36}--25-27.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7190e9a7-e8b6-4a39-b9d6-27e0a4e92a51}--25-27.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-25-27.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-28-30.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{93bfad8a-8e41-487a-9cba-381f4026be03}--28-30.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{421128fb-4e9b-4fdc-a013-80a742ecdad9}--28-30.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-28-30.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-31-33.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{a2f16267-d242-40d8-a1af-b344391abd07}--31-33.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ed308a1e-14ea-4ac4-8f1b-159ce0f6e653}--31-33.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-31-33.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-34-36.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{057d4ab1-f935-47d9-86f7-1499459ab7d7}--34-36.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{f24a11eb-2ef0-419d-b47e-f5a036e1de6a}--34-36.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-34-36.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-37-39.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{492698d3-8627-4ae6-a365-24e6bdffda06}--37-39.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{673db290-0d76-45b9-aa33-8e6a68a1745c}--37-39.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-37-39.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-4-6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3cc3dcc0-7fca-4ddf-803b-d200c7142e35}--4-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0d7b5b0a-a7b8-4e5c-9075-0b0f1697b1ad}--4-6.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-4-6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-40.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{47b9cf95-0de5-4d48-9ff2-3b4c30597321}--40.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{983c8baf-e5cf-4ac5-a655-8071e00196d8}--40.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-40.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-7-9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{573608b9-d028-4aa1-9f20-3cd27814eb2a}--7-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{026415ef-d438-413d-9d23-228a54f4ae12}--7-9.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\-7-9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\0.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0e054381-aa62-487c-90e8-4c23102e4ee6}-0.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{49e5e6c9-db57-4bab-b379-dfe305343792}-0.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\0.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\1-3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{04132f90-0413-4347-9ac5-7f31e3802b3e}-1-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{af284179-9c61-491c-add9-9147e6cba369}-1-3.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\1-3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\10-12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0847ef69-6ce1-4451-bf63-b199505a50dc}-10-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{46e90567-983c-45c0-92b4-3d4a439f8c28}-10-12.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\10-12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\13-15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{529b7ace-3426-4a5d-b4e4-a03c7517c806}-13-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d32347c8-fe68-4147-ab7d-59fc6ce94b64}-13-15.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\13-15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\16-18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5021a73e-c87a-488a-ba9a-93fcd7d3b82f}-16-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{943533e4-d9f5-4357-a2f7-497f996f140d}-16-18.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\16-18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\19-21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{097b601c-118e-4c87-9236-f3c1472fff26}-19-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{98e30c40-b843-4b36-adca-92d9e7ca0152}-19-21.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\19-21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\22-24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9037ac10-2387-4399-991f-30be5db87e5f}-22-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{917a61d0-68c6-4c7d-b53b-94a21799dca3}-22-24.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\22-24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\25.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b8e5fe0d-5f5a-4724-9f77-3491457cf4b8}-25.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ec7edb08-d705-4c81-8d7b-9176b8a1842c}-25.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\25.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\4-6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{85f2e1aa-4adc-4ae2-aee9-65a4b7accf9b}-4-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2f67a1c7-eadc-4baf-bbba-4d8466113769}-4-6.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\4-6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\7-9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{a2f01e94-d344-4325-9d32-7b37c940d0de}-7-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b35d286e-ad7c-4a41-a046-f3216fa16a97}-7-9.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\7-9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\na.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f2d680a2-5e29-48eb-a5fb-aedcb7e7ddf7}-na.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{46ee60ee-045c-45b8-8256-86f73e667b3c}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\DefaultWide\Media\BBCWeather\temp\na.png</DestinationFilename>
             </FileItem>
           </Items>
@@ -1142,7 +1142,7 @@
       </GroupItem>
       <GroupItem Name="BlackGlass">
         <ParentGroup>Default</ParentGroup>
-        <DisplayName>Black Glass HD</DisplayName>
+        <DisplayName>Black Glass HD skin files</DisplayName>
         <DefaulChecked>false</DefaulChecked>
         <Description>Only select if you use the Black Glass HD skin with MP 1.2.0 Beta</Description>
         <Files>
@@ -1157,548 +1157,562 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>skin\Black Glass HD\Media\hover_BBCWeather.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{1fc5ebdb-4c4a-43af-9ed6-cfde06d398c1}-hover_BBCWeather.png</ZipFileName>
-              <DestinationFilename>%Skin%\Black Glass HD\Media\hover_BBCWeather.png</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>Images\Media\BBCWeather\bg_frame.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9f2753bf-bba9-43dc-a95b-5192febd7f08}-bg_frame.png</ZipFileName>
-              <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\bg_frame.png</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\five_day_group.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{29265746-8432-47ea-a51f-3729bc0395a4}-five_day_group.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0aed8662-cc13-419b-bb8f-08231d11f408}-five_day_group.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\five_day_group.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\header_BBCWeather.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{2587ba8f-b49b-4ac4-b29a-9d8c0d8480e0}-header_BBCWeather.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0338cc52-0d57-4f46-8c03-f36fff86d9b8}-header_BBCWeather.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\header_BBCWeather.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>Images\Media\BBCWeather\map_background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{58a61667-7be8-4f31-97c9-1b1e3d9a34a4}-map_background.png</ZipFileName>
+              <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\map_background.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\e.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{dcffa4a7-5082-48da-8c2a-9cae567a6959}-e.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0f68ca80-90f3-41e3-8b91-f437d071224c}-e.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\e.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ene.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{099d8ec4-8751-42b6-82d8-41e64dc0ce2a}-ene.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ded385d7-82ac-48a7-b50b-97f6bbe5d8ad}-ene.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\ene.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ese.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{31f83be9-7de8-4e61-b709-f83df0b2fe7e}-ese.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7a2e6c46-4850-451f-8535-aa643e49c06a}-ese.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\ese.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\n.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{162980f8-3b52-4da7-ab4e-8978589fa755}-n.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{bc52690d-57c7-4682-8d16-0541aaa391e1}-n.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\n.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\na.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5aa1e8af-f0e0-4048-8892-0a0b71620bd1}-na.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{8805156b-d5a8-4fcd-a112-980e4fdfd033}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\na.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ne.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{8d3d64f7-22ba-46a1-8405-348999166579}-ne.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{c455a76e-b78c-43af-a645-5ac053ec2a5a}-ne.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\ne.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nne.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ed00afe7-12e3-4ba7-89f5-d3d903507490}-nne.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{39edca37-69e5-448f-9080-276d33279650}-nne.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\nne.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nnw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{15692b9e-4227-4252-87d6-f3197c103d9a}-nnw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d903577b-aa0c-499b-ac06-9129ce5fa658}-nnw.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\nnw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\nw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9efa48ff-9b28-4bdb-bb6a-8135bb1e02d9}-nw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7ace9552-4dce-4e18-9151-f594cb921621}-nw.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\nw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\s.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b734b3aa-e502-4798-9ea7-5852e2a0600e}-s.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d6509f18-1625-4b6d-bde9-3fab84d77a45}-s.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\s.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\se.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{d47b6a75-e3b3-4de7-afae-1527f9c25b9b}-se.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ac66da63-cc5c-41b8-894e-a138957681e7}-se.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\se.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\sse.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{7d3af6ef-c021-48dc-9e60-df9f1b2ef66f}-sse.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{331b6820-46d9-49df-b21f-64d296caa080}-sse.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\sse.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\ssw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{708d871a-61b4-4ca9-9644-d524ba358a7c}-ssw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{e12456cc-21ad-4944-90dd-002bb55d95a7}-ssw.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\ssw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\sw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{8d44354a-b3bf-49ad-a192-a8790a8df229}-sw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2c38c5ec-b2c7-439c-897c-3e98aad3e0ce}-sw.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\sw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\w.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9be33d0a-4c1c-4865-abd7-4be12ea66324}-w.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{3a0f6fd5-5349-4d4e-be89-084bb00a0d3d}-w.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\w.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\wnw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{71cd723f-daea-463f-901f-d4c14280d130}-wnw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b4be7ad2-5e7f-4192-8207-a003aa985654}-wnw.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\wnw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\wind\wsw.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{950652a9-985f-46c2-8c42-f859d2eb1248}-wsw.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{efd94155-d3ff-42cf-b1e1-1193afe45ebb}-wsw.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\wind\wsw.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\0.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{38c900e9-4b0f-41f3-8277-8b3a4cafb40c}-0.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{27fe1805-2320-4890-a724-3943dcef8ecb}-0.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\0.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\1.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{cb935874-8012-488c-bde8-c27818e0ff26}-1.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6e8c4720-b9c2-4970-801f-25dac18a8a45}-1.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\1.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\10.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{d25630d8-06c5-4f48-bdd6-c5edec140a26}-10.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{17d8d92e-c724-48ce-8348-9719a96dd43e}-10.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\10.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\11.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e02478cb-4f12-47e5-b74c-c0e4004bf132}-11.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9d992627-b853-4fde-bce7-39f8b6b0b189}-11.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\11.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{411a8f41-c53f-4455-b984-fb9c9d4d91fa}-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9d0ac0e7-c106-45d0-b207-e059273cb987}-12.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\13.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ab18abe1-8ecc-4a74-9b9d-c8d7cc6b5e3f}-13.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{c1d0f3de-1a8d-4fef-b900-d3329ff2773c}-13.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\13.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\14.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{1793f1f4-98bf-42d9-82a0-d784c5281180}-14.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{1dc32a78-530c-4385-a36c-3205a5201a5a}-14.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\14.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4aacf992-0356-4e8c-8926-d6c4ce8d609e}-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{06de94e2-345d-4bbf-9edf-1e7d47cfaa37}-15.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\16.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5277e2b5-14d9-482f-ae4c-aa2b4f6c684f}-16.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{e2cf4727-0418-4d36-af1f-ef34a4b4bb89}-16.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\16.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\17.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9ace4084-ac5c-4a8f-bb6b-70450c760b90}-17.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{3daf7852-72cc-4e45-a79a-5ffa9bb1c9a6}-17.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\17.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{6eec8cff-e167-4297-b5e2-cf5ebb19f18a}-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{857fbf24-75f3-4b1a-a1bb-e6aaf016b1ee}-18.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\19.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f545fc8e-0984-431c-a3b5-a00810b62082}-19.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{3c47e2ea-5bed-4604-aced-5fd1003f3698}-19.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\19.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\2.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b5a6b74d-be74-4756-b50d-a53f928b38a8}-2.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{28c0a0b0-73f7-440c-bf2a-e973a19cf4be}-2.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\2.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\20.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ea2afb98-3aeb-4305-a1ae-cd336c5ae85b}-20.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{ac09d385-e8fc-4d32-85e4-c3f0c6aa900b}-20.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\20.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{89f908f2-cf74-401e-b8a9-259acc38b2bc}-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d5f689d5-2183-46a3-9ab3-42b61272eabf}-21.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\22.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f8bb91f3-68a6-47f3-94ad-e8f41be3098b}-22.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d9460f5e-223d-4c4d-a276-324bbcdf18a3}-22.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\22.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\23.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{fa1b8a7a-d9c8-4af4-93f9-d03ba6d765f7}-23.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{344065fc-ad72-46c2-8de0-1f3a380a406f}-23.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\23.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0faaf5a4-0d1f-482a-af37-6c60b27c22ef}-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7e7c23b4-3e4e-439d-b3e7-8a0c63b34105}-24.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\25.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{726c42cf-6f8e-4939-a856-0984e1d2f6bd}-25.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{356190e2-66d7-4e5e-94e3-f7f28db64bdf}-25.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\25.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\26.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{663f20b5-5b50-4934-ba91-b5f4a339b916}-26.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9fd657d7-fe0d-4209-8f45-7a368e2b2ee9}-26.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\26.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\27.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{1e1bf622-b301-481b-bd88-015cdc00195c}-27.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{fa8698ae-ad28-49ae-901d-c330a190b0d7}-27.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\27.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\28.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{a773147e-0dee-41e3-a04a-1b156dbf9663}-28.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d8fd431b-8b35-47fc-bba1-67d010dfd018}-28.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\28.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\29.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{0aa926d1-d7c9-45da-bb18-6d3a335300c7}-29.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5a4a5d4a-1b47-4104-84cc-698407990f39}-29.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\29.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{2bc63a4e-e3de-4b15-bb95-0c6a7631ac65}-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b6d0564b-6dda-4f80-977b-90a7d35165af}-3.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\30.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{f4bf95f6-e747-47bd-bb66-223e3578083e}-30.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{15815f13-d2b8-499c-8ab1-ab39fe772b7f}-30.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\30.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\31.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{71cff943-8663-40e1-be82-2d2be3ef52c0}-31.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{45566c27-ebfc-4e15-bd4f-3d2fdaac1b5e}-31.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\31.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\32.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4b448e02-29bd-49da-a889-7b9a51f3c0f1}-32.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{2c5eec3c-2ce5-4c6e-893a-ecb8b0413469}-32.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\32.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\5.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{d1a9a052-164b-4a81-a172-08a6477dc12a}-5.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{4f4ecf60-38c2-4a7e-a60f-cc80dc222290}-5.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\5.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e334c29f-398a-4c4e-9cb8-6380c641059b}-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7125814a-ed24-4bc6-9b51-fd4798c86cda}-6.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\7.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3f3fea6b-3019-4d55-8129-b94a0a929d7f}-7.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{02127811-8294-4eda-aa90-2aaf8a7367d1}-7.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\7.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\8.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3aa30566-a547-4f12-b86e-6eee1944cb83}-8.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{16c47f5b-ff5c-4cd3-942e-599afeceea71}-8.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\8.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\weather\9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{cc810e14-2bbb-4936-aa13-e908416e5d68}-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5cd1201a-bc6f-4064-9b11-62f6cbba7e4b}-9.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\weather\9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-1-3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{45bf26d2-fda5-478c-b48f-5004dc68a6a8}--1-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{fea27889-0f50-4244-995e-f259a993315d}--1-3.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-1-3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-10-12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{65308126-c063-44b2-9f57-438ff4df352b}--10-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7883d679-4621-44e6-b0d3-b440aad19ead}--10-12.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-10-12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-13-15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{59da1eb2-fb03-4f63-8c43-6a855bde0060}--13-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9af4860e-66fe-4dbf-80ef-1281ddfbb535}--13-15.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-13-15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-16-18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{52d000f5-e086-4317-9d87-15d26017bf3a}--16-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b1df3bcb-052b-48b8-b2dc-855181c612ff}--16-18.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-16-18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-19-21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{6bdd90a0-79c6-45df-b034-0c17175a08f4}--19-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0940b5b4-7123-4d4b-821d-dfc3330b3c3b}--19-21.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-19-21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-22-24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{fab0964f-1a87-489f-b940-c15c4b080285}--22-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{7450dd32-b8a5-4844-9dad-357d62653394}--22-24.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-22-24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-25-27.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3d5b0174-2927-49e5-9fe6-aefd3380d60c}--25-27.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{8a7c8649-e1f4-48cd-8756-5bb133d29843}--25-27.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-25-27.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-28-30.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3e8d27bf-1a24-4167-91ce-7c0bfc6b4c6a}--28-30.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9536ecc8-d69a-46b5-901c-29e59696bfd6}--28-30.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-28-30.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-31-33.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{9c951981-bb80-4df7-96b5-0c0b6a386c96}--31-33.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{8cc42ee1-ed37-4b36-bf14-eb17738711db}--31-33.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-31-33.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-34-36.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{34f7e9c6-5339-46b7-8337-d4db19760ec4}--34-36.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{b223dd1d-ffa5-4d7c-9a02-ed56bc89ad4e}--34-36.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-34-36.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-37-39.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{fde798c3-38b1-44ae-b435-c89abec07e0d}--37-39.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{699a7ac1-8cf3-459a-ab3c-749ed65f8d1f}--37-39.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-37-39.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-4-6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{436ff612-0f7e-4531-b662-fd5f6f1d0505}--4-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5a5a763b-36b0-4395-b46d-e58e721ecaad}--4-6.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-4-6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-40.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{18cc48ce-fc72-48a1-b0b4-5a17c84850db}--40.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{f9bd2452-bbc4-4a92-a902-3dd32089e110}--40.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-40.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\-7-9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{8619b961-03dd-4a27-9bab-4ea6f9eedd60}--7-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{a1e44d4d-bdcf-4ae6-ac56-dace65c40ed1}--7-9.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\-7-9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\0.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{14204da7-594d-46d3-8b43-71944a836e04}-0.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5aca7208-2fea-4735-9d8e-fab7b0037ea8}-0.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\0.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\1-3.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e96a45ac-78e1-4b78-b72d-f7f5f649782e}-1-3.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{d8eca14a-5186-47ad-b305-5387108d53be}-1-3.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\1-3.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\10-12.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e41a8fe1-84ed-422f-913e-711ad84e6826}-10-12.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{5b49b056-0c53-440e-994f-9de779daddc1}-10-12.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\10-12.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\13-15.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{42c2c9a2-de6c-467b-b13b-2f45fcfffbd7}-13-15.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9bfa622e-aec0-45ba-9d45-715a9a472034}-13-15.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\13-15.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\16-18.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5997992e-841b-46e7-aa09-73d21368381e}-16-18.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0f3e465c-d387-41a8-a341-621eb44c2cbf}-16-18.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\16-18.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\19-21.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b47f57a5-f01b-4ff5-bdc2-e3a8a446c203}-19-21.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{0a616eb3-2dd0-41df-a385-07eee0563342}-19-21.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\19-21.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\22-24.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{09fb93c6-894d-4932-b149-091f6ed461f9}-22-24.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{73f35461-add1-426e-bdfc-0d1cdd655835}-22-24.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\22-24.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\25.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{37431c9d-fd83-45db-ad6f-b75dec328192}-25.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{83197f09-33eb-4a1b-9a25-781314a3acbd}-25.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\25.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\4-6.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{31ab9e58-93f0-4b7d-99cf-6912512329c6}-4-6.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{716b4f62-7009-4b9c-9e4d-5941c1145f7a}-4-6.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\4-6.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\7-9.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{ada095e5-30fb-4a57-9b14-5757eb0fab48}-7-9.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{9af380c2-9595-4255-8159-e3edaf751b1e}-7-9.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\7-9.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>Images\Media\BBCWeather\temp\na.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{a5b8b6a0-9ced-4c2b-bd8e-2f8e3358716a}-na.png</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{8f765d00-7099-4b37-8275-d8529b46424b}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\temp\na.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>skin\Black Glass HD\Media\hover_BBCWeather.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0f0a9061-83d0-4554-b7cf-38b88b99b258}-hover_BBCWeather.png</ZipFileName>
+              <DestinationFilename>%Skin%\Black Glass HD\Media\hover_BBCWeather.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>skin\Black Glass HD\Media\BBCWeather\bg_frame.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{fbf0072c-d69e-462a-a1dd-461292bcb3e4}-bg_frame.png</ZipFileName>
+              <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\bg_frame.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>skin\Black Glass HD\Media\BBCWeather\bg_map_background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{06a8deec-56cf-4d73-a1a1-88a3757ba7ae}-bg_map_background.png</ZipFileName>
+              <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\bg_map_background.png</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -1883,9 +1897,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <UpdateUrl />
     <Version>
       <Major>0</Major>
-      <Minor>1</Minor>
+      <Minor>2</Minor>
       <Build>0</Build>
-      <Revision>0</Revision>
+      <Revision>17</Revision>
     </Version>
     <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day and mothly outlook forecasts are available.</ExtensionDescription>
     <VersionDescription />
@@ -1963,550 +1977,550 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <ZipFileName>Installer{CopyFile}\{38b99f2f-9c4c-4700-b70b-18fd1d473511}-BBCWeather.xml</ZipFileName>
         <DestinationFilename>%Skin%\DefaultWide\BBCWeather.xml</DestinationFilename>
       </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\hover_BBCWeather.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{a45310f8-e45b-477c-8c77-33361af9b8d5}-hover_BBCWeather.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{29482c33-d6bd-4635-9835-490fc11cca16}-hover_BBCWeather.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\hover_BBCWeather.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>Images\Media\BBCWeather\bg_frame.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{efd593dd-7361-45ac-b2bd-d3f2fb8209c0}-bg_frame.png</ZipFileName>
-        <DestinationFilename>%Skin%\Default\Media\BBCWeather\bg_frame.png</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\five_day_group.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{0c981599-2763-45ff-bdaf-5d1082e34826}-five_day_group.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{2f601074-651f-4df6-aa48-2b489d48c8fc}-five_day_group.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\five_day_group.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\header_BBCWeather.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6d20fc0e-e959-4cce-b0e1-d6a5ae010f4d}-header_BBCWeather.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{9a395d78-adf1-4b14-87eb-a0140c6d8718}-header_BBCWeather.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\header_BBCWeather.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>Images\Media\BBCWeather\map_background.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a8f1f2f5-65e8-4a48-8b0d-1d37a06b9eed}-map_background.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\BBCWeather\map_background.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\e.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{1355fd26-7f4a-4c2b-b296-035079705d9f}-e.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{fafaea03-c24f-40b2-bec0-321c9e14be83}-e.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\e.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\ene.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{915d5967-5007-4674-85b2-ec1da5a42390}-ene.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{26df0810-62f0-4992-a1f0-24825640a133}-ene.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ene.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\ese.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{9e39ce2b-1e4e-4d50-b69a-fcf84204ecc2}-ese.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{049e22dd-4bef-4853-8939-8b1fe78ce114}-ese.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ese.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\n.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b5446551-2db3-4830-98b7-ec9978512e4f}-n.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{0e4db89a-b7a3-4119-b45b-54f2c06b7fd0}-n.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\n.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\na.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{27423b08-73a1-4ec4-be6e-58e980db30ac}-na.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{52c84ec4-d02c-44e8-b5c7-a5a6b44d7682}-na.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\na.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\ne.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{7618e8ad-6af8-4aca-8070-e21b451ec658}-ne.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{d832034a-ac14-4e5b-a50f-2e09b4813b00}-ne.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ne.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\nne.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{871def62-e76f-41a1-9113-20d7984e3a3b}-nne.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{66fb9dc7-8db4-4a2e-97e5-a16557d7244e}-nne.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\nne.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\nnw.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{049c1db0-a40b-4f4e-8b2c-72c88f0d1c63}-nnw.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{dd6164e9-96cc-4e89-83df-02c015f026bc}-nnw.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\nnw.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\nw.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{3d585d75-da99-4744-bc63-a34e80fe7a13}-nw.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6bc4c34e-c8a0-48db-bd86-498598589b8b}-nw.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\nw.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\s.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6d9b05d5-41ab-4e9c-9562-b1a8e4a65382}-s.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{376799dd-d7ca-45e3-95ad-d80d4b71a051}-s.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\s.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\se.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{1af7e792-153e-4fc3-9308-c6aaa4acfab4}-se.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{48e0a9cc-bb76-41cb-9fd9-568b1e14e719}-se.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\se.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\sse.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{32fab41f-c430-49e6-96c3-d8b9c89a3a39}-sse.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{5f3fb45f-e9f0-4d79-976c-e430be57825e}-sse.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\sse.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\ssw.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{9c81baa9-afdc-463d-9b4f-af977aaeeb28}-ssw.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{965cebeb-7150-4abe-8390-ffdb769f2754}-ssw.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\ssw.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\sw.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4e523345-25db-4b97-881d-8bffdd003571}-sw.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e2db18d3-7965-4421-9fae-291e59fa6ecf}-sw.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\sw.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\w.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{a223136c-cd04-409e-ad7d-42922aac18a7}-w.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{0748265e-cbe7-4ee5-8027-3a4c5cf13b95}-w.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\w.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\wnw.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{97f5c225-071b-4c05-8be9-3526f5521069}-wnw.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{dcc33990-d6a9-4ce0-b361-052f3ba220d1}-wnw.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\wnw.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\wind\wsw.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4d3945da-2389-480c-92f0-e47852f9622e}-wsw.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{2569bc72-7cb4-49cf-b739-7f4ac2fd4b39}-wsw.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\wind\wsw.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\0.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{257c614d-2fa0-47cf-8b59-3bcc322f0185}-0.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e644d6cf-c1d3-4b9b-a49f-5a6c76c4664e}-0.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\0.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\1.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{25362417-8419-42b3-a5f2-80d579ca6ac9}-1.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{a0c731e6-e233-479d-92dc-244807e4e790}-1.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\1.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\10.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b7588601-d6c2-47e8-a419-601c63fc1b37}-10.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{a750707c-14ef-4f54-b415-eb0849be0729}-10.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\10.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\11.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{ee071b22-c5e3-408a-92ec-e9b3ce31a00f}-11.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{9f3606aa-ea16-40ce-bf67-4f2e38435db1}-11.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\11.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\12.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{067159ea-1513-4712-8ef5-fd86e80b9ce9}-12.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{860ceb17-d722-4349-b84e-c780355b8880}-12.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\12.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\13.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c4bbdcf6-ac9b-42f8-a303-0308ba19addb}-13.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{2819250e-6055-40e0-95c6-147ebe6d4703}-13.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\13.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\14.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{5fa3f267-2aee-4e06-a1c5-219ef65cd719}-14.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{f0d2a318-341b-4567-b8e6-61fe727fdd39}-14.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\14.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\15.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{090c4e4b-92bb-4711-9ca4-1581418bf185}-15.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{ca924a59-aa42-4fdf-b06f-ca99131ffd87}-15.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\15.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\16.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e6640cb5-1077-4883-ba02-2203f3bd2ddc}-16.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{de8f33bf-df9e-4832-a909-06487f72d70f}-16.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\16.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\17.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{aaf59e85-f334-4c8c-ba90-326c565130f1}-17.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{79cc3a0a-436f-4fde-a232-fd96131b2c71}-17.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\17.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\18.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{67ae4229-33eb-409e-97f9-4035e986ff56}-18.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{01cb7289-ad7f-4b97-ba04-826c412317ab}-18.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\18.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\19.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4ebfee7a-aad8-4ec5-9750-bdc29c1dca9c}-19.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{7dbc8443-8747-4b74-aee4-9d9a213c81ef}-19.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\19.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\2.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c12be20d-6483-4f3a-ac76-be6fb91e6ca9}-2.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e4a507bc-969b-40d3-bbc8-27b5e8b99a66}-2.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\2.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\20.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{117eade3-1c7a-4023-9fee-6abd4722727d}-20.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{03c1ce1b-8e7a-4ee1-a28c-9d2a8e1d5837}-20.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\20.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\21.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{47459d16-c50d-4cfe-bc34-a72ba457b879}-21.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{9e3b9c5f-1ff4-4eda-be45-6e8d0f4d3075}-21.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\21.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\22.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c22b46b3-553b-4f60-9b36-1c6d1370c5b6}-22.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{28a102fe-7e7f-4139-a511-bc4b3db27668}-22.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\22.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\23.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f3a53afe-fb68-4df8-b9df-ada4654b8055}-23.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{04e8a5e0-2c4c-4ece-8469-d953f5beba8a}-23.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\23.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\24.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{7dc31b78-db77-4c37-a57c-a24d3bc3650f}-24.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{c0f59bb5-d8c0-46ff-8b5f-90eaba07ce39}-24.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\24.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\25.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{fe111847-457c-43af-a200-b11b7f3e77ef}-25.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{531b2d94-31bb-4058-9352-f6d93da3d12f}-25.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\25.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\26.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c67438ab-11df-4a30-bd69-e67eee6907d8}-26.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{76d4a133-cd47-4dd0-8059-01ae586c35cf}-26.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\26.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\27.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{2731b5c7-1ff8-4d80-8b06-fd251046ed01}-27.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{5b4e573f-0177-4530-a447-bb08a1816e59}-27.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\27.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\28.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{89c9be22-c2be-4df7-88b0-af24440a4f9f}-28.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{b4a41e2a-9c3d-4daf-91c0-26157bfbc75b}-28.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\28.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\29.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{8a705c55-9a51-4796-b4ea-05b5d63d9b0c}-29.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{41d5ac1a-a43c-490b-89f8-2eaf077d0620}-29.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\29.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\3.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{a8bbbb18-2518-42ab-8bcd-ae396ad240dc}-3.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{c74bcf31-0c40-4437-bdba-23751aa5c141}-3.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\3.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\30.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{ac1c6ee4-8f58-46d3-affc-4b3236b7ae05}-30.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{611ea43e-e207-4a63-bdfc-82ecf4104bbd}-30.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\30.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\31.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{0e41abcd-442b-4d27-a23d-67fcbd3049f3}-31.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{be23c99f-8098-4a84-9665-b24c3d617c48}-31.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\31.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\32.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e15d2f2d-7360-4797-b307-cba670476a0e}-32.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{8754374f-0958-4542-bd39-f2bef072b996}-32.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\32.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\5.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f91b929a-122f-4dcb-9b06-a05738e3526c}-5.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{d44253f4-93c5-4294-be0a-1c8d03835bc2}-5.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\5.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\6.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{11059667-6038-4114-8803-ce615a453dcc}-6.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{d09730c0-90ff-4009-b38d-aae53c772522}-6.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\6.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\7.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6620cd11-6efc-4a23-ac7c-80b25bf23a5d}-7.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{1c0f4acd-9dc3-43e0-9dd4-a518e42d93cc}-7.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\7.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\8.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b2016992-c55e-412d-8448-b46cb86d96db}-8.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{16867267-92dc-4191-a1e0-47d25feadd44}-8.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\8.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\weather\9.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c26384da-b795-4d79-9ef1-f88f92caf58f}-9.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{0d196531-c4e9-4282-b46f-3c85322f021f}-9.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\weather\9.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-1-3.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{bf11990c-9ef8-4094-8cfa-bc31637a795c}--1-3.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{f5258a25-59c4-409f-9248-35d5bf7b777c}--1-3.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-1-3.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-10-12.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{54f93468-04be-47c3-a9fd-6ec452162446}--10-12.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{571c0746-9c32-4a42-9547-557baa45ebaf}--10-12.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-10-12.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-13-15.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b631c0b4-a375-4656-b463-f9984d1a8db5}--13-15.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{40e886cd-9a48-4c3a-a2cb-82e59702075f}--13-15.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-13-15.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-16-18.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{0c557996-0f93-4461-a7f3-e87c38ce6049}--16-18.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{812e6582-8797-4963-9aa0-75039fa0fc3b}--16-18.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-16-18.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-19-21.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4065dc9b-64db-495b-816d-6c6ac750fe39}--19-21.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{0ac65760-3aab-4ccb-a696-358de9c4c143}--19-21.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-19-21.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-22-24.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{52381715-c5c4-4847-914a-f79ee1122aa8}--22-24.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{cb5a484b-e516-4f62-a813-9bc52137a218}--22-24.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-22-24.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-25-27.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c0b6a76f-9a5d-4d61-834c-450676332c79}--25-27.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{d61a3c41-8124-4015-a5df-6f5b1036a515}--25-27.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-25-27.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-28-30.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{eae7a71c-beea-424d-97c2-592ebd8b72b1}--28-30.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{019aa65f-c328-43fd-9c91-058ca025205d}--28-30.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-28-30.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-31-33.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{45807134-3d34-419e-919d-e213a57de2cf}--31-33.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6e065e15-4582-4412-9248-f7d6c13f3677}--31-33.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-31-33.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-34-36.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{14ca356d-d1d0-4d76-8c8a-cf7370845ea5}--34-36.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{38b88374-b58d-4f49-8806-7cb96c21f8d5}--34-36.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-34-36.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-37-39.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{2e83c137-3e66-4582-ae25-516e91ba6a8f}--37-39.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{2aa68d2f-92ab-49de-b8a4-8f1a4bea3e5e}--37-39.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-37-39.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-4-6.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{cf7a415e-2c2f-4637-9979-5503f41e87e7}--4-6.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e2ddfa0b-a2f5-495c-9a07-1770f1b67f08}--4-6.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-4-6.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-40.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{65786280-689e-4503-b44b-c1e2e90ae06c}--40.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{4b34ff20-0232-4bce-b6ab-81fa054da132}--40.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-40.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\-7-9.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c2b8025f-af24-4484-8415-e20ed39a5321}--7-9.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{598f40f5-7cd3-4135-969e-6cb5081d87db}--7-9.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\-7-9.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\0.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{eeb686f4-f816-4a81-bfbc-a11bfd058f78}-0.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6be03f87-d83c-4c3a-8d05-988dd9f72af2}-0.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\0.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\1-3.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6214ac42-a707-4f83-9b7f-32cf0771698b}-1-3.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{a6c26b23-a61c-4117-990e-81abd1e9dceb}-1-3.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\1-3.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\10-12.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{8aa84358-635d-412e-a8b8-77595b7cbdd7}-10-12.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{1bbb9f3e-9752-4408-9d23-0fb3534fe718}-10-12.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\10-12.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\13-15.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e3d50ee4-3f90-4b7f-aee8-a1cd29c910c7}-13-15.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6c39aaf7-4214-4f4f-9714-2cf9b3911fdf}-13-15.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\13-15.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\16-18.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{99112288-dd95-4cec-9ed4-c4da4d05c7af}-16-18.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{7d6f7dbe-2ce1-4a07-8086-97ebaaf85080}-16-18.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\16-18.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\19-21.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c0695bdd-c7d5-4913-9032-d7b0c8771fd2}-19-21.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{f06536cb-f3d2-4fa4-bbdf-9ab4c845e3e1}-19-21.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\19-21.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\22-24.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{3c36d237-8236-41d7-94db-f48c1d12f713}-22-24.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6dae9399-48d1-4c3b-a4b4-f005922a791e}-22-24.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\22-24.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\25.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{7b172a1c-7c67-4497-89a8-f6dde03fd961}-25.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{2974a333-eec6-445f-8bf5-d43b296d2b75}-25.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\25.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\4-6.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{190d51f2-04d1-4634-a4a0-50e469c766de}-4-6.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{1887aa2c-8fc2-44a0-9dbf-de3bc5a747fa}-4-6.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\4-6.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\7-9.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{5e868dc3-5152-4325-9915-4f564e182ea1}-7-9.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{8ed565db-b946-42e3-88f9-08b266bf6a67}-7-9.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\7-9.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Images\Media\BBCWeather\temp\na.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{5565bff7-853a-426e-9e88-508329d497c7}-na.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{173bd103-990d-4976-a79d-866697338850}-na.png</ZipFileName>
         <DestinationFilename>%Skin%\Default\Media\BBCWeather\temp\na.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
@@ -2516,12 +2530,26 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <ZipFileName>Installer{CopyFile}\{324b3e0a-b235-4fa9-b512-d4e54f15217c}-BBCweather.xml</ZipFileName>
         <DestinationFilename>%Skin%\Black Glass HD\BBCweather.xml</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>skin\Black Glass HD\Media\hover_BBCWeather.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0f0a9061-83d0-4554-b7cf-38b88b99b258}-hover_BBCWeather.png</ZipFileName>
+        <DestinationFilename>%Skin%\Black Glass HD\Media\hover_BBCWeather.png</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>skin\Black Glass HD\Media\hover_BBCWeather.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{1fc5ebdb-4c4a-43af-9ed6-cfde06d398c1}-hover_BBCWeather.png</ZipFileName>
-        <DestinationFilename>%Skin%\Black Glass HD\Media\hover_BBCWeather.png</DestinationFilename>
+        <LocalFileName>skin\Black Glass HD\Media\BBCWeather\bg_frame.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{fbf0072c-d69e-462a-a1dd-461292bcb3e4}-bg_frame.png</ZipFileName>
+        <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\bg_frame.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>skin\Black Glass HD\Media\BBCWeather\bg_map_background.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{06a8deec-56cf-4d73-a1a1-88a3757ba7ae}-bg_map_background.png</ZipFileName>
+        <DestinationFilename>%Skin%\Black Glass HD\Media\BBCWeather\bg_map_background.png</DestinationFilename>
       </FileItem>
     </Items>
   </UniqueFileList>
@@ -2531,8 +2559,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName />
-        <ZipFileName>Installer{CopyFile}\{a4c2169d-cd9b-4be6-82d8-4228e3b765fd}-</ZipFileName>
-        <DestinationFilename>%Skin%\DefaultWide\Media</DestinationFilename>
+        <ZipFileName>Installer{CopyFile}\{538e144b-8f43-46e6-a08a-175eaa51ba7b}-</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\</DestinationFilename>
         <Folder>Images\Media</Folder>
         <Group>Default</Group>
         <Recursive>true</Recursive>
