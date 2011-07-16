@@ -1137,6 +1137,20 @@
               <ZipFileName>Installer{CopyFile}\{c6d663fa-fbc7-4add-83eb-e75665637ff1}-na.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3Wide\Media\BBCWeather\temp\na.png</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>skin\Blue3\animations\BBCWeather\blank.txt</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7c0bfb22-50ee-48ee-b972-d05f7696db25}-blank.txt</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\animations\BBCWeather\blank.txt</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>skin\Blue3Wide\animations\BBCWeather\blank.txt</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b5d4d843-0444-4e8f-a45e-3a89888e927d}-blank.txt</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3Wide\Media\animations\BBCWeather\blank.txt</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -1271,7 +1285,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>5</Revision>
         </MaxVersion>
         <WarnOnly>true</WarnOnly>
-        <Message>Need version of MediaPortal with version betwen 0.0.0.0 - 0.0.0.0</Message>
+        <Message>This installer is for MediaPortal versions up to 1.1.3</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -1282,18 +1296,18 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Author>Cheezey</Author>
     <HomePage>http://wiki.team-mediaportal.com/1_MEDIAPORTAL_1/17_Extensions/3_Plugins/BBC_Weather</HomePage>
     <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/plugin-bbc-weather-97171/</ForumPage>
-    <UpdateUrl />
+    <UpdateUrl>http://bbcweather.googlecode.com/files/update.mp.1.1.3.xml</UpdateUrl>
     <Version>
       <Major>0</Major>
-      <Minor>2</Minor>
+      <Minor>3</Minor>
       <Build>0</Build>
-      <Revision>17</Revision>
+      <Revision>27</Revision>
     </Version>
     <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day and mothly outlook forecasts are available.</ExtensionDescription>
-    <VersionDescription />
+    <VersionDescription>Added setting Infoservice data, configurable wind speed and temperature units.</VersionDescription>
     <DevelopmentStatus>Beta</DevelopmentStatus>
-    <OnlineLocation />
-    <ReleaseDate>2011-05-31T07:10:04.2661953+01:00</ReleaseDate>
+    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.3.0.27.for.MP.1.1.3.mpe1</OnlineLocation>
+    <ReleaseDate>2011-07-16T07:10:04</ReleaseDate>
     <Tags />
     <Location>D:\Dev\vs2010\BBCWeather\BBCWeather\BBCWeather.v.[Version].for.MP.1.1.3.mpe1</Location>
     <Params>
@@ -1321,7 +1335,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Description>Online stored screenshot urls separated by ; </Description>
         </SectionParam>
         <SectionParam Name="Force to uninstall on update">
-          <Value>yes</Value>
+          <Value>YES</Value>
           <ValueType>Bool</ValueType>
           <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
         </SectionParam>
@@ -1911,6 +1925,20 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <ZipFileName>Installer{CopyFile}\{110b6cfe-bf1b-4c89-bc06-2ad87cbc12f3}-na.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\Media\BBCWeather\temp\na.png</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>skin\Blue3\animations\BBCWeather\blank.txt</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{7c0bfb22-50ee-48ee-b972-d05f7696db25}-blank.txt</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\animations\BBCWeather\blank.txt</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>skin\Blue3Wide\animations\BBCWeather\blank.txt</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b5d4d843-0444-4e8f-a45e-3a89888e927d}-blank.txt</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3Wide\Media\animations\BBCWeather\blank.txt</DestinationFilename>
+      </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
@@ -1927,7 +1955,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
       </FolderGroup>
     </FolderGroups>
     <ProjectFilename>D:\Dev\vs2010\BBCWeather\BBCWeather\Installer.1.1.3.xmp2</ProjectFilename>
-    <UpdatePath1 />
+    <UpdatePath1>D:\Dev\vs2010\BBCWeather\BBCWeather\update.mp.1.1.3.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
   </ProjectSettings>
