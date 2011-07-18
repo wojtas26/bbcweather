@@ -158,6 +158,7 @@
     <Content Include="Images\Media\BBCWeather\map_background.png" />
     <Content Include="Images\templates\map_background.png" />
     <Content Include="skin\Avalon\BBCWeather.xml" />
+    <Content Include="skin\Avalon\Media\animations\BBCWeather\blank.txt" />
     <Content Include="skin\Avalon\Media\BBCWeather\temp\-1-3.png" />
     <Content Include="skin\Avalon\Media\BBCWeather\temp\-10-12.png" />
     <Content Include="skin\Avalon\Media\BBCWeather\temp\-13-15.png" />
@@ -238,6 +239,7 @@
     <Content Include="skin\Avalon\Media\bbc_weather_map_overlay_bg.png" />
     <Content Include="skin\Avalon\Media\bbc_weather_month_bg.png" />
     <Content Include="skin\Avalon\Media\hover_BBCWeather.png" />
+    <Content Include="skin\Black Glass HD\Media\animations\BBCWeather\blank.txt" />
     <Content Include="skin\Black Glass HD\Media\BBCWeather\bg_frame.png" />
     <Content Include="Images\Media\BBCWeather\five_day_group.png" />
     <Content Include="Images\Media\BBCWeather\header_BBCWeather.png" />
@@ -324,18 +326,17 @@
     <Content Include="skin\Black Glass HD\Media\hover_BBCWeather.png" />
     <Content Include="skin\Blue3Wide\BBCWeather.xml" />
     <Content Include="skin\Blue3\BBCWeather.xml" />
+    <Content Include="skin\DefaultWide\animations\BBCWeather\blank.txt" />
     <Content Include="skin\DefaultWide\BBCWeather.xml" />
+    <Content Include="skin\Default\animations\BBCWeather\blank.txt" />
     <Content Include="skin\Default\BBCWeather.xml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="skin\Avalon\Media\animations\BBCWeather\" />
     <Folder Include="skin\Blue3Wide\animations\BBCWeather\" />
     <Folder Include="skin\Blue3\animations\BBCWeather\" />
-    <Folder Include="skin\DefaultWide\animations\BBCWeather\" />
-    <Folder Include="skin\Default\animations\BBCWeather\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
