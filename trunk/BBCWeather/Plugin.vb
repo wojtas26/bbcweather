@@ -878,8 +878,8 @@ Public Class BBCWeatherPlugin
                     If Not Parse5DayWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("5 day forecast")
                     If Not Parse24HourWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("24 hour forecast")
                     If Not ParseMonthlyWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
-                    If Not ParseMapOverlay() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
-                    If Not SetInfoServiceProperties() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
+                    If Not ParseMapOverlay() AndAlso Not autoUpdate Then DisplayErrorDialog("map overlay")
+                    If Not SetInfoServiceProperties() AndAlso Not autoUpdate Then DisplayErrorDialog("info properties")
                 End If
 
                 _lastRefreshTime = DateTime.Now

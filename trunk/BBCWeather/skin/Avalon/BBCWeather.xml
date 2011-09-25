@@ -10,8 +10,7 @@
   <control>
 		<type>actiongroup</type>
 		<description>action menu</description>
-		<defaultcontrol>2</defaultcontrol>
-		<onexit>50</onexit>
+		<onexit>9999</onexit>
 		<dimColor>00ffffff</dimColor>
 		<buttonX>0</buttonX>
 		<buttonY>0</buttonY>
@@ -126,18 +125,16 @@
   <control>
     <type>group</type>
 
- 		<control>
-			<type>image</type>
-			<id>0</id>
-			<width>1920</width>
-			<height>1080</height>
-			<texture>semi_trans_back_hidden_menu.png</texture>
-			<visible>!Control.HasFocus(9999)</visible>
-			<animation effect="fade" time="450">visible</animation>
-			<animation effect="fade" time="400">hidden</animation>
-		</control>
-    
-    <control>
+ 	<control>
+		<description>Alternate BG</description>
+		<type>image</type>
+		<id>1</id>
+		<width>1920</width>
+		<height>1080</height>
+		<texture>background.png</texture>
+	</control>
+
+	<control>
       <description>weather label</description>
       <type>label</type>
       <id>1</id>
@@ -160,8 +157,6 @@
       <textcolor>White</textcolor>
       <font>fontB22</font>
     </control>
-    
-
     
     <control>
       <description>dummy</description>
@@ -372,8 +367,13 @@
   <control>
     <type>group</type>
     <dimColor>FFFFFFFF</dimColor>
-    <animation effect="fade" time="100">VisibleChange</animation>
-
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<animation effect="slide" time="250" start="-1890,0">WindowOpen</animation>
+	<animation effect="slide" time="250" end="-1890,0">WindowClose</animation>
+	<animation effect="fade" time="250">VisibleChange</animation>
+	<animation effect="slide" time="250" start="-1890,0">VisibleChange</animation>
+	
     <control>
       <description>5 Day viewport</description>
       <type>image</type>
@@ -1111,8 +1111,13 @@
   <control>
     <type>group</type>
     <dimColor>FFFFFFFF</dimColor>
-    <animation effect="fade" time="100">VisibleChange</animation>
-    
+ 	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<animation effect="slide" time="250" start="-1890,0">WindowOpen</animation>
+	<animation effect="slide" time="250" end="-1890,0">WindowClose</animation>
+	<animation effect="fade" time="250">VisibleChange</animation>
+	<animation effect="slide" time="250" start="-1890,0">VisibleChange</animation>
+   
     <control>
       <description>24hour viewport</description>
       <type>image</type>
@@ -2061,7 +2066,12 @@
   <control>
     <type>group</type>
     <dimColor>FFFFFFFF</dimColor>
-    <animation effect="fade" time="100">VisibleChange</animation>
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<animation effect="slide" time="250" start="-1890,0">WindowOpen</animation>
+	<animation effect="slide" time="250" end="-1890,0">WindowClose</animation>
+	<animation effect="fade" time="250">VisibleChange</animation>
+	<animation effect="slide" time="250" start="-1890,0">VisibleChange</animation>
 
     <control>
       <description>Month viewport</description>
@@ -2135,7 +2145,12 @@
   <control>
     <type>group</type>
     <dimColor>FFFFFFFF</dimColor>
-    <animation effect="fade" time="100">VisibleChange</animation>
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<animation effect="slide" time="250" start="-1890,0">WindowOpen</animation>
+	<animation effect="slide" time="250" end="-1890,0">WindowClose</animation>
+	<animation effect="fade" time="250">VisibleChange</animation>
+	<animation effect="slide" time="250" start="-1890,0">VisibleChange</animation>
 
     <control>
       <description>Map viewport</description>
@@ -2191,7 +2206,18 @@
 
     
   <import>common.overlay.xml</import>
-	<import>common.time.xml</import>
+  <import>common.time.xml</import>
+
+  <control>
+    <type>image</type>
+    <id>0</id>
+    <width>1920</width>
+    <height>1080</height>
+    <texture>semi_trans_back_hidden_menu.png</texture>
+    <visible>!Control.HasFocus(9999)</visible>
+    <animation effect="fade" time="450">visible</animation>
+    <animation effect="fade" time="400">hidden</animation>
+  </control>
 
   <control>
     <id>1</id>
