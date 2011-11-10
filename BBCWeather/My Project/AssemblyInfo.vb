@@ -15,7 +15,7 @@ Imports MediaPortal.Common.Utils
 <Assembly: AssemblyProduct("BBCWeather")> 
 <Assembly: AssemblyCopyright("Copyright © CheezeySoft 2011")> 
 <Assembly: AssemblyTrademark("")> 
-<Assembly: CompatibleVersion("1.1.7.0")> 
+<Assembly: CompatibleVersion("1.1.6.27644")> 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
