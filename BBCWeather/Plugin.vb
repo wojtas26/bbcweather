@@ -94,6 +94,7 @@ Public Class BBCWeatherPlugin
         IMG_DAY0_SUMMARY_IMAGE = 207
         IMG_DAY0_SUMMARY_FRAME = 219
         LBL_DAY0_SUMMARY_LABEL = 208
+        LBL_DAY0_SUMMARY_LABEL_SHORT = 205
         IMG_DAY0_MAXTEMP_IMAGE = 209
         LBL_DAY0_MAXTEMP_LABEL = 210
         IMG_DAY0_MINTEMP_IMAGE = 211
@@ -109,6 +110,7 @@ Public Class BBCWeatherPlugin
         IMG_DAY1_SUMMARY_IMAGE = 227
         IMG_DAY1_SUMMARY_FRAME = 239
         LBL_DAY1_SUMMARY_LABEL = 228
+        LBL_DAY1_SUMMARY_LABEL_SHORT = 225
         IMG_DAY1_MAXTEMP_IMAGE = 229
         LBL_DAY1_MAXTEMP_LABEL = 230
         IMG_DAY1_MINTEMP_IMAGE = 231
@@ -124,6 +126,7 @@ Public Class BBCWeatherPlugin
         IMG_DAY2_SUMMARY_IMAGE = 247
         IMG_DAY2_SUMMARY_FRAME = 259
         LBL_DAY2_SUMMARY_LABEL = 248
+        LBL_DAY2_SUMMARY_LABEL_SHORT = 245
         IMG_DAY2_MAXTEMP_IMAGE = 249
         LBL_DAY2_MAXTEMP_LABEL = 250
         IMG_DAY2_MINTEMP_IMAGE = 251
@@ -139,6 +142,7 @@ Public Class BBCWeatherPlugin
         IMG_DAY3_SUMMARY_IMAGE = 267
         IMG_DAY3_SUMMARY_FRAME = 279
         LBL_DAY3_SUMMARY_LABEL = 268
+        LBL_DAY3_SUMMARY_LABEL_SHORT = 265
         IMG_DAY3_MAXTEMP_IMAGE = 269
         LBL_DAY3_MAXTEMP_LABEL = 270
         IMG_DAY3_MINTEMP_IMAGE = 271
@@ -154,6 +158,7 @@ Public Class BBCWeatherPlugin
         IMG_DAY4_SUMMARY_IMAGE = 287
         IMG_DAY4_SUMMARY_FRAME = 299
         LBL_DAY4_SUMMARY_LABEL = 288
+        LBL_DAY4_SUMMARY_LABEL_SHORT = 285
         IMG_DAY4_MAXTEMP_IMAGE = 289
         LBL_DAY4_MAXTEMP_LABEL = 290
         IMG_DAY4_MINTEMP_IMAGE = 291
@@ -412,8 +417,6 @@ Public Class BBCWeatherPlugin
 
     Public Overrides Sub Process()
 
-        Dim a As DateTime = DateTime.Now
-
         If (DateTime.Now - _lastRefreshTime).Minutes >= _refreshIntervalMinutes AndAlso _areaCode <> String.Empty AndAlso Not Me.IsRefreshing Then
             Log.Debug("plugin: BBCWeather: autoupdating data.")
             BackgroundUpdate(True)
@@ -503,12 +506,18 @@ Public Class BBCWeatherPlugin
         Next
 
         Dim image As GUIImage = Nothing
+        Dim summary As String = String.Empty
         For dayNum As Integer = 0 To 4
+            summary = _5DayForecast(dayNum).Summary
+            If InStr(summary, "with") > 0 Then
+                summary = Left(summary, InStr(summary, "with") - 2)
+            End If
 
             GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_DAYNAME + (dayNum * 20), Left(DateTime.Now.AddDays(dayNum).ToString("dddd"), 3))
             image = DirectCast(GetControl(Controls.IMG_DAY0_SUMMARY_IMAGE + (dayNum * 20)), GUIImage)
             image.SetFileName(GetWeatherImage(_5DayForecast(dayNum).Summary))
             GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_SUMMARY_LABEL + (dayNum * 20), _5DayForecast(dayNum).Summary)
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_SUMMARY_LABEL_SHORT + (dayNum * 20), summary)
             image = DirectCast(GetControl(Controls.IMG_DAY0_MAXTEMP_IMAGE + (dayNum * 20)), GUIImage)
             image.SetFileName(GetTemperatureImage(_5DayForecast(dayNum).MaxTemp))
             GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_MAXTEMP_LABEL + (dayNum * 20), _5DayForecast(dayNum).MaxTemp)
@@ -572,7 +581,7 @@ Public Class BBCWeatherPlugin
         txt = String.Format("{0} {1}", _monthly.publishedDate, _monthly.nextUpdate)
 
         GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_PUBLISHED_LABEL, txt)
-        GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_AUTHOR_LABEL, _monthly.author)
+        'GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_AUTHOR_LABEL, _monthly.author)
         GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_HEADLINE_LABEL, _monthly.headline)
 
         Dim break As String = String.Format("{0}{1}{0}", Environment.NewLine, Replicate("=", 30))
@@ -868,7 +877,7 @@ Public Class BBCWeatherPlugin
 
     Private Sub RefreshMe(autoUpdate As Boolean)
 
-        HideAllControls()
+        If Not autoUpdate Then HideAllControls()
 
         SyncLock _downloadLock
             Using cursor As New WaitCursor()
@@ -887,7 +896,7 @@ Public Class BBCWeatherPlugin
             End Using
         End SyncLock
 
-        RefreshNewMode()
+        If Not autoUpdate Then RefreshNewMode()
 
     End Sub
 
@@ -1302,7 +1311,7 @@ Public Class BBCWeatherPlugin
             Dim node As HtmlAgilityPack.HtmlNode = doc.DocumentNode.SelectSingleNode("//div[@class = ""updated""]")
             _monthly.publishedDate = node.ChildNodes(3).InnerText
             _monthly.nextUpdate = node.ChildNodes(5).InnerText
-            _monthly.author = node.ChildNodes(7).InnerText
+            '_monthly.author = node.ChildNodes(7).InnerText
 
             node = doc.DocumentNode.SelectSingleNode("//div[@class = ""outlook_content""]")
             _monthly.headline = node.ChildNodes(3).InnerText
