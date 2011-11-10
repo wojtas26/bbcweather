@@ -2505,7 +2505,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Major>0</Major>
       <Minor>3</Minor>
       <Build>0</Build>
-      <Revision>33</Revision>
+      <Revision>35</Revision>
     </Version>
     <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day and mothly outlook forecasts are available.</ExtensionDescription>
     <VersionDescription />
