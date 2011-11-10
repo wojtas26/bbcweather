@@ -2500,18 +2500,20 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Author>Cheezey</Author>
     <HomePage>http://wiki.team-mediaportal.com/1_MEDIAPORTAL_1/17_Extensions/3_Plugins/BBC_Weather</HomePage>
     <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/plugin-bbc-weather-97171/</ForumPage>
-    <UpdateUrl />
+    <UpdateUrl>http://bbcweather.googlecode.com/svn/trunk/BBCWeather/update.xml</UpdateUrl>
     <Version>
       <Major>0</Major>
       <Minor>3</Minor>
       <Build>0</Build>
       <Revision>35</Revision>
     </Version>
-    <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day and mothly outlook forecasts are available.</ExtensionDescription>
-    <VersionDescription />
+    <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
+    <VersionDescription>v0.3 for MP 1.2.x
+Added configurable units
+Added optional override InfoService properties</VersionDescription>
     <DevelopmentStatus>Beta</DevelopmentStatus>
-    <OnlineLocation />
-    <ReleaseDate>2011-05-31T07:10:04.2661953+01:00</ReleaseDate>
+    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.3.0.35.for.MP.1.2.x.mpe1</OnlineLocation>
+    <ReleaseDate>2011-11-10T07:10:04</ReleaseDate>
     <Tags />
     <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
     <Params>
@@ -3771,7 +3773,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
       </FolderGroup>
     </FolderGroups>
     <ProjectFilename>C:\Dev\BBCWeather\BBCWeather\Installer.1.2.x.xmp2</ProjectFilename>
-    <UpdatePath1 />
+    <UpdatePath1>C:\Dev\BBCWeather\BBCWeather\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
   </ProjectSettings>
