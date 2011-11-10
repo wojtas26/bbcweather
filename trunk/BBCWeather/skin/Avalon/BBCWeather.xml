@@ -412,7 +412,7 @@
     <control>
       <description>Day 0 summary label</description>
       <type>fadelabel</type>
-      <id>208</id>
+      <id>205</id>
       <posX>574</posX>
       <posY>405</posY>
       <width>220</width>
@@ -556,7 +556,7 @@
     <control>
       <description>Day 1 summary label</description>
       <type>label</type>
-      <id>228</id>
+      <id>225</id>
       <posX>947</posX>
       <posY>405</posY>
       <align>center</align>
@@ -699,7 +699,7 @@
     <control>
       <description>Day 2 summary label</description>
       <type>label</type>
-      <id>248</id>
+      <id>245</id>
       <posX>1210</posX>
       <posY>405</posY>
       <align>center</align>
@@ -842,7 +842,7 @@
     <control>
       <description>Day 3 summary label</description>
       <type>label</type>
-      <id>268</id>
+      <id>265</id>
       <posX>1473</posX>
       <posY>405</posY>
       <align>center</align>
@@ -985,7 +985,7 @@
     <control>
       <description>Day 4 summary label</description>
       <type>label</type>
-      <id>288</id>
+      <id>285</id>
       <posX>1735</posX>
       <posY>405</posY>
       <align>center</align>
