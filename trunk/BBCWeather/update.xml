@@ -35,8 +35,45 @@
         <Items />
       </Sections>
       <Dependencies>
-        <Items />
+        <Items>
+          <DependencyItem>
+            <Type>MediaPortal</Type>
+            <Id />
+            <MinVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MinVersion>
+            <MaxVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MaxVersion>
+            <WarnOnly>false</WarnOnly>
+            <Message>Minimum requirement is MediaPortal 1.2.0.</Message>
+            <Name>MediaPortal</Name>
+          </DependencyItem>
+        </Items>
       </Dependencies>
+      <PluginDependencies>
+        <Items>
+          <PluginDependencyItem AssemblyName="BBCWeather.dll">
+            <CompatibleVersion>
+              <Items>
+                <CompatibleVersionItem>
+                  <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+                  <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+                </CompatibleVersionItem>
+              </Items>
+            </CompatibleVersion>
+            <SubSystemsUsed>
+              <Items />
+            </SubSystemsUsed>
+          </PluginDependencyItem>
+        </Items>
+      </PluginDependencies>
       <GeneralInfo>
         <Name>BBC Weather</Name>
         <Id>7d91aa07-388c-427f-86dc-7d89eb5b5cad</Id>
@@ -61,11 +98,6 @@ Added optional override InfoService properties</VersionDescription>
         <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
         <Params>
           <Items>
-            <SectionParam Name="Icon">
-              <Value />
-              <ValueType>File</ValueType>
-              <Description>The icon file of the package (jpg,png,bmp)</Description>
-            </SectionParam>
             <SectionParam Name="Online Icon">
               <Value />
               <ValueType>String</ValueType>
@@ -97,6 +129,7 @@ Added optional override InfoService properties</VersionDescription>
       <ProjectSettings>
         <FolderGroups />
       </ProjectSettings>
+      <IsSkin>false</IsSkin>
     </PackageClass>
   </Items>
 </ExtensionCollection>
