@@ -2479,14 +2479,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <MinVersion>
           <Major>1</Major>
           <Minor>1</Minor>
-          <Build>0</Build>
-          <Revision>6</Revision>
+          <Build>6</Build>
+          <Revision>0</Revision>
         </MinVersion>
         <MaxVersion>
           <Major>1</Major>
           <Minor>1</Minor>
-          <Build>0</Build>
-          <Revision>9</Revision>
+          <Build>9</Build>
+          <Revision>99999</Revision>
         </MaxVersion>
         <WarnOnly>true</WarnOnly>
         <Message>This plugin requires MediaPortal 1.2.0 or greater</Message>
