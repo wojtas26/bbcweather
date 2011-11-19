@@ -1985,7 +1985,7 @@
         <id>500</id>
         <posX>500</posX>
         <posY>100</posY>
-        <label>UK Monthly Outlook</label>
+        <label>-</label>
         <font>font13</font>
         <textcolor>White</textcolor>
       </control>
@@ -2000,21 +2000,11 @@
         <textcolor>99CCCC11</textcolor>
       </control>
       <control>
-        <description>Monthly outlook author label</description>
-        <type>label</type>
-        <id>502</id>
-        <posX>500</posX>
-        <posY>150</posY>
-        <label>-</label>
-        <font>font12</font>
-        <textcolor>99CCCC11</textcolor>
-      </control>
-      <control>
         <description>Monthly outlook headline label</description>
         <type>label</type>
         <id>503</id>
         <posX>500</posX>
-        <posY>175</posY>
+        <posY>150</posY>
         <label>-</label>
         <font>font12</font>
         <textcolor>99CCCC11</textcolor>
@@ -2024,8 +2014,8 @@
         <type>textboxscrollup</type>
         <id>504</id>
         <posX>500</posX>
-        <posY>210</posY>
-        <height>480</height>
+        <posY>190</posY>
+        <height>500</height>
         <width>750</width>
         <label>-</label>
         <font>font13</font>
