@@ -19,6 +19,7 @@ Public Class PluginSetupForm
     Private _tempUnit As String = String.Empty
     Private _windUnit As String = String.Empty
     Private _overRide As Boolean = False
+    Private _interval As Integer = 0
 
     Private Sub PluginSetupForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
@@ -30,6 +31,7 @@ Public Class PluginSetupForm
             _tempUnit = xmlReader.GetValueAsString("BBCWeather", "tempUnit", "degC")
             _windUnit = xmlReader.GetValueAsString("BBCWeather", "windUnit", "mph")
             _overRide = xmlReader.GetValueAsBool("BBCWeather", "overRide", False)
+            _interval = xmlReader.GetValueAsInt("BBCWeather", "interval", 15)
         End Using
 
         If _areaName.Length > 0 Then AreaLookup(_areaName)
@@ -51,6 +53,8 @@ Public Class PluginSetupForm
         End If
 
         cbxInfoService.Checked = _overRide
+
+        numInterval.Value = _interval
 
     End Sub
 
@@ -118,6 +122,7 @@ Public Class PluginSetupForm
                 xmlReader.SetValue("BBCWeather", "tempUnit", IIf(rbnDegF.Checked, "degF", "degC"))
                 xmlReader.SetValue("BBCWeather", "windUnit", IIf(rbnKph.Checked, "kph", "mph"))
                 xmlReader.SetValueAsBool("BBCWeather", "overRide", cbxInfoService.Checked)
+                xmlReader.SetValue("BBCWeather", "interval", numInterval.Value)
                 Settings.SaveCache()
             End Using
         End If

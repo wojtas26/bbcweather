@@ -312,7 +312,8 @@ Public Class BBCWeatherPlugin
     Private _workerActive As Boolean = False
     Private _downloadLock As Object = Nothing
     Private _currentMode As String = Mode.FiveDay           'Start with the 5 day forecast
-    Private _refreshIntervalMinutes As Integer = 15         'Refresh every 15 minutes
+    Private _refreshIntervalMinutes As Integer = 15
+    Private timer As System.Threading.Timer
     Private _lastRefreshTime As DateTime = Now.AddHours(-1) 'Set to -1 to force a refresh on init 
 
     Private _currentImage As GUIImage = Nothing
@@ -360,6 +361,7 @@ Public Class BBCWeatherPlugin
             _tempUnit = xmlReader.GetValueAsString("BBCWeather", "tempUnit", "degC")
             _windUnit = xmlReader.GetValueAsString("BBCWeather", "windUnit", "mph")
             _overRide = xmlReader.GetValueAsBool("BBCWeather", "overRide", False)
+            _refreshIntervalMinutes = xmlReader.GetValueAsInt("BBCWeather", "interval", 15)
         End Using
 
     End Sub
@@ -377,16 +379,6 @@ Public Class BBCWeatherPlugin
         End Set
     End Property
 
-    Public Property IsRefreshing() As Boolean
-        Get
-            Return _workerActive
-        End Get
-        <MethodImpl(MethodImplOptions.Synchronized)> _
-        Private Set(value As Boolean)
-            _workerActive = value
-        End Set
-    End Property
-
 #End Region
 
 #Region "Overrides"
@@ -395,11 +387,8 @@ Public Class BBCWeatherPlugin
         AppDomain.CurrentDomain.AppendPrivatePath(String.Format("{0}\Plugins\Windows\BBCWeather", AppDomain.CurrentDomain.BaseDirectory))
         Try
             LoadSettings()
-            DownloadAll()
-            ParseCurrentObservation()
-            Parse5DayWeatherInfo()
-            Parse24HourWeatherInfo()
-            SetInfoServiceProperties()
+            _downloadLock = New Object
+            ScheduleTimer()
         Catch ex As Exception
             Log.Error("plugin: BBCWeather: error on plugin init.")
         End Try
@@ -410,19 +399,6 @@ Public Class BBCWeatherPlugin
 
         MyBase.OnPageLoad()
         RefreshNewMode()
-        _downloadLock = New Object
-        If _lastRefreshTime < Now.AddMinutes(-_refreshIntervalMinutes) Then BackgroundUpdate(False)
-
-    End Sub
-
-    Public Overrides Sub Process()
-
-        If (DateTime.Now - _lastRefreshTime).Minutes >= _refreshIntervalMinutes AndAlso _areaCode <> String.Empty AndAlso Not Me.IsRefreshing Then
-            Log.Debug("plugin: BBCWeather: autoupdating data.")
-            BackgroundUpdate(True)
-        End If
-
-        MyBase.Process()
 
     End Sub
 
@@ -448,6 +424,7 @@ Public Class BBCWeatherPlugin
 #Region "Skin control methods"
 
     Private Sub RefreshNewMode()
+        ClearAllNonHeaderAndCurrentWeatherControls()
         Select Case _currentMode
             Case Mode.FiveDay
                 GUIControl.FocusControl(GetID, 2)
@@ -463,6 +440,13 @@ Public Class BBCWeatherPlugin
                 SetMapsModeControls()
         End Select
         GUIControl.FocusControl(GetID, 9999)
+    End Sub
+
+    Private Sub ClearAllNonHeaderAndCurrentWeatherControls()
+        Clear5DayModeControls()
+        Clear24HourModeControls()
+        ClearMonthlyModeControls()
+        ClearMapsModeControls()
     End Sub
 
     Private Sub HideAllControls()
@@ -492,6 +476,33 @@ Public Class BBCWeatherPlugin
         GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_VISIBILITY, _currentVisibility)
         GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_OBS_TIME, _currentObsTime)
         GUIControl.SetControlLabel(GetID, Controls.LBL_CURRENT_OBS_STATION, _currentObsStation)
+
+    End Sub
+
+    Private Sub Clear5DayModeControls()
+
+        Dim image As GUIImage = Nothing
+        Dim summary As String = String.Empty
+        For dayNum As Integer = 0 To 4
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_DAYNAME + (dayNum * 20), "")
+            image = DirectCast(GetControl(Controls.IMG_DAY0_SUMMARY_IMAGE + (dayNum * 20)), GUIImage)
+            image.SetFileName("")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_SUMMARY_LABEL + (dayNum * 20), "")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_SUMMARY_LABEL_SHORT + (dayNum * 20), "")
+            image = DirectCast(GetControl(Controls.IMG_DAY0_MAXTEMP_IMAGE + (dayNum * 20)), GUIImage)
+            image.SetFileName("")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_MAXTEMP_LABEL + (dayNum * 20), "")
+            image = DirectCast(GetControl(Controls.IMG_DAY0_MINTEMP_IMAGE + (dayNum * 20)), GUIImage)
+            image.SetFileName("")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_MINTEMP_LABEL + (dayNum * 20), "")
+            image = DirectCast(GetControl(Controls.IMG_DAY0_WIND_IMAGE + (dayNum * 20)), GUIImage)
+            image.SetFileName("")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_WIND_LABEL + (dayNum * 20), "")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_HUMIDITY_LABEL + (dayNum * 20), "")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_PRESSURE_LABEL + (dayNum * 20), "")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_DAY0_VISIBILITY_LABEL + (dayNum * 20), "")
+
+        Next
 
     End Sub
 
@@ -535,6 +546,30 @@ Public Class BBCWeatherPlugin
 
     End Sub
 
+    Private Sub Clear24HourModeControls()
+
+        Dim image As GUIImage = Nothing
+
+        For hourNum As Integer = 0 To 7
+
+            GUIControl.SetControlLabel(GetID, Controls.LBL_HOUR0_HOURNAME + (hourNum * 20), "")
+            image = DirectCast(GetControl(Controls.IMG_HOUR0_SUMMARY_IMAGE + (hourNum * 20)), GUIImage)
+            image.SetFileName("")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_HOUR0_SUMMARY_LABEL + (hourNum * 20), "")
+            image = DirectCast(GetControl(Controls.IMG_HOUR0_MAXTEMP_IMAGE + (hourNum * 20)), GUIImage)
+            image.SetFileName("")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_HOUR0_MAXTEMP_LABEL + (hourNum * 20), "")
+            image = DirectCast(GetControl(Controls.IMG_HOUR0_WIND_IMAGE + (hourNum * 20)), GUIImage)
+            image.SetFileName("")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_HOUR0_WIND_LABEL + (hourNum * 20), "")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_HOUR0_HUMIDITY_LABEL + (hourNum * 20), "")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_HOUR0_PRESSURE_LABEL + (hourNum * 20), "")
+            GUIControl.SetControlLabel(GetID, Controls.LBL_HOUR0_VISIBILITY_LABEL + (hourNum * 20), "")
+
+        Next
+
+    End Sub
+
     Private Sub Set24HourModeControls()
 
         HideAllControls()
@@ -567,6 +602,15 @@ Public Class BBCWeatherPlugin
 
     End Sub
 
+    Private Sub ClearMonthlyModeControls()
+
+        GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_HEADING_LABEL, "")
+        GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_PUBLISHED_LABEL, "")
+        GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_HEADLINE_LABEL, "")
+        GUIControl.SetControlLabel(GetID, Controls.TBX_MONTHLY_DETAIL_TEXTBOX, "")
+
+    End Sub
+
     Private Sub SetMonthlyModeControls()
 
         HideAllControls()
@@ -579,9 +623,8 @@ Public Class BBCWeatherPlugin
 
         Dim txt As String
         txt = String.Format("{0} {1}", _monthly.publishedDate, _monthly.nextUpdate)
-
+        GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_HEADING_LABEL, "Monthly Outlook")
         GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_PUBLISHED_LABEL, txt)
-        'GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_AUTHOR_LABEL, _monthly.author)
         GUIControl.SetControlLabel(GetID, Controls.LBL_MONTHLY_HEADLINE_LABEL, _monthly.headline)
 
         Dim break As String = String.Format("{0}{1}{0}", Environment.NewLine, Replicate("=", 30))
@@ -603,6 +646,16 @@ Public Class BBCWeatherPlugin
 
     End Sub
 
+    Private Sub ClearMapsModeControls()
+
+        Dim image As GUIImage = DirectCast(GetControl(Controls.IMG_MAPS_ANIMATIONS_OVERLAY), GUIImage)
+        image.SetFileName("")
+
+        Dim mImage As GUIMultiImage = DirectCast(GetControl(Controls.IMG_MAPS_ANIMATIONS), GUIMultiImage)
+        mImage.AllocResources()
+
+    End Sub
+
     Private Sub SetMapsModeControls()
 
         HideAllControls()
@@ -614,7 +667,7 @@ Public Class BBCWeatherPlugin
         Next
 
         Dim image As GUIImage = DirectCast(GetControl(Controls.IMG_MAPS_ANIMATIONS_OVERLAY), GUIImage)
-        image.SetFileName(String.Format("{0}\Media\BBCWeather\overlay.png", GUIGraphicsContext.Skin))
+        image.SetFileName(String.Format("{0}\BBCWeather\overlay.png", Config.GetFolder(Config.Dir.Cache), _areaCode))
 
         Dim mImage As GUIMultiImage = DirectCast(GetControl(Controls.IMG_MAPS_ANIMATIONS), GUIMultiImage)
         mImage.AllocResources()
@@ -851,52 +904,54 @@ Public Class BBCWeatherPlugin
 
 #Region "Background updaters"
 
-    Private Sub BackgroundUpdate(isAuto As Boolean)
-        Dim updateThread As New Thread(New ParameterizedThreadStart(AddressOf DownloadWorker))
-        updateThread.IsBackground = True
-        updateThread.Name = "BBC Weather updater"
-        IsRefreshing = True
-        updateThread.Start(isAuto)
+    Private Sub ScheduleTimer()
 
-        While IsRefreshing
-            GUIWindowManager.Process()
-        End While
+        Log.Debug("BBCWeather - scheduler timer thread started")
+
+        Dim methodToExecute As TimerCallback = (AddressOf RefreshMe)
+        Dim timeBetweenCalls As Integer = CInt(New System.TimeSpan(0, _refreshIntervalMinutes, 0).TotalMilliseconds)
+        Dim timeToFirstExecution As Integer = 1000
+        timer = New System.Threading.Timer(methodToExecute, Nothing, timeToFirstExecution, timeBetweenCalls)
+
+        Log.Info("BBCWeather - timeBetweenCalls: {0}", timeBetweenCalls)
 
     End Sub
 
-    <MethodImpl(MethodImplOptions.Synchronized)> _
-    Private Sub DownloadWorker(data As Object)
-        RefreshMe(CBool(data))
-        'do an autoUpdate refresh
-        IsRefreshing = False
+    Private Sub StopScheduleTimer()
+
+        timer.Dispose()
+
     End Sub
 
 #End Region
 
 #Region "Main refresh method"
 
-    Private Sub RefreshMe(autoUpdate As Boolean)
-
-        If Not autoUpdate Then HideAllControls()
-
+    Private Sub RefreshMe()
+        Dim GUI As Boolean = False
+        If GUIWindowManager.ActiveWindow = 8192 Then GUI = True
         SyncLock _downloadLock
-            Using cursor As New WaitCursor()
-
-                If DownloadAll() Then
-                    If Not ParseCurrentObservation() AndAlso Not autoUpdate Then DisplayErrorDialog("current observation")
-                    If Not Parse5DayWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("5 day forecast")
-                    If Not Parse24HourWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("24 hour forecast")
-                    If Not ParseMonthlyWeatherInfo() AndAlso Not autoUpdate Then DisplayErrorDialog("monthly outlook")
-                    If Not ParseMapOverlay() AndAlso Not autoUpdate Then DisplayErrorDialog("map overlay")
-                    If Not SetInfoServiceProperties() AndAlso Not autoUpdate Then DisplayErrorDialog("info properties")
+            If DownloadAll() Then
+                If GUI Then
+                    Using cursor As New WaitCursor()
+                        If Not ParseCurrentObservation() Then DisplayErrorDialog("current observation")
+                        If Not Parse5DayWeatherInfo() Then DisplayErrorDialog("5 day forecast")
+                        If Not Parse24HourWeatherInfo() Then DisplayErrorDialog("24 hour forecast")
+                        If Not ParseMonthlyWeatherInfo() Then DisplayErrorDialog("monthly outlook")
+                        If Not ParseMapOverlay() Then DisplayErrorDialog("map overlay")
+                        If Not SetInfoServiceProperties() Then DisplayErrorDialog("info properties")
+                    End Using
+                    RefreshNewMode()
+                Else
+                    ParseCurrentObservation()
+                    Parse5DayWeatherInfo()
+                    Parse24HourWeatherInfo()
+                    ParseMonthlyWeatherInfo()
+                    ParseMapOverlay()
+                    SetInfoServiceProperties()
                 End If
-
-                _lastRefreshTime = DateTime.Now
-
-            End Using
+            End If
         End SyncLock
-
-        If Not autoUpdate Then RefreshNewMode()
 
     End Sub
 
@@ -1469,7 +1524,8 @@ Public Class BBCWeatherPlugin
 
         Next
 
-        bitmap.Save(String.Format("{0}\Media\BBCWeather\overlay.png", GUIGraphicsContext.Skin), Imaging.ImageFormat.Png)
+
+        bitmap.Save(String.Format("{0}\BBCWeather\overlay.png", Config.GetFolder(Config.Dir.Cache), _areaCode))
         graphic.Dispose()
         bitmap.Dispose()
 

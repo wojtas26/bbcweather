@@ -116,7 +116,7 @@
           <onright>9999</onright>
           <ondown>2</ondown>
         </control>
-   
+      
       </control>
   
   </control>
@@ -2090,7 +2090,7 @@
       <id>500</id>
       <posX>580</posX>
       <posY>210</posY>
-      <label>UK Monthly Outlook</label>
+      <label>-</label>
       <font>fontB20</font>
       <textcolor>White</textcolor>
     </control>
@@ -2105,21 +2105,11 @@
       <textcolor>85cffe</textcolor>
     </control>
     <control>
-      <description>Monthly outlook author label</description>
-      <type>label</type>
-      <id>502</id>
-      <posX>580</posX>
-      <posY>290</posY>
-      <label>-</label>
-      <font>AvalonLight14</font>
-      <textcolor>85cffe</textcolor>
-    </control>
-    <control>
       <description>Monthly outlook headline label</description>
       <type>label</type>
       <id>503</id>
       <posX>580</posX>
-      <posY>320</posY>
+      <posY>290</posY>
       <label>-</label>
       <font>AvalonLight14</font>
       <textcolor>85cffe</textcolor>
@@ -2129,8 +2119,8 @@
       <type>textboxscrollup</type>
       <id>504</id>
       <posX>580</posX>
-      <posY>380</posY>
-      <height>430</height>
+      <posY>350</posY>
+      <height>460</height>
       <width>1280</width>
       <label>-</label>
       <font>AvalonLight14</font>

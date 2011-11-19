@@ -326,7 +326,9 @@
     <Content Include="skin\Blue3Wide\BBCWeather.xml" />
     <Content Include="skin\Blue3\BBCWeather.xml" />
     <Content Include="skin\DefaultWide\animations\BBCWeather\blank.txt" />
-    <Content Include="skin\DefaultWide\BBCWeather.xml" />
+    <Content Include="skin\DefaultWide\BBCWeather.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="skin\Default\animations\BBCWeather\blank.txt" />
     <Content Include="skin\Default\BBCWeather.xml" />
   </ItemGroup>
