@@ -2520,17 +2520,20 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <UpdateUrl>http://bbcweather.googlecode.com/svn/trunk/BBCWeather/update.xml</UpdateUrl>
     <Version>
       <Major>0</Major>
-      <Minor>3</Minor>
+      <Minor>4</Minor>
       <Build>0</Build>
-      <Revision>35</Revision>
+      <Revision>41</Revision>
     </Version>
     <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
-    <VersionDescription>v0.3 for MP 1.2.x
-Added configurable units
-Added optional override InfoService properties</VersionDescription>
+    <VersionDescription>v0.4 for MP 1.2.x
+Moved overlay.png into cache folder
+Changed background thread to run on a timer
+Allowed the refresh interval to be configurable
+Cleared GUI controls when refreshing to hide flicker (hopefully)
+Removed Monthly forecast Author field</VersionDescription>
     <DevelopmentStatus>Beta</DevelopmentStatus>
-    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.3.0.35.for.MP.1.2.x.mpe1</OnlineLocation>
-    <ReleaseDate>2011-11-10T07:10:04</ReleaseDate>
+    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.0.41.for.MP.1.2.x.mpe1</OnlineLocation>
+    <ReleaseDate>2011-11-19T07:10:04</ReleaseDate>
     <Tags />
     <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
     <Params>
