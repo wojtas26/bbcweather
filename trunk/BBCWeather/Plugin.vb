@@ -1244,11 +1244,20 @@ Public Class BBCWeatherPlugin
 
     Private Function ParseRegionName() As Boolean
 
+        If Not Win32API.IsConnectedToInternet() Then
+            Log.Error("plugin: BBCWeather - error downloading weather, no internet connection")
+            Return False
+        End If
+
         Dim URL As String = String.Format("http://news.bbc.co.uk/weather/forecast/{0}/MapPresenterInner.json", _areaCode)
-        Dim response As String = New WebClient().DownloadString(URL)
-        Dim jo1 As JsonObject = CType(Conversion.JsonConvert.Import(response), JsonObject)
-        Dim jo2 As JsonObject = jo1.Item("MapPresenter")
-        _regionName = jo2.Item("showLocation")
+        Try
+            Dim response As String = New WebClient().DownloadString(URL)
+            Dim jo1 As JsonObject = CType(Conversion.JsonConvert.Import(response), JsonObject)
+            Dim jo2 As JsonObject = jo1.Item("MapPresenter")
+            _regionName = jo2.Item("showLocation")
+        Catch ex As Exception
+            Log.Error("plugin: BBCWeather - error downloading weather from {0}", URL)
+        End Try
 
         Return True
 
