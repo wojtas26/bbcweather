@@ -2529,7 +2529,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
 
 Fixed bug which crashed MP by trying to download when no internet connection is available.</VersionDescription>
     <DevelopmentStatus>Beta</DevelopmentStatus>
-    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.[Version].for.MP.1.2.x.mpe1</OnlineLocation>
+    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.1.43.for.MP.1.2.x.mpe1</OnlineLocation>
     <ReleaseDate>2011-11-19T07:10:04</ReleaseDate>
     <Tags />
     <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
