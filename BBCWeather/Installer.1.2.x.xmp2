@@ -2522,15 +2522,15 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Major>0</Major>
       <Minor>4</Minor>
       <Build>1</Build>
-      <Revision>43</Revision>
+      <Revision>47</Revision>
     </Version>
     <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
     <VersionDescription>v0.4.1 for MP 1.2.x
 
-Fixed bug which crashed MP by trying to download when no internet connection is available.</VersionDescription>
+Fixed bug which failed to display N/A weather image.</VersionDescription>
     <DevelopmentStatus>Beta</DevelopmentStatus>
-    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.1.43.for.MP.1.2.x.mpe1</OnlineLocation>
-    <ReleaseDate>2011-11-19T07:10:04</ReleaseDate>
+    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.1.47.for.MP.1.2.x.mpe1</OnlineLocation>
+    <ReleaseDate>2011-11-24T07:10:04</ReleaseDate>
     <Tags />
     <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
     <Params>

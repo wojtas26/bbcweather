@@ -882,10 +882,14 @@ Public Class BBCWeatherPlugin
             End Select
         End If
 
+        Dim imgString As String = img.ToString
+
+        If imgString = "99" Then imgString = "na"
+
         If fullPath Then
-            Return (String.Format("{0}\Media\BBCWeather\weather\{1}.png", GUIGraphicsContext.Skin, img.ToString))
+            Return (String.Format("{0}\Media\BBCWeather\weather\{1}.png", GUIGraphicsContext.Skin, imgString))
         Else
-            Return img.ToString
+            Return imgString
         End If
 
     End Function
