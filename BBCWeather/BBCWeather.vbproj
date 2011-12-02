@@ -134,7 +134,6 @@
     <None Include="Images\templates\globes.pdn" />
     <None Include="Images\templates\hover_BBC weather.pdn" />
     <None Include="Images\templates\Weather images.pdn" />
-    <None Include="Installer.1.2.0.beta.xmp2" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
