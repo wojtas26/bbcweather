@@ -134,6 +134,7 @@
     <None Include="Images\templates\globes.pdn" />
     <None Include="Images\templates\hover_BBC weather.pdn" />
     <None Include="Images\templates\Weather images.pdn" />
+    <None Include="Installer.1.2.0.beta.xmp2" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -322,6 +323,8 @@
     <Content Include="skin\Black Glass HD\BBCweather.xml" />
     <Content Include="skin\Black Glass HD\Media\BBCWeather\bg_map_background.png" />
     <Content Include="skin\Black Glass HD\Media\hover_BBCWeather.png" />
+    <Content Include="skin\Blue3Wide\BBCWeather.xml" />
+    <Content Include="skin\Blue3\BBCWeather.xml" />
     <Content Include="skin\DefaultWide\animations\BBCWeather\blank.txt" />
     <Content Include="skin\DefaultWide\BBCWeather.xml">
       <SubType>Designer</SubType>
@@ -332,7 +335,10 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="skin\Blue3Wide\animations\BBCWeather\" />
+    <Folder Include="skin\Blue3\animations\BBCWeather\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
