@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExtensionCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Items>
+    <PackageClass>
+      <Version>2.0</Version>
+      <Groups>
+        <Items>
+          <GroupItem Name="Default">
+            <DisplayName>Default</DisplayName>
+            <DefaulChecked>true</DefaulChecked>
+            <Description>Default</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="BlackGlass">
+            <DisplayName>BlackGlass</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>BlackGlass</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="Avalon">
+            <DisplayName>Avalon</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>Avalon</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+        </Items>
+      </Groups>
+      <Sections>
+        <Items />
+      </Sections>
+      <Dependencies>
+        <Items>
+          <DependencyItem>
+            <Type>MediaPortal</Type>
+            <Id />
+            <MinVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MinVersion>
+            <MaxVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MaxVersion>
+            <WarnOnly>false</WarnOnly>
+            <Message>Minimum requirement is MediaPortal 1.2.0.</Message>
+            <Name>MediaPortal</Name>
+          </DependencyItem>
+        </Items>
+      </Dependencies>
+      <PluginDependencies>
+        <Items>
+          <PluginDependencyItem AssemblyName="BBCWeather.dll">
+            <CompatibleVersion>
+              <Items>
+                <CompatibleVersionItem>
+                  <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+                  <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+                </CompatibleVersionItem>
+              </Items>
+            </CompatibleVersion>
+            <SubSystemsUsed>
+              <Items />
+            </SubSystemsUsed>
+          </PluginDependencyItem>
+        </Items>
+      </PluginDependencies>
+      <GeneralInfo>
+        <Name>BBC Weather</Name>
+        <Id>7d91aa07-388c-427f-86dc-7d89eb5b5cad</Id>
+        <Author>Cheezey</Author>
+        <HomePage>http://wiki.team-mediaportal.com/1_MEDIAPORTAL_1/17_Extensions/3_Plugins/BBC_Weather</HomePage>
+        <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/plugin-bbc-weather-97171/</ForumPage>
+        <UpdateUrl>http://bbcweather.googlecode.com/svn/trunk/BBCWeather/update.xml</UpdateUrl>
+        <Version>
+          <Major>0</Major>
+          <Minor>3</Minor>
+          <Build>0</Build>
+          <Revision>35</Revision>
+        </Version>
+        <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
+        <VersionDescription>v0.3 for MP 1.2.x
+Added configurable units
+Added optional override InfoService properties</VersionDescription>
+        <DevelopmentStatus>Beta</DevelopmentStatus>
+        <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.3.0.35.for.MP.1.2.x.mpe1</OnlineLocation>
+        <ReleaseDate>2011-11-10T07:10:04</ReleaseDate>
+        <Tags />
+        <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
+        <Params>
+          <Items>
+            <SectionParam Name="Online Icon">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+            </SectionParam>
+            <SectionParam Name="Configuration file">
+              <Value />
+              <ValueType>Template</ValueType>
+              <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+            </SectionParam>
+            <SectionParam Name="Online Screenshots">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Online stored screenshot urls separated by ; </Description>
+            </SectionParam>
+            <SectionParam Name="Force to uninstall on update">
+              <Value>yes</Value>
+              <ValueType>Bool</ValueType>
+              <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+      </GeneralInfo>
+      <UniqueFileList>
+        <Items />
+      </UniqueFileList>
+      <ProjectSettings>
+        <FolderGroups />
+      </ProjectSettings>
+      <IsSkin>false</IsSkin>
+    </PackageClass>
+    <PackageClass>
+      <Version>2.0</Version>
+      <Groups>
+        <Items>
+          <GroupItem Name="Default">
+            <DisplayName>Default</DisplayName>
+            <DefaulChecked>true</DefaulChecked>
+            <Description>Default</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="BlackGlass">
+            <DisplayName>BlackGlass</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>BlackGlass</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="Avalon">
+            <DisplayName>Avalon</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>Avalon</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+        </Items>
+      </Groups>
+      <Sections>
+        <Items />
+      </Sections>
+      <Dependencies>
+        <Items>
+          <DependencyItem>
+            <Type>MediaPortal</Type>
+            <Id />
+            <MinVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MinVersion>
+            <MaxVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MaxVersion>
+            <WarnOnly>false</WarnOnly>
+            <Message>Minimum requirement is MediaPortal 1.2.0.</Message>
+            <Name>MediaPortal</Name>
+          </DependencyItem>
+        </Items>
+      </Dependencies>
+      <PluginDependencies>
+        <Items>
+          <PluginDependencyItem AssemblyName="BBCWeather.dll">
+            <CompatibleVersion>
+              <Items>
+                <CompatibleVersionItem>
+                  <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+                  <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+                </CompatibleVersionItem>
+              </Items>
+            </CompatibleVersion>
+            <SubSystemsUsed>
+              <Items />
+            </SubSystemsUsed>
+          </PluginDependencyItem>
+        </Items>
+      </PluginDependencies>
+      <GeneralInfo>
+        <Name>BBC Weather</Name>
+        <Id>7d91aa07-388c-427f-86dc-7d89eb5b5cad</Id>
+        <Author>Cheezey</Author>
+        <HomePage>http://wiki.team-mediaportal.com/1_MEDIAPORTAL_1/17_Extensions/3_Plugins/BBC_Weather</HomePage>
+        <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/plugin-bbc-weather-97171/</ForumPage>
+        <UpdateUrl>http://bbcweather.googlecode.com/svn/trunk/BBCWeather/update.xml</UpdateUrl>
+        <Version>
+          <Major>0</Major>
+          <Minor>4</Minor>
+          <Build>0</Build>
+          <Revision>41</Revision>
+        </Version>
+        <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
+        <VersionDescription>v0.4 for MP 1.2.x
+Moved overlay.png into cache folder
+Changed background thread to run on a timer
+Allowed the refresh interval to be configurable
+Cleared GUI controls when refreshing to hide flicker (hopefully)
+Removed Monthly forecast Author field</VersionDescription>
+        <DevelopmentStatus>Beta</DevelopmentStatus>
+        <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.0.41.for.MP.1.2.x.mpe1</OnlineLocation>
+        <ReleaseDate>2011-11-19T07:10:04</ReleaseDate>
+        <Tags />
+        <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
+        <Params>
+          <Items>
+            <SectionParam Name="Online Icon">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+            </SectionParam>
+            <SectionParam Name="Configuration file">
+              <Value />
+              <ValueType>Template</ValueType>
+              <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+            </SectionParam>
+            <SectionParam Name="Online Screenshots">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Online stored screenshot urls separated by ; </Description>
+            </SectionParam>
+            <SectionParam Name="Force to uninstall on update">
+              <Value>yes</Value>
+              <ValueType>Bool</ValueType>
+              <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+      </GeneralInfo>
+      <UniqueFileList>
+        <Items />
+      </UniqueFileList>
+      <ProjectSettings>
+        <FolderGroups />
+      </ProjectSettings>
+      <IsSkin>false</IsSkin>
+    </PackageClass>
+    <PackageClass>
+      <Version>2.0</Version>
+      <Groups>
+        <Items>
+          <GroupItem Name="Default">
+            <DisplayName>Default</DisplayName>
+            <DefaulChecked>true</DefaulChecked>
+            <Description>Default</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="BlackGlass">
+            <DisplayName>BlackGlass</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>BlackGlass</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="Avalon">
+            <DisplayName>Avalon</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>Avalon</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+        </Items>
+      </Groups>
+      <Sections>
+        <Items />
+      </Sections>
+      <Dependencies>
+        <Items>
+          <DependencyItem>
+            <Type>MediaPortal</Type>
+            <Id />
+            <MinVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MinVersion>
+            <MaxVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MaxVersion>
+            <WarnOnly>false</WarnOnly>
+            <Message>Minimum requirement is MediaPortal 1.2.0.</Message>
+            <Name>MediaPortal</Name>
+          </DependencyItem>
+        </Items>
+      </Dependencies>
+      <PluginDependencies>
+        <Items>
+          <PluginDependencyItem AssemblyName="BBCWeather.dll">
+            <CompatibleVersion>
+              <Items>
+                <CompatibleVersionItem>
+                  <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+                  <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+                </CompatibleVersionItem>
+              </Items>
+            </CompatibleVersion>
+            <SubSystemsUsed>
+              <Items />
+            </SubSystemsUsed>
+          </PluginDependencyItem>
+        </Items>
+      </PluginDependencies>
+      <GeneralInfo>
+        <Name>BBC Weather</Name>
+        <Id>7d91aa07-388c-427f-86dc-7d89eb5b5cad</Id>
+        <Author>Cheezey</Author>
+        <HomePage>http://wiki.team-mediaportal.com/1_MEDIAPORTAL_1/17_Extensions/3_Plugins/BBC_Weather</HomePage>
+        <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/plugin-bbc-weather-97171/</ForumPage>
+        <UpdateUrl>http://bbcweather.googlecode.com/svn/trunk/BBCWeather/update.xml</UpdateUrl>
+        <Version>
+          <Major>0</Major>
+          <Minor>4</Minor>
+          <Build>1</Build>
+          <Revision>43</Revision>
+        </Version>
+        <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
+        <VersionDescription>v0.4.1 for MP 1.2.x
+
+Fixed bug which crashed MP by trying to download when no internet connection is available.</VersionDescription>
+        <DevelopmentStatus>Beta</DevelopmentStatus>
+        <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.1.43.for.MP.1.2.x.mpe1</OnlineLocation>
+        <ReleaseDate>2011-11-19T07:10:04</ReleaseDate>
+        <Tags />
+        <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
+        <Params>
+          <Items>
+            <SectionParam Name="Online Icon">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+            </SectionParam>
+            <SectionParam Name="Configuration file">
+              <Value />
+              <ValueType>Template</ValueType>
+              <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+            </SectionParam>
+            <SectionParam Name="Online Screenshots">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Online stored screenshot urls separated by ; </Description>
+            </SectionParam>
+            <SectionParam Name="Force to uninstall on update">
+              <Value>yes</Value>
+              <ValueType>Bool</ValueType>
+              <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+      </GeneralInfo>
+      <UniqueFileList>
+        <Items />
+      </UniqueFileList>
+      <ProjectSettings>
+        <FolderGroups />
+      </ProjectSettings>
+      <IsSkin>false</IsSkin>
+    </PackageClass>
+    <PackageClass>
+      <Version>2.0</Version>
+      <Groups>
+        <Items>
+          <GroupItem Name="Default">
+            <DisplayName>Default</DisplayName>
+            <DefaulChecked>true</DefaulChecked>
+            <Description>Default</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="BlackGlass">
+            <DisplayName>BlackGlass</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>BlackGlass</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="Avalon">
+            <DisplayName>Avalon</DisplayName>
+            <DefaulChecked>false</DefaulChecked>
+            <Description>Avalon</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+        </Items>
+      </Groups>
+      <Sections>
+        <Items />
+      </Sections>
+      <Dependencies>
+        <Items>
+          <DependencyItem>
+            <Type>MediaPortal</Type>
+            <Id />
+            <MinVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MinVersion>
+            <MaxVersion>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
+            </MaxVersion>
+            <WarnOnly>false</WarnOnly>
+            <Message>Minimum requirement is MediaPortal 1.2.0.</Message>
+            <Name>MediaPortal</Name>
+          </DependencyItem>
+        </Items>
+      </Dependencies>
+      <PluginDependencies>
+        <Items>
+          <PluginDependencyItem AssemblyName="BBCWeather.dll">
+            <CompatibleVersion>
+              <Items>
+                <CompatibleVersionItem>
+                  <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+                  <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+                </CompatibleVersionItem>
+              </Items>
+            </CompatibleVersion>
+            <SubSystemsUsed>
+              <Items />
+            </SubSystemsUsed>
+          </PluginDependencyItem>
+        </Items>
+      </PluginDependencies>
+      <GeneralInfo>
+        <Name>BBC Weather</Name>
+        <Id>7d91aa07-388c-427f-86dc-7d89eb5b5cad</Id>
+        <Author>Cheezey</Author>
+        <HomePage>http://wiki.team-mediaportal.com/1_MEDIAPORTAL_1/17_Extensions/3_Plugins/BBC_Weather</HomePage>
+        <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/plugin-bbc-weather-97171/</ForumPage>
+        <UpdateUrl>http://bbcweather.googlecode.com/svn/trunk/BBCWeather/update.xml</UpdateUrl>
+        <Version>
+          <Major>0</Major>
+          <Minor>4</Minor>
+          <Build>1</Build>
+          <Revision>47</Revision>
+        </Version>
+        <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
+        <VersionDescription>v0.4.1 for MP 1.2.x
+
+Fixed bug which failed to display N/A weather image.</VersionDescription>
+        <DevelopmentStatus>Stable</DevelopmentStatus>
+        <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.1.47.for.MP.1.2.x.mpe1</OnlineLocation>
+        <ReleaseDate>2011-11-24T07:10:04</ReleaseDate>
+        <Tags />
+        <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
+        <Params>
+          <Items>
+            <SectionParam Name="Online Icon">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+            </SectionParam>
+            <SectionParam Name="Configuration file">
+              <Value />
+              <ValueType>Template</ValueType>
+              <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+            </SectionParam>
+            <SectionParam Name="Online Screenshots">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Online stored screenshot urls separated by ; </Description>
+            </SectionParam>
+            <SectionParam Name="Force to uninstall on update">
+              <Value>yes</Value>
+              <ValueType>Bool</ValueType>
+              <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+      </GeneralInfo>
+      <UniqueFileList>
+        <Items />
+      </UniqueFileList>
+      <ProjectSettings>
+        <FolderGroups />
+      </ProjectSettings>
+      <IsSkin>false</IsSkin>
+    </PackageClass>
+  </Items>
+</ExtensionCollection>
