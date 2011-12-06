@@ -39,9 +39,12 @@ Partial Class PluginSetupForm
         Me.rbnDegF = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.numInterval = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.clbLocations = New System.Windows.Forms.CheckedListBox()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnRemove = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -64,9 +67,9 @@ Partial Class PluginSetupForm
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(13, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(225, 13)
+        Me.Label1.Size = New System.Drawing.Size(267, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Enter a town, city, UK county or UK postcode:"
+        Me.Label1.Text = "Enter your location (locality, town, city or UK postcode):"
         '
         'tbxInput
         '
@@ -89,9 +92,9 @@ Partial Class PluginSetupForm
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(183, 374)
+        Me.btnSave.Location = New System.Drawing.Point(407, 307)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(55, 23)
+        Me.btnSave.Size = New System.Drawing.Size(70, 23)
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -99,7 +102,7 @@ Partial Class PluginSetupForm
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.BBCWeather.My.Resources.Resources.btn_donate_SM
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 374)
+        Me.PictureBox1.Location = New System.Drawing.Point(402, 13)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(75, 23)
         Me.PictureBox1.TabIndex = 5
@@ -121,7 +124,7 @@ Partial Class PluginSetupForm
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.rbnKph)
         Me.GroupBox1.Controls.Add(Me.rbnMph)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 236)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 259)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(222, 40)
         Me.GroupBox1.TabIndex = 7
@@ -194,7 +197,7 @@ Partial Class PluginSetupForm
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.rbnDegF)
         Me.GroupBox2.Controls.Add(Me.rbnDegC)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 282)
+        Me.GroupBox2.Location = New System.Drawing.Point(255, 259)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(222, 40)
         Me.GroupBox2.TabIndex = 8
@@ -204,20 +207,11 @@ Partial Class PluginSetupForm
         '
         Me.GroupBox3.Controls.Add(Me.numInterval)
         Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 328)
+        Me.GroupBox3.Location = New System.Drawing.Point(255, 213)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(222, 40)
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 16)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Refresh interval (mins)"
         '
         'numInterval
         '
@@ -230,20 +224,61 @@ Partial Class PluginSetupForm
         Me.numInterval.TabIndex = 3
         Me.numInterval.Value = New Decimal(New Integer() {15, 0, 0, 0})
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(111, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Refresh interval (mins)"
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.cbxInfoService)
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 190)
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 213)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(222, 40)
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         '
+        'clbLocations
+        '
+        Me.clbLocations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.clbLocations.CheckOnClick = True
+        Me.clbLocations.FormattingEnabled = True
+        Me.clbLocations.HorizontalScrollbar = True
+        Me.clbLocations.Location = New System.Drawing.Point(255, 77)
+        Me.clbLocations.Name = "clbLocations"
+        Me.clbLocations.Size = New System.Drawing.Size(222, 107)
+        Me.clbLocations.TabIndex = 11
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(168, 190)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(70, 23)
+        Me.btnAdd.TabIndex = 12
+        Me.btnAdd.Text = "Add ->"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'btnRemove
+        '
+        Me.btnRemove.Location = New System.Drawing.Point(255, 190)
+        Me.btnRemove.Name = "btnRemove"
+        Me.btnRemove.Size = New System.Drawing.Size(70, 23)
+        Me.btnRemove.TabIndex = 13
+        Me.btnRemove.Text = "<- Remove"
+        Me.btnRemove.UseVisualStyleBackColor = True
+        '
         'PluginSetupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(255, 405)
+        Me.ClientSize = New System.Drawing.Size(494, 342)
+        Me.Controls.Add(Me.btnRemove)
+        Me.Controls.Add(Me.btnAdd)
+        Me.Controls.Add(Me.clbLocations)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -255,7 +290,11 @@ Partial Class PluginSetupForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(510, 380)
+        Me.MinimumSize = New System.Drawing.Size(510, 380)
         Me.Name = "PluginSetupForm"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "BBC Weather config"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -290,4 +329,7 @@ Partial Class PluginSetupForm
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents numInterval As System.Windows.Forms.NumericUpDown
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents clbLocations As System.Windows.Forms.CheckedListBox
+    Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents btnRemove As System.Windows.Forms.Button
 End Class
