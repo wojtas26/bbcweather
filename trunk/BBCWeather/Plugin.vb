@@ -1500,49 +1500,51 @@ Public Class BBCWeatherPlugin
     Private Function ParseMapOverlay() As Boolean
 
         Dim doc As New XmlDocument
-        doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode))
+        Try
+            doc.Load(String.Format("{0}\BBCWeather\BBCWeather_{1}.xml", Config.GetFolder(Config.Dir.Cache), _areaCode))
 
-        Dim nodes As XmlNodeList = doc.SelectNodes("//placename")
+            Dim nodes As XmlNodeList = doc.SelectNodes("//placename")
 
-        Dim name As String = String.Empty
-        Dim x As Integer = 0
-        Dim y As Integer = 0
-        Dim align As String = String.Empty
+            Dim name As String = String.Empty
+            Dim x As Integer = 0
+            Dim y As Integer = 0
+            Dim align As String = String.Empty
 
-        Dim bitmap As New Bitmap(453, 500)
-        Dim graphic As Graphics = Graphics.FromImage(bitmap)
-        Dim font As New Font("Verdana", 10, FontStyle.Bold)
+            Dim bitmap As New Bitmap(453, 500)
+            Dim graphic As Graphics = Graphics.FromImage(bitmap)
+            Dim font As New Font("Verdana", 10, FontStyle.Bold)
 
-        For Each node As XmlNode In nodes
-            name = node.Attributes("name").Value
-            x = node.Attributes("x").Value
-            y = node.Attributes("y").Value
-            align = node.Attributes("align").Value
-            Dim rect As Rectangle = New Rectangle(x - 2, y - 2, 5, 5)
-            graphic.DrawRectangle(Pens.White, rect)
-            graphic.FillRectangle(Brushes.White, rect)
+            For Each node As XmlNode In nodes
+                name = node.Attributes("name").Value
+                x = node.Attributes("x").Value
+                y = node.Attributes("y").Value
+                align = node.Attributes("align").Value
+                Dim rect As Rectangle = New Rectangle(x - 2, y - 2, 5, 5)
+                graphic.DrawRectangle(Pens.White, rect)
+                graphic.FillRectangle(Brushes.White, rect)
 
-            If align.ToLower = "left" Then
-                Dim offset As SizeF = graphic.MeasureString(name, font)
-                x = x - offset.Width + 2
-            Else
-                x += 7
-            End If
+                If align.ToLower = "left" Then
+                    Dim offset As SizeF = graphic.MeasureString(name, font)
+                    x = x - offset.Width + 2
+                Else
+                    x += 7
+                End If
 
-            Dim point1 As New Point(x - 3, y - 7)
-            graphic.DrawString(name, font, Brushes.Black, point1)
-            Dim point2 As New Point(x - 2, y - 8)
-            graphic.DrawString(name, font, Brushes.White, point2)
-            graphic.Save()
+                Dim point1 As New Point(x - 3, y - 7)
+                graphic.DrawString(name, font, Brushes.Black, point1)
+                Dim point2 As New Point(x - 2, y - 8)
+                graphic.DrawString(name, font, Brushes.White, point2)
+                graphic.Save()
 
-        Next
-
-
-        bitmap.Save(String.Format("{0}\BBCWeather\overlay.png", Config.GetFolder(Config.Dir.Cache), _areaCode))
-        graphic.Dispose()
-        bitmap.Dispose()
-
-
+            Next
+            bitmap.Save(String.Format("{0}\BBCWeather\overlay.png", Config.GetFolder(Config.Dir.Cache), _areaCode))
+            graphic.Dispose()
+            bitmap.Dispose()
+            Log.Info("plugin: BBCWeather - completed parsing BBCWeather_{0}.xml", _areaCode)
+        Catch ex As Exception
+            Log.Error("plugin: BBCWeather - error with map overlay parse : {0}", ex.Message)
+            Return False
+        End Try
         Return True
 
     End Function
