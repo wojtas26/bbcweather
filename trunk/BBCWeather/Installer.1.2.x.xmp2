@@ -1158,7 +1158,7 @@
         <ParentGroup>Default</ParentGroup>
         <DisplayName>Black Glass HD skin files</DisplayName>
         <DefaulChecked>false</DefaulChecked>
-        <Description>Only select if you use the Black Glass HD skin with MP 1.2.0 Beta</Description>
+        <Description>Only select if you use the Black Glass HD skin with MP 1.2.0</Description>
         <Files>
           <Items>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
@@ -1742,7 +1742,7 @@
         <ParentGroup>Default</ParentGroup>
         <DisplayName>Avalon skin files</DisplayName>
         <DefaulChecked>false</DefaulChecked>
-        <Description>Only select if you use the Avalon skin with MP 1.2.0 Beta</Description>
+        <Description>Only select if you use the Avalon skin with MP 1.2.0</Description>
         <Files>
           <Items>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
@@ -2319,6 +2319,13 @@
               <ZipFileName>Installer{CopyFile}\{faa4ef44-b312-4223-8ece-10d7011cde78}-blank.txt</ZipFileName>
               <DestinationFilename>%Skin%\Avalon\Media\animations\BBCWeather\blank.txt</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>skin\Avalon\Media\BBCWeather\Thumbs.db</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b0b30a0d-a8b6-4e72-abb1-0fd2c4e34dab}-Thumbs.db</ZipFileName>
+              <DestinationFilename>%Skin%\Avalon\Media\BBCWeather\Thumbs.db</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -2522,15 +2529,15 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Major>0</Major>
       <Minor>4</Minor>
       <Build>1</Build>
-      <Revision>47</Revision>
+      <Revision>56</Revision>
     </Version>
     <ExtensionDescription>Display the BBC weather information as seen on the BBC weather website. 24 hour, 5-day, monthly outlook and map forecasts are available.</ExtensionDescription>
     <VersionDescription>v0.4.1 for MP 1.2.x
 
-Fixed bug which failed to display N/A weather image.</VersionDescription>
+Fixed bug which could cause MP to crash when an internet connection was unavailable.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.1.47.for.MP.1.2.x.mpe1</OnlineLocation>
-    <ReleaseDate>2011-11-24T07:10:04</ReleaseDate>
+    <OnlineLocation>http://bbcweather.googlecode.com/files/BBCWeather.v.0.4.1.56.for.MP.1.2.x.mpe1</OnlineLocation>
+    <ReleaseDate>2011-12-08T07:10:04</ReleaseDate>
     <Tags />
     <Location>C:\Dev\BBCWeather.v.[Version].for.MP.1.2.x.mpe1</Location>
     <Params>
@@ -3764,6 +3771,13 @@ Fixed bug which failed to display N/A weather image.</VersionDescription>
         <ZipFileName>Installer{CopyFile}\{faa4ef44-b312-4223-8ece-10d7011cde78}-blank.txt</ZipFileName>
         <DestinationFilename>%Skin%\Avalon\Media\animations\BBCWeather\blank.txt</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>skin\Avalon\Media\BBCWeather\Thumbs.db</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b0b30a0d-a8b6-4e72-abb1-0fd2c4e34dab}-Thumbs.db</ZipFileName>
+        <DestinationFilename>%Skin%\Avalon\Media\BBCWeather\Thumbs.db</DestinationFilename>
+      </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
@@ -3790,7 +3804,7 @@ Fixed bug which failed to display N/A weather image.</VersionDescription>
       </FolderGroup>
     </FolderGroups>
     <ProjectFilename>Installer.1.2.x.xmp2</ProjectFilename>
-    <UpdatePath1>C:\Dev\BBCWeather\BBCWeather\update.xml</UpdatePath1>
+    <UpdatePath1>C:\Dev\vs2010\BBCWeather\BBCWeather\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
   </ProjectSettings>
