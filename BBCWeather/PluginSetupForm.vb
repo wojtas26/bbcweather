@@ -8,13 +8,17 @@ Imports System.Windows.Forms
 
 Public Class PluginSetupForm
 
-    Private _searchNames As New List(Of String)
-    Private _areaCodes As New List(Of String)
-    Private _areaNames As New List(Of String)
-    Private _areaCodeList As New List(Of String)
+    Private Class BBCLocation
+        Public LocationID As String
+        Public LocationName As String
+        Public ForecastID As String
+    End Class
+
+    Private _SelectedBBCLocations As New List(Of BBCLocation)
+    Private _AllBBCLocations As New List(Of BBCLocation)
+    Private _jsonLocations As String = String.Empty
     Private _tempUnit As String = String.Empty
     Private _windUnit As String = String.Empty
-    Private _locations As String = String.Empty
     Private _overRide As Boolean = False
     Private _interval As Integer = 0
 
@@ -27,19 +31,8 @@ Public Class PluginSetupForm
             _windUnit = xmlReader.GetValueAsString("BBCWeather", "windUnit", "mph")
             _interval = xmlReader.GetValueAsInt("BBCWeather", "interval", 15)
             _overRide = xmlReader.GetValueAsBool("BBCWeather", "overRide", False)
-            _locations = xmlReader.GetValueAsString("BBCWeather", "locations", "")
+            _jsonLocations = xmlReader.GetValueAsString("BBCWeather", "locations", "")
         End Using
-
-        Dim jo As JsonObject
-        jo = CType(Conversion.JsonConvert.Import(_locations), JsonObject)
-
-        For i As Integer = 0 To jo.Count - 1
-            Dim location As JsonObject = jo.Item(jo.Names(i))
-            _searchNames.Add(location.Item("searchName"))
-            _areaCodes.Add(location.Item("areaCode"))
-            _areaNames.Add(location.Item("areaName"))
-            clbLocations.Items.Add(_areaNames(i))
-        Next
 
         If _tempUnit.ToLower = "degc" Then
             rbnDegC.Checked = True
@@ -60,6 +53,20 @@ Public Class PluginSetupForm
         cbxInfoService.Checked = _overRide
 
         numInterval.Value = _interval
+
+        Dim jo As JsonObject
+        jo = CType(Conversion.JsonConvert.Import(_jsonLocations), JsonObject)
+        If jo.Count = 0 Then Exit Sub
+
+        Dim BBCLocation As New BBCLocation
+        For i As Integer = 0 To jo.Count - 1
+            Dim location As JsonObject = jo.Item(jo.Names(i))
+            BBCLocation.LocationID = location.Item("LocationID")
+            BBCLocation.LocationName = location.Item("LocationName")
+            BBCLocation.ForecastID = location.Item("ForecastID")
+            _SelectedBBCLocations.Add(BBCLocation)
+            clbSelectedBBCLocations.Items.Add(BBCLocation.LocationName)
+        Next
 
     End Sub
 
@@ -89,8 +96,7 @@ Public Class PluginSetupForm
             MessageBox.Show(String.Format("More than 100 results returned for {0}. Displaying the first 100.{1}You may want to narrow your search.", area, vbCrLf), "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
 
-        clbResults.Items.Clear()
-        _areaCodeList.Clear()
+        clbAllBBCLocations.Items.Clear()
 
         Dim locationString As String = CType(jo("results"), String)
         Dim doc As New HtmlAgilityPack.HtmlDocument
@@ -98,8 +104,11 @@ Public Class PluginSetupForm
 
         Dim nodes As HtmlAgilityPack.HtmlNodeCollection = doc.DocumentNode.SelectNodes("//li")
         For Each node As HtmlAgilityPack.HtmlNode In nodes
-            clbResults.Items.Add(node.InnerText)
-            _areaCodeList.Add(Split(node.ChildNodes(0).Attributes("href").Value, "/")(2))
+            Dim BBCLocation As New BBCLocation
+            BBCLocation.LocationID = Split(node.ChildNodes(0).Attributes("href").Value, "/")(2)
+            BBCLocation.LocationName = node.InnerText
+            BBCLocation.ForecastID = ""
+            _AllBBCLocations.Add(BBCLocation)
         Next
 
         Dim noOfPages As Integer = System.Math.Ceiling(noOfResults / 10)
@@ -112,13 +121,18 @@ Public Class PluginSetupForm
                 doc.LoadHtml(locationString)
                 nodes = doc.DocumentNode.SelectNodes("//li")
                 For Each node As HtmlAgilityPack.HtmlNode In nodes
-                    clbResults.Items.Add(node.InnerText)
-                    _areaCodeList.Add(Split(node.ChildNodes(0).Attributes("href").Value, "/")(2))
+                    Dim BBCLocation As New BBCLocation
+                    BBCLocation.LocationID = Split(node.ChildNodes(0).Attributes("href").Value, "/")(2)
+                    BBCLocation.LocationName = node.InnerText
+                    BBCLocation.ForecastID = ""
+                    _AllBBCLocations.Add(BBCLocation)
                 Next
             Next
         End If
 
-        'CheckSelectedListItem()
+        For Each BBCLocation In _AllBBCLocations
+            clbAllBBCLocations.Items.Add(BBCLocation.LocationName)
+        Next
 
         Cursor = Windows.Forms.Cursors.Arrow
     End Sub
@@ -126,101 +140,105 @@ Public Class PluginSetupForm
     Private Sub CheckSelectedListItem(areaName)
         Dim itemToBeChecked As Integer = 0
 
-        For Each areaItem In clbResults.Items
+        For Each areaItem In clbAllBBCLocations.Items
             If areaName = areaItem Then
-                itemToBeChecked = clbResults.Items.IndexOf(areaItem)
+                itemToBeChecked = clbAllBBCLocations.Items.IndexOf(areaItem)
             End If
         Next
-        clbResults.SetItemChecked(itemToBeChecked, True)
-        clbResults.TopIndex = itemToBeChecked
+        clbAllBBCLocations.SetItemChecked(itemToBeChecked, True)
+        clbAllBBCLocations.TopIndex = itemToBeChecked
+    End Sub
+
+    Private Sub clbAllBBCLocations_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles clbAllBBCLocations.ItemCheck
+        If e.NewValue = CheckState.Checked Then
+            For i As Integer = 0 To clbAllBBCLocations.Items.Count - 1
+                If e.Index <> i Then
+                    clbAllBBCLocations.SetItemChecked(i, False)
+                End If
+            Next
+        End If
+    End Sub
+
+    Private Sub clbSelectedBBCLocations_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles clbSelectedBBCLocations.ItemCheck
+        If e.NewValue = CheckState.Checked Then
+            For i As Integer = 0 To clbSelectedBBCLocations.Items.Count - 1
+                If e.Index <> i Then
+                    clbSelectedBBCLocations.SetItemChecked(i, False)
+                End If
+            Next
+        End If
+    End Sub
+
+    Private Sub btnRemove_Click(sender As System.Object, e As System.EventArgs) Handles btnRemove.Click
+        Dim nameToRemove As String = String.Empty
+        For Each checkedItem In clbSelectedBBCLocations.CheckedItems
+            nameToRemove = checkedItem
+        Next
+        If nameToRemove = String.Empty Then Exit Sub
+
+        Dim BBCLocation As BBCLocation = Nothing
+        For Each BBCLocation In _SelectedBBCLocations
+            If BBCLocation.LocationName = nameToRemove Then Exit For
+        Next
+
+        _SelectedBBCLocations.Remove(BBCLocation)
+        clbSelectedBBCLocations.Items.Remove(nameToRemove)
+    End Sub
+
+    Private Sub btnAdd_Click(sender As System.Object, e As System.EventArgs) Handles btnAdd.Click
+        Dim nameToAdd As String = String.Empty
+        For Each checkedItem In clbAllBBCLocations.CheckedItems
+            nameToAdd = checkedItem
+        Next
+        If nameToAdd = String.Empty Then Exit Sub
+
+        Dim BBCLocation As BBCLocation = Nothing
+        For Each BBCLocation In _AllBBCLocations
+            If BBCLocation.LocationName = nameToAdd Then Exit For
+        Next
+
+        _SelectedBBCLocations.Add(BBCLocation)
+        clbSelectedBBCLocations.Items.Add(nameToAdd)
     End Sub
 
     Private Sub btnSave_Click(sender As System.Object, e As System.EventArgs) Handles btnSave.Click
-        Dim areaCode As String = String.Empty
-        Dim searchName As String = String.Empty
-        Dim areaName As String = String.Empty
-        For Each checkedItem In clbResults.CheckedItems
-            areaCode = _areaCodes(clbResults.Items.IndexOf(checkedItem))
-            areaName = checkedItem
-        Next
 
-        If areaCode <> "" Then
-            Using jw As New JsonTextWriter
-                jw.PrettyPrint = False
+        Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
+            xmlReader.SetValue("BBCWeather", "tempUnit", IIf(rbnDegF.Checked, "degF", "degC"))
+            xmlReader.SetValue("BBCWeather", "windUnit", IIf(rbnKph.Checked, "kph", "mph"))
+            xmlReader.SetValue("BBCWeather", "interval", numInterval.Value)
+            xmlReader.SetValueAsBool("BBCWeather", "overRide", cbxInfoService.Checked)
+        End Using
+
+        Using jw As New JsonTextWriter
+            jw.PrettyPrint = False
+            jw.WriteStartObject()
+
+            For Each BBCLocation In _SelectedBBCLocations
+                jw.WriteMember(_SelectedBBCLocations.IndexOf(BBCLocation))
                 jw.WriteStartObject()
-                For i = 1 To 3
-                    jw.WriteMember(i.ToString)
-                    jw.WriteStartObject()
-                    jw.WriteMember("searchName")
-                    jw.WriteString(searchName)
-                    jw.WriteMember("areaCode")
-                    jw.WriteString(areaCode)
-                    jw.WriteMember("areaName")
-                    jw.WriteString(areaName)
-                    jw.WriteEndObject()
-                Next
+                jw.WriteMember("LocationID")
+                jw.WriteString(BBCLocation.LocationID)
+                jw.WriteMember("LocationName")
+                jw.WriteString(BBCLocation.LocationName)
+                jw.WriteMember("ForecastID")
+                jw.WriteString(BBCLocation.ForecastID)
                 jw.WriteEndObject()
-                Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
-                    xmlReader.SetValue("BBCWeather", "tempUnit", IIf(rbnDegF.Checked, "degF", "degC"))
-                    xmlReader.SetValue("BBCWeather", "windUnit", IIf(rbnKph.Checked, "kph", "mph"))
-                    xmlReader.SetValue("BBCWeather", "interval", numInterval.Value)
-                    xmlReader.SetValueAsBool("BBCWeather", "overRide", cbxInfoService.Checked)
-                    xmlReader.SetValue("BBCWeather", "locations", jw.ToString)
-                    Settings.SaveCache()
-                End Using
+            Next
+            jw.WriteEndObject()
+            Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
+                xmlReader.SetValue("BBCWeather", "locations", jw.ToString)
+                Settings.SaveCache()
             End Using
-        End If
+        End Using
 
         If cbxInfoService.Checked Then MessageBox.Show("You should open InfoService config now and remove the tick from the 'Weather information enabled' checkbox on the Weather tab. Then click Save.", "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Me.Close()
     End Sub
 
-    Private Sub clbResults_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles clbResults.ItemCheck
-        If e.NewValue = CheckState.Checked Then
-            For i As Integer = 0 To clbResults.Items.Count - 1
-                If e.Index <> i Then
-                    clbResults.SetItemChecked(i, False)
-                End If
-            Next
-        End If
-    End Sub
-
-    Private Sub clbLocations_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles clbLocations.ItemCheck
-        If e.NewValue = CheckState.Checked Then
-            For i As Integer = 0 To clbLocations.Items.Count - 1
-                If e.Index <> i Then
-                    clbLocations.SetItemChecked(i, False)
-                End If
-            Next
-        End If
-    End Sub
-
     Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
         System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WDNKXZFMKR4MY")
     End Sub
 
-    Private Sub btnRemove_Click(sender As System.Object, e As System.EventArgs) Handles btnRemove.Click
-        Dim itemToRemove As Integer
-        For Each checkedItem In clbLocations.CheckedItems
-            itemToRemove = clbLocations.Items.IndexOf(checkedItem)
-        Next
-        _searchNames.RemoveAt(itemToRemove)
-        _areaCodes.RemoveAt(itemToRemove)
-        _areaNames.RemoveAt(itemToRemove)
-        clbLocations.Items.RemoveAt(itemToRemove)
-    End Sub
-
-    Private Sub btnAdd_Click(sender As System.Object, e As System.EventArgs) Handles btnAdd.Click
-        Dim itemToAdd As Integer = 0
-        Dim nameToAdd As String = String.Empty
-        For Each checkedItem In clbResults.CheckedItems
-            itemToAdd = clbResults.Items.IndexOf(checkedItem)
-            nameToAdd = checkedItem
-        Next
-        _searchNames.Add(tbxInput.Text)
-        _areaCodes.Add(_areaCodeList(itemToAdd))
-        _areaNames.Add(clbResults.Items.IndexOf(itemToAdd).ToString)
-        clbLocations.Items.Add(nameToAdd)
-    End Sub
 End Class
