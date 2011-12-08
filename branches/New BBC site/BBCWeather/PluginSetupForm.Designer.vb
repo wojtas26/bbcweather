@@ -26,7 +26,7 @@ Partial Class PluginSetupForm
         Me.btnLookup = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbxInput = New System.Windows.Forms.TextBox()
-        Me.clbResults = New System.Windows.Forms.CheckedListBox()
+        Me.clbAllBBCLocations = New System.Windows.Forms.CheckedListBox()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cbxInfoService = New System.Windows.Forms.CheckBox()
@@ -42,7 +42,7 @@ Partial Class PluginSetupForm
         Me.numInterval = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.clbLocations = New System.Windows.Forms.CheckedListBox()
+        Me.clbSelectedBBCLocations = New System.Windows.Forms.CheckedListBox()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnRemove = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,16 +79,16 @@ Partial Class PluginSetupForm
         Me.tbxInput.Size = New System.Drawing.Size(161, 20)
         Me.tbxInput.TabIndex = 2
         '
-        'clbResults
+        'clbAllBBCLocations
         '
-        Me.clbResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.clbResults.CheckOnClick = True
-        Me.clbResults.FormattingEnabled = True
-        Me.clbResults.HorizontalScrollbar = True
-        Me.clbResults.Location = New System.Drawing.Point(16, 77)
-        Me.clbResults.Name = "clbResults"
-        Me.clbResults.Size = New System.Drawing.Size(222, 107)
-        Me.clbResults.TabIndex = 3
+        Me.clbAllBBCLocations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.clbAllBBCLocations.CheckOnClick = True
+        Me.clbAllBBCLocations.FormattingEnabled = True
+        Me.clbAllBBCLocations.HorizontalScrollbar = True
+        Me.clbAllBBCLocations.Location = New System.Drawing.Point(16, 77)
+        Me.clbAllBBCLocations.Name = "clbAllBBCLocations"
+        Me.clbAllBBCLocations.Size = New System.Drawing.Size(222, 107)
+        Me.clbAllBBCLocations.TabIndex = 3
         '
         'btnSave
         '
@@ -242,16 +242,16 @@ Partial Class PluginSetupForm
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         '
-        'clbLocations
+        'clbSelectedBBCLocations
         '
-        Me.clbLocations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.clbLocations.CheckOnClick = True
-        Me.clbLocations.FormattingEnabled = True
-        Me.clbLocations.HorizontalScrollbar = True
-        Me.clbLocations.Location = New System.Drawing.Point(255, 77)
-        Me.clbLocations.Name = "clbLocations"
-        Me.clbLocations.Size = New System.Drawing.Size(222, 107)
-        Me.clbLocations.TabIndex = 11
+        Me.clbSelectedBBCLocations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.clbSelectedBBCLocations.CheckOnClick = True
+        Me.clbSelectedBBCLocations.FormattingEnabled = True
+        Me.clbSelectedBBCLocations.HorizontalScrollbar = True
+        Me.clbSelectedBBCLocations.Location = New System.Drawing.Point(255, 77)
+        Me.clbSelectedBBCLocations.Name = "clbSelectedBBCLocations"
+        Me.clbSelectedBBCLocations.Size = New System.Drawing.Size(222, 107)
+        Me.clbSelectedBBCLocations.TabIndex = 11
         '
         'btnAdd
         '
@@ -278,14 +278,14 @@ Partial Class PluginSetupForm
         Me.ClientSize = New System.Drawing.Size(494, 342)
         Me.Controls.Add(Me.btnRemove)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.clbLocations)
+        Me.Controls.Add(Me.clbSelectedBBCLocations)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLookup)
         Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.clbResults)
+        Me.Controls.Add(Me.clbAllBBCLocations)
         Me.Controls.Add(Me.tbxInput)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox4)
@@ -313,7 +313,7 @@ Partial Class PluginSetupForm
     Friend WithEvents btnLookup As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents tbxInput As System.Windows.Forms.TextBox
-    Friend WithEvents clbResults As System.Windows.Forms.CheckedListBox
+    Friend WithEvents clbAllBBCLocations As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents cbxInfoService As System.Windows.Forms.CheckBox
@@ -329,7 +329,7 @@ Partial Class PluginSetupForm
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents numInterval As System.Windows.Forms.NumericUpDown
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents clbLocations As System.Windows.Forms.CheckedListBox
+    Friend WithEvents clbSelectedBBCLocations As System.Windows.Forms.CheckedListBox
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents btnRemove As System.Windows.Forms.Button
 End Class
