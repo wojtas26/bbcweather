@@ -5,6 +5,7 @@ Imports MediaPortal.Profile
 Imports System.Net
 Imports System.Web
 Imports System.Windows.Forms
+Imports System.Text.RegularExpressions
 
 Public Class PluginSetupForm
 
@@ -79,6 +80,9 @@ Public Class PluginSetupForm
         If Not MediaPortal.Util.Win32API.IsConnectedToInternet() Then
             MessageBox.Show("Cannot detect an Internet connection.", "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
+        ElseIf area.Length = 0 Then
+            MessageBox.Show("Please supply a location.", "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
         End If
 
         Cursor = Windows.Forms.Cursors.WaitCursor
@@ -97,6 +101,7 @@ Public Class PluginSetupForm
         End If
 
         clbAllBBCLocations.Items.Clear()
+        _AllBBCLocations.Clear()
 
         Dim locationString As String = CType(jo("results"), String)
         Dim doc As New HtmlAgilityPack.HtmlDocument
@@ -137,6 +142,27 @@ Public Class PluginSetupForm
         Cursor = Windows.Forms.Cursors.Arrow
     End Sub
 
+    Private Function GetForecastID(ByVal locationID As String) As String
+
+        Dim forecastID As String = String.Empty
+
+        If Not MediaPortal.Util.Win32API.IsConnectedToInternet() Then
+            MessageBox.Show("Cannot detect an Internet connection.", "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return forecastID
+        End If
+
+        Dim URL As String = String.Format("http://www.bbc.co.uk/weather/{0}", HttpUtility.UrlEncode(locationID))
+        Dim response As String = New WebClient().DownloadString(URL)
+
+        Dim r As New Regex("Forecast ID: (?<locid>\d+) -->")
+        Dim m As Match = r.Match(response)
+
+        If m.Success Then forecastID = r.Match(response).Result("${locid}")
+
+        Return forecastID
+
+    End Function
+
     Private Sub CheckSelectedListItem(areaName)
         Dim itemToBeChecked As Integer = 0
 
@@ -176,13 +202,14 @@ Public Class PluginSetupForm
         Next
         If nameToRemove = String.Empty Then Exit Sub
 
-        Dim BBCLocation As BBCLocation = Nothing
-        For Each BBCLocation In _SelectedBBCLocations
-            If BBCLocation.LocationName = nameToRemove Then Exit For
+        For Each BBCLocation As BBCLocation In _SelectedBBCLocations
+            If BBCLocation.LocationName = nameToRemove Then
+                _SelectedBBCLocations.Remove(BBCLocation)
+                clbSelectedBBCLocations.Items.Remove(nameToRemove)
+                Exit Sub
+            End If
         Next
 
-        _SelectedBBCLocations.Remove(BBCLocation)
-        clbSelectedBBCLocations.Items.Remove(nameToRemove)
     End Sub
 
     Private Sub btnAdd_Click(sender As System.Object, e As System.EventArgs) Handles btnAdd.Click
@@ -192,16 +219,26 @@ Public Class PluginSetupForm
         Next
         If nameToAdd = String.Empty Then Exit Sub
 
+        For Each item In clbSelectedBBCLocations.Items
+            If nameToAdd = item Then
+                MessageBox.Show("Location aready added.", "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            End If
+        Next
         Dim BBCLocation As BBCLocation = Nothing
         For Each BBCLocation In _AllBBCLocations
-            If BBCLocation.LocationName = nameToAdd Then Exit For
+            If BBCLocation.LocationName = nameToAdd Then
+                _SelectedBBCLocations.Add(BBCLocation)
+                clbSelectedBBCLocations.Items.Add(nameToAdd)
+                Exit Sub
+            End If
         Next
 
-        _SelectedBBCLocations.Add(BBCLocation)
-        clbSelectedBBCLocations.Items.Add(nameToAdd)
     End Sub
 
     Private Sub btnSave_Click(sender As System.Object, e As System.EventArgs) Handles btnSave.Click
+
+        Cursor = Windows.Forms.Cursors.WaitCursor
 
         Using xmlReader As Settings = New Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml"))
             xmlReader.SetValue("BBCWeather", "tempUnit", IIf(rbnDegF.Checked, "degF", "degC"))
@@ -222,7 +259,7 @@ Public Class PluginSetupForm
                 jw.WriteMember("LocationName")
                 jw.WriteString(BBCLocation.LocationName)
                 jw.WriteMember("ForecastID")
-                jw.WriteString(BBCLocation.ForecastID)
+                jw.WriteString(GetForecastID(BBCLocation.LocationID))
                 jw.WriteEndObject()
             Next
             jw.WriteEndObject()
@@ -233,7 +270,7 @@ Public Class PluginSetupForm
         End Using
 
         If cbxInfoService.Checked Then MessageBox.Show("You should open InfoService config now and remove the tick from the 'Weather information enabled' checkbox on the Weather tab. Then click Save.", "BBC Weather", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+        Cursor = Windows.Forms.Cursors.Arrow
         Me.Close()
     End Sub
 
