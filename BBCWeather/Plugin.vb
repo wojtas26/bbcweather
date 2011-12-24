@@ -313,6 +313,8 @@ Public Class BBCWeatherPlugin
     Private _downloadLock As Object = Nothing
     Private _currentMode As String = Mode.FiveDay           'Start with the 5 day forecast
     Private _refreshIntervalMinutes As Integer = 15
+    Private _startDaylightHour As Integer = 6
+    Private _finishDaylightHour As Integer = 20
     Private timer As System.Threading.Timer
     Private _lastRefreshTime As DateTime = Now.AddHours(-1) 'Set to -1 to force a refresh on init 
 
@@ -362,6 +364,8 @@ Public Class BBCWeatherPlugin
             _windUnit = xmlReader.GetValueAsString("BBCWeather", "windUnit", "mph")
             _overRide = xmlReader.GetValueAsBool("BBCWeather", "overRide", False)
             _refreshIntervalMinutes = xmlReader.GetValueAsInt("BBCWeather", "interval", 15)
+            _startDaylightHour = xmlReader.GetValueAsInt("BBCWeather", "dayStart", 6)
+            _finishDaylightHour = xmlReader.GetValueAsInt("BBCWeather", "dayFinish", 20)
         End Using
 
     End Sub
@@ -787,8 +791,14 @@ Public Class BBCWeatherPlugin
     Private Function GetWeatherImage(ByVal weather As String, Optional ByVal hour As Integer = 12, Optional ByVal fullPath As Boolean = True, Optional ByVal infoService As Boolean = False) As String
 
         Dim img As Integer = 0
+        Dim infoServiceImg As Integer = 0
+        Dim isDaylight As Boolean = False
+
         Dim day As Integer = 0
-        If hour >= 6 And hour <= 20 Then day = 1
+        If hour >= _startDaylightHour And _finishDaylightHour <= 20 Then
+            day = 1
+            isDaylight = True
+        End If
 
         If InStr(weather, "with") > 0 Then
             weather = Left(weather, InStr(weather, "with") - 2)
@@ -796,95 +806,81 @@ Public Class BBCWeatherPlugin
 
         Select Case weather.ToLower
             Case "clear sky", "sunny"
-                img = 0 + day
+                img = IIf(isDaylight, 1, 0)
+                infoServiceImg = IIf(isDaylight, 32, 31)
             Case "partly cloudy", "sunny intervals"
                 img = 2 + day
+                img = IIf(isDaylight, 3, 2)
+                infoServiceImg = IIf(isDaylight, 34, 33)
             Case "mist"
                 img = 5
+                infoServiceImg = 20
             Case "fog"
                 img = 6
+                infoServiceImg = 20
             Case "white cloud"
                 img = 7
+                infoServiceImg = IIf(isDaylight, 30, 27)
             Case "black cloud", "grey cloud"
                 img = 8
+                infoServiceImg = IIf(isDaylight, 28, 27)
             Case "light rain shower"
                 img = 9 + day
+                img = IIf(isDaylight, 10, 9)
+                infoServiceImg = IIf(isDaylight, 39, 45)
             Case "drizzle"
                 img = 11
+                infoServiceImg = 11
             Case "light rain"
                 img = 12
+                infoServiceImg = 10
             Case "heavy rain shower"
                 img = 13 + day
+                infoServiceImg = 10
             Case "heavy rain"
                 img = 15
+                infoServiceImg = 10
             Case "sleet shower"
                 img = 16 + day
+                infoServiceImg = 5
             Case "sleet"
                 img = 18
+                infoServiceImg = 5
             Case "hail shower"
                 img = 19 + day
+                infoServiceImg = 6
             Case "hail"
                 img = 21
+                infoServiceImg = 6
             Case "light snow shower"
                 img = 22 + day
+                infoServiceImg = 13
             Case "light snow"
                 img = 24
+                infoServiceImg = 13
             Case "heavy snow shower"
                 img = 25 + day
+                infoServiceImg = 13
             Case "heavy snow"
                 img = 27
+                infoServiceImg = 13
             Case "thundery shower"
                 img = 28 + day
+                infoServiceImg = IIf(isDaylight, 37, 47)
             Case "thunder storm"
                 img = 30 + day
+                infoServiceImg = IIf(isDaylight, 37, 47)
             Case Else
                 img = 32
+                infoServiceImg = 99
         End Select
 
+        Dim imgString As String
         If infoService Then
-            Select Case img
-                Case 0
-                    img = 31
-                Case 1
-                    img = 32
-                Case 2
-                    img = 33
-                Case 3
-                    img = 34
-                Case 5, 6
-                    img = 20
-                Case 7
-                    img = 30
-                Case 8
-                    img = 28
-                Case 9
-                    img = 45
-                Case 10
-                    img = 39
-                Case 11
-                    img = 11
-                Case 12, 13, 14, 15
-                    img = 10
-                Case 16, 17, 18
-                    img = 5
-                Case 19, 20, 21
-                    img = 6
-                Case 22, 23, 24, 25, 26, 27
-                    img = 13
-                Case 28, 30
-                    img = 47
-                Case 29, 31
-                    img = 37
-                Case 32
-                    img = 99
-                Case Else
-                    img = 99
-            End Select
+            imgString = IIf(infoServiceImg = 99, "n/a", infoServiceImg.ToString)
+        Else
+            imgString = img.ToString
         End If
-
-        Dim imgString As String = img.ToString
-
-        If imgString = "99" Then imgString = "na"
 
         If fullPath Then
             Return (String.Format("{0}\Media\BBCWeather\weather\{1}.png", GUIGraphicsContext.Skin, imgString))
@@ -1561,12 +1557,12 @@ Public Class BBCWeatherPlugin
             SetInfoServiceProperty("#infoservice.weather.today.uvindex", "N/A")
             If Not _currentWind Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.wind", _currentWind)
             If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.condition", _currentSummary)
-            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
-            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
-            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
-            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True))))
-            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
-            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, , False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, Now.Hour, False, True))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, Now.Hour, False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.small.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(_currentSummary, Now.Hour, False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.fullpath", Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, Now.Hour, False, True))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithext", Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, Now.Hour, False, True)))))
+            If Not _currentSummary Is Nothing Then SetInfoServiceProperty("#infoservice.weather.today.img.big.filenamewithoutext", Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(_currentSummary, Now.Hour, False, True)))))
             SetInfoServiceProperty("#infoservice.weather.today.weekday", Now.ToString("dddd"))
             If Not _currentObsStation Is Nothing Then SetInfoServiceProperty("#infoservice.weather.lastupdated.message", String.Format("Observation station is {0}.", _currentObsStation))
             If Not _currentObsTime Is Nothing Then SetInfoServiceProperty("#infoservice.weather.lastupdated.datetime", _currentObsTime)
@@ -1585,12 +1581,12 @@ Public Class BBCWeatherPlugin
                 SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.wind", num), "N/A")
                 If Not forecast.Humidity Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.humidity", num), forecast.Humidity)
                 SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.night.humidity", num), "N/A")
-                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
-                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
-                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
-                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True))))
-                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
-                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, , False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, Now.Hour, False, True))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, Now.Hour, False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.small.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("64x64\{0}.png", GetWeatherImage(forecast.Summary, Now.Hour, False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.fullpath", num), Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, Now.Hour, False, True))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithext", num), Path.GetFileName(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, Now.Hour, False, True)))))
+                If Not forecast.Summary Is Nothing Then SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.day.img.big.filenamewithoutext", num), Path.GetFileNameWithoutExtension(Config.GetFile(Config.Dir.Weather, String.Format("128x128\{0}.png", GetWeatherImage(forecast.Summary, Now.Hour, False, True)))))
                 SetInfoServiceProperty(String.Format("#infoservice.weather.forecast{0}.weekday", num), Now.AddDays(num - 1).ToString("dddd"))
                 num += 1
             Next

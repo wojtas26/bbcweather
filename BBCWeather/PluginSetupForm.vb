@@ -20,6 +20,8 @@ Public Class PluginSetupForm
     Private _windUnit As String = String.Empty
     Private _overRide As Boolean = False
     Private _interval As Integer = 0
+    Private _startDaylightHour As Integer = 0
+    Private _finishDaylightHour As Integer = 0
 
     Private Sub PluginSetupForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
@@ -32,6 +34,8 @@ Public Class PluginSetupForm
             _windUnit = xmlReader.GetValueAsString("BBCWeather", "windUnit", "mph")
             _overRide = xmlReader.GetValueAsBool("BBCWeather", "overRide", False)
             _interval = xmlReader.GetValueAsInt("BBCWeather", "interval", 15)
+            _startDaylightHour = xmlReader.GetValueAsInt("BBCWeather", "dayStart", 6)
+            _finishDaylightHour = xmlReader.GetValueAsInt("BBCWeather", "dayFinish", 20)
         End Using
 
         If _areaName.Length > 0 Then AreaLookup(_areaName)
@@ -55,6 +59,8 @@ Public Class PluginSetupForm
         cbxInfoService.Checked = _overRide
 
         numInterval.Value = _interval
+        numDaylightStart.Value = _startDaylightHour
+        numDaylightFinish.Value = _finishDaylightHour
 
     End Sub
 
@@ -123,6 +129,8 @@ Public Class PluginSetupForm
                 xmlReader.SetValue("BBCWeather", "windUnit", IIf(rbnKph.Checked, "kph", "mph"))
                 xmlReader.SetValueAsBool("BBCWeather", "overRide", cbxInfoService.Checked)
                 xmlReader.SetValue("BBCWeather", "interval", numInterval.Value)
+                xmlReader.SetValue("BBCWeather", "dayStart", numDaylightStart.Value)
+                xmlReader.SetValue("BBCWeather", "dayFinish", numDaylightFinish.Value)
                 Settings.SaveCache()
             End Using
         End If
@@ -137,4 +145,21 @@ Public Class PluginSetupForm
         System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WDNKXZFMKR4MY")
     End Sub
 
+    Private Sub numDaylightStart_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles numDaylightStart.ValueChanged
+        If numDaylightStart.Value >= numDaylightFinish.Value Then numDaylightStart.Value = numDaylightFinish.Value - 1
+    End Sub
+
+    Private Sub numDaylightFinish_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles numDaylightFinish.ValueChanged
+        If numDaylightFinish.Value <= numDaylightStart.Value Then numDaylightFinish.Value = numDaylightStart.Value + 1
+    End Sub
+
+    Private Sub cbxInfoService_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbxInfoService.CheckedChanged
+        If cbxInfoService.Checked Then
+            numDaylightStart.Enabled = True
+            numDaylightFinish.Enabled = True
+        Else
+            numDaylightStart.Enabled = False
+            numDaylightFinish.Enabled = False
+        End If
+    End Sub
 End Class
