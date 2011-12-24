@@ -39,15 +39,21 @@ Partial Class PluginSetupForm
         Me.rbnDegF = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.numInterval = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.lblDaylightStart = New System.Windows.Forms.Label()
+        Me.lblDaylightFinish = New System.Windows.Forms.Label()
+        Me.numDaylightStart = New System.Windows.Forms.NumericUpDown()
+        Me.numDaylightFinish = New System.Windows.Forms.NumericUpDown()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.numInterval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.numDaylightStart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numDaylightFinish, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLookup
@@ -89,7 +95,7 @@ Partial Class PluginSetupForm
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(183, 374)
+        Me.btnSave.Location = New System.Drawing.Point(183, 427)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(55, 23)
         Me.btnSave.TabIndex = 4
@@ -99,7 +105,7 @@ Partial Class PluginSetupForm
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.BBCWeather.My.Resources.Resources.btn_donate_SM
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 374)
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 427)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(75, 23)
         Me.PictureBox1.TabIndex = 5
@@ -108,7 +114,7 @@ Partial Class PluginSetupForm
         'cbxInfoService
         '
         Me.cbxInfoService.AutoSize = True
-        Me.cbxInfoService.Location = New System.Drawing.Point(9, 17)
+        Me.cbxInfoService.Location = New System.Drawing.Point(6, 17)
         Me.cbxInfoService.Name = "cbxInfoService"
         Me.cbxInfoService.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.cbxInfoService.Size = New System.Drawing.Size(188, 17)
@@ -204,20 +210,11 @@ Partial Class PluginSetupForm
         '
         Me.GroupBox3.Controls.Add(Me.numInterval)
         Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 328)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 190)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(222, 40)
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 16)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Refresh interval (mins)"
         '
         'numInterval
         '
@@ -230,20 +227,69 @@ Partial Class PluginSetupForm
         Me.numInterval.TabIndex = 3
         Me.numInterval.Value = New Decimal(New Integer() {15, 0, 0, 0})
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(111, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Refresh interval (mins)"
+        '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.numDaylightFinish)
+        Me.GroupBox4.Controls.Add(Me.numDaylightStart)
+        Me.GroupBox4.Controls.Add(Me.lblDaylightFinish)
+        Me.GroupBox4.Controls.Add(Me.lblDaylightStart)
         Me.GroupBox4.Controls.Add(Me.cbxInfoService)
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 190)
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 328)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(222, 40)
+        Me.GroupBox4.Size = New System.Drawing.Size(222, 93)
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
+        '
+        'lblDaylightStart
+        '
+        Me.lblDaylightStart.AutoSize = True
+        Me.lblDaylightStart.Location = New System.Drawing.Point(6, 42)
+        Me.lblDaylightStart.Name = "lblDaylightStart"
+        Me.lblDaylightStart.Size = New System.Drawing.Size(123, 13)
+        Me.lblDaylightStart.TabIndex = 7
+        Me.lblDaylightStart.Text = "Select daylight start hour"
+        '
+        'lblDaylightFinish
+        '
+        Me.lblDaylightFinish.AutoSize = True
+        Me.lblDaylightFinish.Location = New System.Drawing.Point(6, 68)
+        Me.lblDaylightFinish.Name = "lblDaylightFinish"
+        Me.lblDaylightFinish.Size = New System.Drawing.Size(127, 13)
+        Me.lblDaylightFinish.TabIndex = 8
+        Me.lblDaylightFinish.Text = "Select daylight finish hour"
+        '
+        'numDaylightStart
+        '
+        Me.numDaylightStart.Location = New System.Drawing.Point(147, 40)
+        Me.numDaylightStart.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
+        Me.numDaylightStart.Name = "numDaylightStart"
+        Me.numDaylightStart.Size = New System.Drawing.Size(60, 20)
+        Me.numDaylightStart.TabIndex = 4
+        Me.numDaylightStart.Value = New Decimal(New Integer() {6, 0, 0, 0})
+        '
+        'numDaylightFinish
+        '
+        Me.numDaylightFinish.Location = New System.Drawing.Point(147, 66)
+        Me.numDaylightFinish.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
+        Me.numDaylightFinish.Name = "numDaylightFinish"
+        Me.numDaylightFinish.Size = New System.Drawing.Size(60, 20)
+        Me.numDaylightFinish.TabIndex = 9
+        Me.numDaylightFinish.Value = New Decimal(New Integer() {20, 0, 0, 0})
         '
         'PluginSetupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(255, 405)
+        Me.ClientSize = New System.Drawing.Size(255, 456)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -267,6 +313,8 @@ Partial Class PluginSetupForm
         CType(Me.numInterval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.numDaylightStart, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numDaylightFinish, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -290,4 +338,8 @@ Partial Class PluginSetupForm
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents numInterval As System.Windows.Forms.NumericUpDown
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents numDaylightFinish As System.Windows.Forms.NumericUpDown
+    Friend WithEvents numDaylightStart As System.Windows.Forms.NumericUpDown
+    Friend WithEvents lblDaylightFinish As System.Windows.Forms.Label
+    Friend WithEvents lblDaylightStart As System.Windows.Forms.Label
 End Class
