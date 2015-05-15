@@ -1,0 +1,1 @@
+Displays the weather information as seen on the BBC weather website, including 24 hour, 5 day and monthly forecasts.
